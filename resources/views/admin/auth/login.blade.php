@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>غاز</title>
+    <title>الثمار الوطنية</title>
     <!-- Tell the browser to be responsive to screen width -->
     {{--<link rel="stylesheet" href="select2.css">--}}
     {{--<link rel="stylesheet" href="select2-bootstrap4.css">--}}

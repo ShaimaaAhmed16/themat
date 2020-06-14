@@ -23,5 +23,12 @@
 </header>
 @section('content')
     <section class="container text-right mt-5 about">
-       <p>{{$about->text}}</p>  </section>
+        @if($about)
+            <p>{{$about->text}}</p>  </section>
+    @else
+        <div class="alert alert-danger" role="alert">
+            لا يوجد بيانات
+        </div>
+    @endif
+        @endif
     @endsection
