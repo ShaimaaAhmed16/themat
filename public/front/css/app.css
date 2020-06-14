@@ -1,0 +1,483 @@
+@font-face {
+  font-family: "cairo", sans-serif;
+  src: url(../fonts/Cairo-Black.ttf);
+  src: url(../fonts/Cairo-Bold.ttf);
+  src: url(../fonts/Cairo-ExtraLight.ttf);
+  src: url(../fonts/Cairo-Light.ttf);
+  src: url(../fonts/Cairo-Regular.ttf);
+  src: url(../fonts/Cairo-SemiBold.ttf);
+}
+
+html,
+body {
+  font-family: flat;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+.bg-light-green {
+  background-color: #8cc540;
+}
+.bg-gray {
+  background-color: #f8f8f8;
+}
+.bg-red {
+  background-color: #551313;
+}
+.bg-black {
+  background-color: #000;
+}
+
+.text-light-green {
+  color: #8cc540;
+}
+.text-silver {
+  color: #b2b6bc;
+}
+.text-black {
+  color: #000;
+}
+.text-blue {
+  color: #1d4f8b;
+}
+::placeholder {
+  text-align: right;
+  font-size: 16px;
+}
+/*=============*/
+.header {
+  border-radius: 0 !important;
+  box-shadow: 1px 1px 1px #8cc540;
+}
+.container-menu {
+  background-color: #8cc540;
+}
+.searchContainer {
+  display: grid;
+  grid-template-columns: 1.5rem 4fr 1fr;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 1px 1px 1px #8cc540;
+}
+
+.searchContainer:focus-within i {
+  display: none;
+}
+
+.searchContainer:focus-within .searchBox {
+  grid-column: 1/4;
+}
+
+.searchContainer:focus-within .searchBox::placeholder {
+  color: transparent;
+}
+
+.searchIcon {
+  padding: 0.5rem;
+  grid-row: 1;
+  grid-column: 1/2;
+  z-index: 2;
+}
+
+.searchBox {
+  border: 0;
+  background-color: #fff;
+  padding: 0.5rem;
+  grid-column: 2/4;
+  grid-row: 1;
+  outline: none;
+}
+.filter.card {
+  border-radius: 0 !important;
+}
+.filter a {
+  color: #ccc;
+}
+.filter a:hover {
+  color: #8cc540;
+}
+a:hover {
+  text-decoration: none;
+}
+.border-bottom {
+  border-bottom: 10px solid #ffd208;
+}
+nav {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+nav .nav-link span {
+  background-color: #8cc540;
+  border-radius: 50%;
+}
+nav a:hover {
+  color: #909499;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111940;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 32px 8px 0px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+  text-align: right;
+  position: relative;
+}
+
+.sidenav a:hover {
+  color: #b4afaf;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 22px;
+  margin-left: 10px;
+}
+.sidenav a .user-icon {
+  border-radius: 50%;
+}
+.sidenav .user i {
+  position: absolute;
+  right: 35;
+  bottom: 5;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 10px;
+  }
+}
+.content {
+  margin-bottom: 100px;
+}
+.content button {
+  color: #ccc;
+}
+.content-large {
+  margin-bottom: 100px;
+}
+.content-large button {
+  color: #ccc;
+}
+.content-large .btn-sm {
+  border-radius: 20px;
+}
+.fillter a:hover {
+  color: #8cc540;
+}
+/*buy*/
+.buy {
+  margin-bottom: 100px;
+}
+.buy button {
+  border: 1px solid #8cc540;
+}
+.buy .btn-group {
+  border-radius: 30px !important;
+}
+.buy .card {
+  position: relative;
+}
+.buy .card span.about-product {
+  position: absolute;
+  right: 0;
+  top: -40px;
+  background-color: #fff;
+  padding: 5px 15px;
+}
+/*products*/
+.product {
+  margin-bottom: 100px;
+}
+.product a.btn-sm {
+  background-color: #eef2f5;
+  border-radius: 20px;
+}
+/*shopcart*/
+.shopcart label {
+  border-radius: 20px;
+}
+/*shopcart1*/
+.shopcart1 .true {
+  border-radius: 50% !important;
+  border: 2px solid #0bc50b;
+  box-shadow: 1px 1px 1px #ccc;
+  width: 35px;
+}
+.shopcart1 .btn-group {
+  box-shadow: 1px 1px 1px #ccc;
+  border-radius: 20px;
+  border: 1px solid #ffd208;
+}
+.shopcart1 .btn-group button {
+  border: 1px solid #ffd208;
+  border-radius: 20px;
+}
+.shopcart1 .img {
+  border: 1px solid #ffd208;
+  width: 50px;
+  height: 50px;
+}
+/*account*/
+.account {
+  margin-bottom: 100px;
+  padding: 0 10%;
+}
+.account img {
+  border-radius: 50%;
+}
+/*update info*/
+.update {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.update .card {
+  margin: 0;
+}
+.update .card img {
+  border-radius: 50%;
+  padding: 20px 0;
+}
+.update .form-group {
+  margin: 30px 0px;
+}
+.update input {
+  border-radius: 20px;
+}
+.update form button {
+  background: #0bc50b;
+  text-align: center !important;
+  width: 65%;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+/*about*/
+.about {
+  margin-bottom: 100px;
+}
+/*contact*/
+.contact {
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
+.contact .card {
+  margin: 0px;
+}
+.contact form {
+  margin: 30px 0px;
+}
+.contact form input,
+.contact form textarea {
+  border-radius: 20px;
+}
+.contact form button {
+  background: #0bc50b;
+  text-align: center !important;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+/*intro*/
+.intro {
+  background: url(../images/bac.png) center no-repeat;
+  background-size: cover;
+  padding-bottom: 30px;
+}
+.intro .btn-group {
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid #ffd208;
+  width: 100%;
+}
+.intro a.active {
+  background-color: #ffd208;
+  border-radius: 20px !important;
+}
+.intro a {
+  width: 250px;
+  border-radius: 20px;
+}
+/*signin*/
+.signin {
+  margin-bottom: 80px;
+}
+.signin form input,
+.signin form a,
+.signin form button {
+  border-radius: 20px;
+}
+.signin button.btn-secondary {
+  background-color: #c7c7c7 !important;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: transparent;
+  border-bottom: 5px solid #ffd208;
+}
+.form .value-button {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  vertical-align: top;
+  padding: 11px 0;
+  background: #eee;
+}
+.form .value-button:hover {
+  cursor: pointer;
+}
+.form #decrease {
+  margin-right: -4px;
+  border-radius: 0 8px 8px 0;
+  position: relative;
+}
+.form #decrease span {
+  position: absolute;
+  top: -2px;
+  left: 15px;
+}
+.form #increase {
+  margin-left: -4px;
+  border-radius: 8px 0 0 8px;
+  position: relative;
+}
+.form #increase span {
+  position: absolute;
+  top: -2px;
+  right: 13px;
+}
+.form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+.form input#number,
+.form input#number1,
+.form input#number2,
+.form input#number3 {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 24.5px;
+  padding: 0 !important;
+}
+.form input[type="number"]::-webkit-inner-spin-button,
+.form input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.map {
+  margin-bottom: 60px;
+  overflow-x: hidden;
+}
+.map .row {
+  margin-left: 0;
+}
+.map .col-12 {
+  padding-left: 0;
+  padding-right: 0;
+}
+.map iframe {
+  position: relative;
+}
+.map .btn {
+  position: absolute;
+  bottom: 5%;
+  right: 15%;
+  width: 70%;
+  background-color: #229bdc;
+}
+.nice-number button {
+  margin: 0 5px;
+  border-radius: 5px 0;
+  outline: none;
+  border: none;
+  padding: 0px 10px;
+  box-shadow: 2px 2px 2px #ccc;
+  color: #000;
+}
+.nice-number input {
+  border: none;
+  box-shadow: 2px 2px 2px #ccc;
+  padding: 0 10px;
+}
+/*Profile Pic Start*/
+.picture-container{
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+}
+.picture{
+  width:100px;
+  height: 100px;
+  background-color: #999999;
+  border: 4px solid #CCCCCC;
+  color: #FFFFFF;
+  border-radius: 50%;
+  margin: 0px auto;
+  overflow: hidden;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  position: relative;
+}
+.picture:hover{
+  border-color: #2ca8ff;
+}
+.update .card img {
+  border-radius: 50%;
+  padding: 0px;
+}
+.content.ct-wizard-green .picture:hover{
+  border-color: #05ae0e;
+}
+.content.ct-wizard-blue .picture:hover{
+  border-color: #3472f7;
+}
+.content.ct-wizard-orange .picture:hover{
+  border-color: #ff9500;
+}
+.content.ct-wizard-red .picture:hover{
+  border-color: #ff3b30;
+}
+.picture input[type="file"] {
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0 !important;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.picture-edit{
+  position: absolute;
+  bottom: 0px;
+  left: 20px;
+}
+.picture-src{
+  width: 100%;
+}
+/*Profile Pic End*/
