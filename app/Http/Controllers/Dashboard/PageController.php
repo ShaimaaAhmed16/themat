@@ -15,13 +15,13 @@ class PageController extends Controller
      */
     public function __construct()
     {
-        $this->mainRedirect = 'admin.Pages.';
+//        $this->mainRedirect = 'admin.Pages.';
     }
 
     public function index()
     {
         $pages = Page::latest()->paginate(6);
-        return view($this->mainRedirect.'index',compact('pages'));
+        return view('admin.Pages.index',compact('pages'));
     }
 
     /**
@@ -31,7 +31,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        return view($this->mainRedirect .'create');
+        return view('admin.Pages.create');
     }
 
     /**
@@ -82,7 +82,7 @@ class PageController extends Controller
     public function show($id)
     {
         $record=Page::findOrFail($id);
-        return view($this->mainRedirect.'show',compact('record'));
+        return view('admin.Pages.show',compact('record'));
     }
 
     /**
@@ -95,7 +95,7 @@ class PageController extends Controller
     {
 
         $model = Page::findOrFail($id);
-        return view($this->mainRedirect .'edit', compact('model'));
+        return view('admin.Pages.edit', compact('model'));
     }
 
     /**
