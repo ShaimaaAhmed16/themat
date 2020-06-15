@@ -50,7 +50,13 @@
                     <input type="hidden" name="id" value="{{$row->id}}">
                     <input type="hidden" name="name" value="{{$row->name}}">
                     <input type="hidden" name="price" value="{{$row->price}}">
-                    <input type="number" value="{{$product_qty?$product_qty:1}}" min="1" name="qty">
+                        @if (Cart::count() > 0)
+                            <input type="number" value="{{$product_qty?$product_qty:1}}" min="1" name="qty">
+                        @else
+                            <input type="number" value="1" min="1" name="qty">
+                        @endif
+
+
                 </form>
             </div>
             <div class="col-6">

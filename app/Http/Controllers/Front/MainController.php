@@ -118,7 +118,8 @@ class MainController extends Controller
         $rows = Product::where('price','<=',$row->price)->paginate(2);
         $row->num_of_views +=1;
         $row->update();
-        foreach (Cart::content() as $item){
+        if (Cart::content()){
+            foreach (Cart::content() as $item){
             if ($item->id ==$id){
 //            return $item;
                 $product_qty = $item->qty;
@@ -130,8 +131,10 @@ class MainController extends Controller
                 return view('front.details',compact('row','rows','product_qty'));
             }
         }
+          }
+
+        return view('front.details',compact('row','rows'));
 //
-//        }
 //        return view('front.details',compact('row','rows'));
     }
 
@@ -165,8 +168,9 @@ class MainController extends Controller
 
         ]);
         if ($user){
-            dd('done');
-//            return redirect()->route('index');
+//            return redirect()->route('addorder');
+            return back();
+
         }else{
             flash()->error('يوجد بيانات خطأ يرجي المحاوله مره اخري');
             return back();
@@ -180,11 +184,10 @@ class MainController extends Controller
         return view('front.orders',compact('orders'));
     }
     public function addOrder(Request $request){
-
         $order = Order::create([
             'client_id' => auth('client-web')->user()->id,
             'status' => 'منتظر',
-            'total' =>Cart::subtotal(),
+            'total' => Cart::total(),
         ]);
         $order->num_of_orders +=1;
         $order->update();
@@ -198,6 +201,8 @@ class MainController extends Controller
         }
         Cart::instance('default')->destroy();
         session()->forget('coupon');
-        return back();
+//        return back();
+        flash()->success('تم ارسال الطلب ,الطلب في حاله الانتظار');
+        return redirect()->route('index');
     }
 }

@@ -136,7 +136,8 @@
                 </div>
             </section>
         <section class="text-center mt-3">
-            <form method="get" action="{{route('addorder')}}">
+            {{--<form method="get" action="{{route('addorder')}}">--}}
+            <form method="get" action="{{route('map')}}">
 
             <button type="submit" class="btn btn-success btn-block mt-4"> إكمال الطلب</button>
             {{--<a href="map.html" class="btn btn-success btn-block mt-4"> إكمال الطلب</a>--}}
