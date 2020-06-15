@@ -7,6 +7,8 @@
     Route::post('login', 'AuthController@login')->name('login.client');
     Route::get('reset/password-client', 'AuthController@resetPassword')->name('reset.password');
     Route::post('send/code', 'AuthController@sendMessage')->name('send.code');
+    Route::get('activation-page', 'AuthController@activationPage')->name('activation-page');
+    Route::post('activation', 'AuthController@activation')->name('activation');
     Route::get('checkCode/{phone?}', 'AuthController@checkCodePage')->name('checkCode');
     Route::get('change-password', 'AuthController@newPassword')->name('newPassword');
     Route::post('check/code', 'AuthController@checkCode')->name('check.code');

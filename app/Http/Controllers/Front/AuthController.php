@@ -21,6 +21,16 @@ class AuthController extends Controller
         return view('front.send-code');
     }
 
+    public function activationPage()
+    {
+        return view('front.activationPage');
+    }
+
+    public function activation(Request $request)
+    {
+        dd($request->all());
+    }
+
     public function register(Request $request){
         $rules=[
             'first_name'=>'required',
@@ -41,22 +51,24 @@ class AuthController extends Controller
 
         $this->validate($request,$rules,$messages);
 //        dd($request->all());
+
+        $code = rand('1111','9999');
+
         $user = Client::create([
             'first_name' => $request->first_name,
             'second_name' => $request->second_name,
             'address' => $request->address,
             'email' => $request->email,
+            'pin_code' => $code,
             'phone' => $request->phone,
             'password' => Hash::make($request->password),
         ]);
         $user->save();
         if ($user){
-
-            $send=curl_send_jawalsms_message($request->phone, "تم التفعيل بنجاح ");
+            $send = curl_send_jawalsms_message($request->phone, "كود التفعيل الخاص بك هو $code");
            if ($send){
-             $user->update(['status' => 1]);
-            auth('client-web')->login($user);
-            return redirect()->route('index');
+                auth('client-web')->login($user);
+                return redirect()->route('activation-page');
            }
            else{
                flash()->error('يوجد كتابه رقم الجوال بطريقه صحيحه ********9665');
