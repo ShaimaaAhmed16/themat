@@ -66,7 +66,7 @@ class ClientController extends Controller
         ]);
         if($record){
             flash()->success("تم الاضافه بنجاح");
-            return redirect(route('client.index'));
+            return redirect()->route('client.index');
         }
         else{
             flash()->error("حدث خطا");
