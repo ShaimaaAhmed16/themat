@@ -117,7 +117,7 @@ class ClientController extends Controller
             $record->update([
 
                 'password' =>$record->password,
-                'full_name' =>   $request->full_name,
+                'first_name' =>   $request->full_name,
                 'phone' =>   $request->phone,
                 'email' =>   $request->email,
             ]);
