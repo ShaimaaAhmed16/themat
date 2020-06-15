@@ -50,8 +50,16 @@ class AuthController extends Controller
         ]);
         $user->save();
         if ($user){
+            $user->update(['status' => 1]);
+            $send=curl_send_jawalsms_message($request->phone, "تم التفعيل بنجاح ");
+           if ($send){
             auth('client-web')->login($user);
             return redirect()->route('index');
+           }
+           else{
+               flash()->error('يوجد كتابه رقم الجوال بطريقه صحيحه ********9665');
+               return back();
+           }
         }
         else{
             flash()->error('يوجد خطا في البيانات');

@@ -17,8 +17,7 @@
 
 
     Route::get('main', 'MainController@main')->name('main');
-    Route::get('filter', 'MainController@viewFilter')->name('filter');
-    Route::get('details/product/{id}', 'MainController@detailsProduct')->name('details');
+
 
     Route::get('auth/{provider}', 'AuthController@redirectToProvider');
     Route::get('auth/{provider}/callback', 'AuthController@handleProviderCallback');
@@ -29,24 +28,27 @@
     Route::get('about', 'MainController@about')->name('about');
 
 
-Route::get('cart', 'CartController@index')->name('cart');
-Route::post('add-cart', 'CartController@store');
-Route::get('update-quantity/{product}', 'CartController@update');
-Route::get('empty', 'CartController@empty')->name('empty');
-Route::delete('remove/{product}', 'CartController@destroy');
+
 
     Route::group(['middleware'=>'client-web'],function () {
-        Route::get('profile-client/{id}', 'AuthController@viewProfile')->name('profile.client');
-        Route::post('profile-update/{id}', 'AuthController@profile')->name('profile');
-        Route::get('myacount', 'AuthController@myAccount')->name('myacount');
-        Route::get('logout', 'AuthController@logout')->name('logout');
-        Route::get('bank/account', 'MainController@bank')->name('bank');
+        Route::get('filter', 'MainController@viewFilter')->name('filter');
 
-        Route::get('myorder', 'MainController@myOrder')->name('myorder');
-        Route::get('addorder', 'MainController@addOrder')->name('addorder');
         //this routes for active client only
         Route::group(['middleware'=>['IsActive']],function () {
+            Route::get('details/product/{id}', 'MainController@detailsProduct')->name('details');
+            Route::get('cart', 'CartController@index')->name('cart');
+            Route::post('add-cart', 'CartController@store');
+            Route::get('update-quantity/{product}', 'CartController@update');
+            Route::get('empty', 'CartController@empty')->name('empty');
+            Route::delete('remove/{product}', 'CartController@destroy');
+            Route::get('profile-client/{id}', 'AuthController@viewProfile')->name('profile.client');
+            Route::post('profile-update/{id}', 'AuthController@profile')->name('profile');
+            Route::get('myacount', 'AuthController@myAccount')->name('myacount');
+            Route::get('logout', 'AuthController@logout')->name('logout');
+            Route::get('bank/account', 'MainController@bank')->name('bank');
 
+            Route::get('myorder', 'MainController@myOrder')->name('myorder');
+            Route::get('addorder', 'MainController@addOrder')->name('addorder');
 
         });
     });

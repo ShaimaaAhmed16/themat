@@ -47,7 +47,7 @@
                     <a href="{{route('register.client')}}" type="submit" class="btn btn-block mb-1 text-white bg-black">تسجيل حساب جديد</a>
                 </div>
                 <a  href="{{route('index')}}" class="btn btn-block text-white bg-light-green mt-2">  الدخول ك زائر</a>
-                <a href="{{route('reset.password')}}"  class="btn text-white text-right bg-secondary">استعادة كلمة  المرور</a>
+                <a href="{{route('reset.password')}}"  class="btn btn-block text-white bg-light-green mt-2">استعادة كلمة  المرور</a>
                 <br />
                 <hr />
                 <div class="d-flex justify-content-center">
