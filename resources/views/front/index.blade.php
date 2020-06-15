@@ -54,8 +54,9 @@
 
     </section>
     {{--flash message--}}
+    <div class="text-center">
     @include('flash::message')
-
+    </div>
     <section class="container mt-2 filter card">
         <div class="row p-2">
             <div class="col-6 text-right">

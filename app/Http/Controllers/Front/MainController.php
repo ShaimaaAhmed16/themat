@@ -168,8 +168,8 @@ class MainController extends Controller
 
         ]);
         if ($user){
-//            return redirect()->route('addorder');
-            return back();
+            return redirect()->route('addorder');
+//            return back();
 
         }else{
             flash()->error('يوجد بيانات خطأ يرجي المحاوله مره اخري');
@@ -181,6 +181,7 @@ class MainController extends Controller
 
     public function myOrder(){
         $orders = Order::all();
+//        dd($orders);
         return view('front.orders',compact('orders'));
     }
     public function addOrder(Request $request){
@@ -202,7 +203,10 @@ class MainController extends Controller
         Cart::instance('default')->destroy();
         session()->forget('coupon');
 //        return back();
-        flash()->success('تم ارسال الطلب ,الطلب في حاله الانتظار');
-        return redirect()->route('index');
+//        flash()->success('تم ارسال الطلب ,الطلب في حاله الانتظار ويتم الدفع عند الاستلام');
+        return redirect()->route('done');
+    }
+    public function done(){
+        return view('front.done');
     }
 }

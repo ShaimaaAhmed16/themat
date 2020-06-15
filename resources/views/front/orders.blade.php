@@ -25,10 +25,10 @@
     <section class="container text-right mt-5 about">
         <ul class="nav nav-tabs  nav-justified pr-0" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link  text-dark active" id="profile-tab" data-toggle="tab" href="#منتظر" role="tab" aria-controls="profile" aria-selected="false">منتظر </a>
+                <a class="nav-link  text-dark " id="profile-tab" data-toggle="tab" href="#منتظر" role="tab" aria-controls="profile" aria-selected="false">منتظر </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark " id="contact-tab" data-toggle="tab" href="#فعال" role="tab" aria-controls="contact" aria-selected="true">فعال </a>
+                <a class="nav-link text-dark active" id="contact-tab" data-toggle="tab" href="#فعال" role="tab" aria-controls="contact" aria-selected="true">فعال </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link  text-dark" id="profile-tab" data-toggle="tab" href="#منتهى" role="tab" aria-controls="profile" aria-selected="false">منتهى </a>
@@ -42,6 +42,7 @@
             <div class="tab-pane fade" id="ملغى" role="tabpanel" aria-labelledby="home-tab">
                 @foreach($orders as $order)
                     @if($order->status == 'ملغي')
+                        <br>
                             <div class="timeline-image">
                                 <img class="rounded-circle img-fluid" src="{{asset('public/front/images/accepted.png')}}" alt="">
                             </div>
@@ -57,8 +58,8 @@
             </div>
             <div class="tab-pane fade" id="منتهى" role="tabpanel" aria-labelledby="profile-tab">
                 @foreach($orders as $order)
-                    @if($order->status == 'منتهى')
-
+                    @if($order->status == 'منتهي')
+                        <br>
                             <div class="timeline-image">
                                 <img class="rounded-circle img-fluid" src="{{asset('public/front/images/tick.png')}}" alt="">
                             </div>
@@ -76,7 +77,7 @@
             <div class="tab-pane fade show active" id="فعال" role="tabpanel" aria-labelledby="contact-tab">
                 @foreach($orders as $order)
                     @if($order->status == 'فعال')
-
+                        <br>
                             <div class="timeline-image">
                                 <img class="rounded-circle img-fluid" src="{{asset('public/front/images/accepted.png')}}" alt="">
                             </div>
@@ -90,9 +91,10 @@
                     @endif
                 @endforeach
             </div>
-            <div class="tab-pane fade" id="منتظر" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="tab-pane fade " id="منتظر" role="tabpanel" aria-labelledby="profile-tab">
                 @foreach($orders as $order)
                     @if($order->status == 'منتظر')
+                        <br>
                             <div class="timeline-image">
                                 <img class="rounded-circle img-fluid" src="{{asset('public/front/images/accepted.png')}}" alt="">
                             </div>

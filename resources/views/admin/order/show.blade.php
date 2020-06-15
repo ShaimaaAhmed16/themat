@@ -18,7 +18,7 @@
                         </ul>
                     </div>
                 @endif
-                {!!  Form::open(['action'=>['Admin\ClientController@show',$record->id],'method'=>'put']) !!}
+                {!!  Form::open(['action'=>['Dashboard\ClientController@show',$record->id],'method'=>'put']) !!}
                 <div class="row ">
                     <div class="col-12   order-md-first mt-3 mt-md-0 ">
                         <ul class="list-group">
@@ -42,7 +42,7 @@
                                         </p>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <p class="m-0">{{optional($record->client)->full_name}}</p>
+                                        <p class="m-0">{{optional($record->client)->first_name}}{{optional($record->client)->second_name}}</p>
                                     </div>
 
                                 </div>

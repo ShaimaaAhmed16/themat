@@ -29,7 +29,7 @@
                                     <tr>
                                         <th>{{$loop->iteration}}</th>
                                         <th>{{$record->total}} ر.س</th>
-                                        <th>{{optional($record->client)->full_name}}</th>
+                                        <th>{{optional($record->client)->first_name}}{{optional($record->client)->second_name}}</th>
                                         <th> <a href="{{url(route('order.show',$record->id))}}" class="btn btn-warning btn-xs"><i class="fa fa-eye"></i></a>
                                         </th>
                                         {{--<th>--}}
@@ -51,11 +51,10 @@
 
                                                     @if($record->status == 'فعال')
                                                         <a  class="btn btn-success btn-xs" >جاري التوصيل</a>
-                                                        @if($record->status == 'منتهي')
-                                                            <a href="order/{{$record->id}}/finished" class="btn btn-danger btn-xs" >منتظر</a>
+                                                        <a href="order/{{$record->id}}/finished" class="btn btn-danger btn-xs" >منتظر</a>
                                                         @else
                                                             <a  class="btn btn-success btn-xs" >تم التوصيل</a>
-                                                        @endif
+
                                                     @endif
                                                 @endif
                                             @endif

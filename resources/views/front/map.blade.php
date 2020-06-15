@@ -56,7 +56,7 @@
                 ><span class="text-danger">*</span> رقم جوال اضافى للتواصل مع
                     المندوب
                 </label>
-                <input type="text" class="form-control" name="additional_mobile" required />
+                <input type="tel" class="form-control" name="additional_mobile" required />
             </div>
 
             <div class="text-center">

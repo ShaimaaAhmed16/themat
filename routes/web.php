@@ -34,6 +34,8 @@ Route::group(['prefix' => 'dashboard','namespace' => 'Dashboard'], function () {
         Route::resource('page', 'PageController');
         Route::get('order/{id}/active', 'OrderController@active');
         Route::get('order/{id}/deactive', 'OrderController@deactive');
+        Route::get('order/{id}/canceled', 'OrderController@canceled');
+        Route::get('order/{id}/finished', 'OrderController@finish');
         Route::get('profile-user/{id}', 'UserController@viewProfileUser')->name('profile.user');
         Route::post('profile-user/{id}', 'UserController@profileUser')->name('profile.user');
         Route::get('change-password', 'UserController@changePasswordView')->name('change.password');
