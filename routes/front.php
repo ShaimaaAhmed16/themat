@@ -14,7 +14,7 @@
     Route::post('check/code', 'AuthController@checkCode')->name('check.code');
     Route::post('change/password', 'AuthController@changePassword')->name('change.password');
 
-    Route::get('home', 'MainController@homeClient')->name('home');
+    Route::get('/', 'MainController@homeClient')->name('home');
     Route::get('index', 'MainController@index')->name('index');
 
 

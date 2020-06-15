@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="483b92ba-8189-4c5c-8aca-35995e190d8d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/activationPage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/activationPage.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/map.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/map.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/front.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/front.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,8 +34,17 @@
       <file leaf-file-name="front.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/front.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+            <state relative-caret-position="112">
+              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RouteServiceProvider.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="84" column="32" lean-forward="true" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -81,7 +88,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Front/AuthController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
@@ -105,6 +112,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>checkCode</find>
+      <find>home</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -113,7 +121,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/Desktop/themar/resend.html" />
         <option value="$PROJECT_DIR$/resources/views/front/about.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Dashboard/CategoryController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/contact/index.blade.php" />
@@ -159,11 +166,12 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ClientController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ProductController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/product/index.blade.php" />
-        <option value="$PROJECT_DIR$/routes/front.php" />
         <option value="$PROJECT_DIR$/resources/views/front/map.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/activationPage.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/activationRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Front/AuthController.php" />
+        <option value="$PROJECT_DIR$/routes/front.php" />
+        <option value="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" />
       </list>
     </option>
   </component>
@@ -295,6 +303,17 @@
               <item name="themar" type="b2602c69:ProjectViewProjectNode" />
               <item name="themar" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="themar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="themar" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="themar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="themar" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Providers" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -347,12 +366,12 @@
       <workItem from="1592069354090" duration="17650000" />
       <workItem from="1592122291920" duration="20526000" />
       <workItem from="1592165506145" duration="7198000" />
-      <workItem from="1592208334472" duration="18315000" />
+      <workItem from="1592208334472" duration="18633000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115154000" />
+    <option name="totallyTimeSpent" value="115472000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -365,7 +384,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" sideWeight="0.5008944" side_tool="true" weight="0.26963562" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49959514" weight="0.4847943" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49910554" visible="true" weight="0.20809716" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49910554" visible="true" weight="0.20809716" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32955465" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -392,13 +411,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/client/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1456">
-          <caret line="52" column="57" selection-start-line="52" selection-start-column="57" selection-end-line="52" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/client/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -704,13 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/front.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/auth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-868">
@@ -756,6 +761,20 @@
           <folding>
             <element signature="e#46#82#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/front.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="84" column="32" lean-forward="true" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
         </state>
       </provider>
     </entry>
