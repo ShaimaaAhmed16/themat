@@ -44,12 +44,14 @@
             Route::get('profile-client/{id}', 'AuthController@viewProfile')->name('profile.client');
             Route::post('profile-update/{id}', 'AuthController@profile')->name('profile');
             Route::get('myacount', 'AuthController@myAccount')->name('myacount');
-            Route::get('logout', 'AuthController@logout')->name('logout');
-            Route::get('bank/account', 'MainController@bank')->name('bank');
+
+
+            Route::get('map', 'MainController@viewMap')->name('map');
+            Route::post('map', 'MainController@map')->name('map');
 
             Route::get('myorder', 'MainController@myOrder')->name('myorder');
             Route::get('addorder', 'MainController@addOrder')->name('addorder');
-
+            Route::get('logout', 'AuthController@logout')->name('logout');
         });
     });
 

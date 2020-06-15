@@ -141,6 +141,39 @@ class MainController extends Controller
     }
 
 
+    public function viewMap(){
+        return view('front.map');
+    }
+
+    public function map(Request $request){
+        $rules=[
+            'address_details'=>'required',
+            'nearby'=>'required',
+            'additional_mobile'=>'required',
+        ];
+        $messages=[
+            'address_details.required'=>'يرجي كتابه العنوان بالتفصيل',
+            'nearby.required'=>'يرجي كتابه مكان قريب منك',
+            'additional_mobile.required'=>'يرجي كتابه رقم الجوال اخر للتواصل مع المندوب',
+        ];
+        $this->validate($request,$rules,$messages);
+        $user=$request->user('client-web');
+        $user ->update([
+            'address_details' => $request->address_details,
+            'nearby' => $request->nearby,
+            'additional_mobile' => $request->additional_mobile,
+
+        ]);
+        if ($user){
+            dd('done');
+//            return redirect()->route('index');
+        }else{
+            flash()->error('يوجد بيانات خطأ يرجي المحاوله مره اخري');
+            return back();
+        }
+    }
+
+
 
     public function myOrder(){
         $orders = Order::all();

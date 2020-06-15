@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Client;
 use App\Models\Order;
+use App\Rules\StartWritePhone;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -27,7 +28,7 @@ class AuthController extends Controller
             'address'=>'required',
             'email'=>'required|unique:clients',
             'password'=>'required|confirmed|min:6',
-            'phone'=>'required',
+            'phone'=>['required',new StartWritePhone],
         ];
         $messages=[
             'first_name.required'=>'يرجي كتابه الاسم الاول',
@@ -35,7 +36,7 @@ class AuthController extends Controller
             'address.required'=>'يرجي كتابه اسم الحي',
             'email.required'=>'يرجي كتابه البريد الالكتروني بطريقه صحيحه',
             'password.required'=>'يرجي كتابه كلمه السر لاتقل عن 6احرف',
-            'phone.required'=>'يرجي كتابه رقم الجوال',
+            'phone.required'=>'يرجي كتابه رقم الجوال********9665',
         ];
 
         $this->validate($request,$rules,$messages);
@@ -50,9 +51,10 @@ class AuthController extends Controller
         ]);
         $user->save();
         if ($user){
-            $user->update(['status' => 1]);
+
             $send=curl_send_jawalsms_message($request->phone, "تم التفعيل بنجاح ");
            if ($send){
+             $user->update(['status' => 1]);
             auth('client-web')->login($user);
             return redirect()->route('index');
            }

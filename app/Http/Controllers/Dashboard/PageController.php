@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\Page;
-use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -21,9 +20,8 @@ class PageController extends Controller
 
     public function index()
     {
-        $setting = Setting::find(1);
         $pages = Page::latest()->paginate(6);
-        return view($this->mainRedirect.'index',compact('setting','pages'));
+        return view($this->mainRedirect.'index',compact('pages'));
     }
 
     /**
@@ -33,8 +31,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        $setting = Setting::find(1);
-        return view($this->mainRedirect .'create',compact('setting'));
+        return view($this->mainRedirect .'create');
     }
 
     /**
@@ -53,7 +50,7 @@ class PageController extends Controller
         $messages = [
             'name.required' => 'يرجي كتابه اسم الصفحه',
             'text.required' => 'يرجي كتابه محتوي الصفحه',
-            'image.required' => 'تحميل صوره الصفحه',
+            'image.sometimes' => 'تحميل صوره الصفحه',
         ];
         $this->validate($request, $rules, $messages);
         if ($request->image != null){
@@ -84,9 +81,8 @@ class PageController extends Controller
      */
     public function show($id)
     {
-        $setting = Setting::find(1);
         $record=Page::findOrFail($id);
-        return view($this->mainRedirect.'show',compact('record','setting'));
+        return view($this->mainRedirect.'show',compact('record'));
     }
 
     /**
@@ -97,9 +93,9 @@ class PageController extends Controller
      */
     public function edit($id)
     {
-        $setting = Setting::find(1);
+
         $model = Page::findOrFail($id);
-        return view($this->mainRedirect .'edit', compact('model','setting'));
+        return view($this->mainRedirect .'edit', compact('model'));
     }
 
     /**
