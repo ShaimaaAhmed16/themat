@@ -45,7 +45,7 @@ class ProductController extends Controller
             'wight' => 'required',
             'description' => 'required',
             'category_id' => 'required',
-            'image'=>'required|image',
+            'image'=>'required|mimes:jpg,png,jpeg',
         ];
         $messages = [
             'name.required' => 'يرجي كتابه اسم المنتج',
