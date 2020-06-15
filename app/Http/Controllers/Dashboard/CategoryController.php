@@ -43,6 +43,7 @@ class CategoryController extends Controller
         ];
         $messages = [
             'name.required' => 'يرجي كتابه اسم التصنيف',
+            'image.required' => 'يرجي اختيار الصوره بامتداد jpg,png,jpeg',
         ];
         $this->validate($request, $rules, $messages);
 
