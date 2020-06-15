@@ -30,7 +30,7 @@
     Route::get('about', 'MainController@about')->name('about');
 
 
-
+Route::get('map', 'MainController@viewMap')->name('map');
 
     Route::group(['middleware'=>'client-web'],function () {
         Route::get('filter', 'MainController@viewFilter')->name('filter');
@@ -48,7 +48,7 @@
             Route::get('myacount', 'AuthController@myAccount')->name('myacount');
 
 
-            Route::get('map', 'MainController@viewMap')->name('map');
+//            Route::get('map', 'MainController@viewMap')->name('map');
             Route::post('map', 'MainController@map')->name('map');
 
             Route::get('myorder', 'MainController@myOrder')->name('myorder');

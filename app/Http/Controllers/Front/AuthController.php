@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\activationRequest;
 use App\Models\Client;
 use App\Models\Order;
 use App\Rules\StartWritePhone;
@@ -26,9 +27,29 @@ class AuthController extends Controller
         return view('front.activationPage');
     }
 
-    public function activation(Request $request)
+    public function activation(activationRequest $request)
     {
-        dd($request->all());
+        $user = auth()->guard('client-web')->user();
+
+        if($request->has('pin_code'))
+        {
+            if($user->pin_code == $request->pin_code)
+            {
+                $user->update(['status' => 1, 'pin_code' => null]);
+
+                return redirect()->route('index');
+            }
+
+            return back()->with('error', 'عفوا كود التفعيل غير صحيح');
+        }
+
+        $code = rand('1111','9999');
+
+        $user->update(['pin_code' => $code]);
+
+        curl_send_jawalsms_message($user->phone, "كود التفعيل الخاص بك هو $code");
+
+        return back()->with('success', 'تم إرسال الكود بنجاح');
     }
 
     public function register(Request $request){

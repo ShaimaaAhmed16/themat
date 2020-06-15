@@ -39,7 +39,7 @@
             <form action="{{ route('activation') }}" method="POST">
                 <div class="mb-3 text-center w-50 m-auto">
                     @csrf
-                    <input type="hidden" name="phone" value="{{ auth()->user()->phone }}">
+                    <input type="hidden" name="pin_code" value="1234">
                     <button  type="submit" class="btn text-white btn-block text-center bg-light-green"> إعادة إرسال </button>
                 </div>
             </form>
