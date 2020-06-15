@@ -79,7 +79,7 @@
 
                     </div>
                     <div class="col-4">
-                        <form action="{{url('front/update-quantity/'.$item->rowId)}}" method="get" class="box mt-3">
+                        <form action="{{url('update-quantity/'.$item->rowId)}}" method="get" class="box mt-3">
                             @csrf
                             {{ method_field('patch') }}
                             <input type="number" value="{{$item->qty}}" min="1" name="quantity">
@@ -90,9 +90,9 @@
                         <div class="card m-2 true">
                             <span class="pt-1 pb-1">&#10004;</span>
                         </div>
-                        {{--<a href="{{url('front/remove/'.$item->rowId)}}" class="m-3">--}}
+                        {{--<a href="{{url('remove/'.$item->rowId)}}" class="m-3">--}}
                             {{--<i class="fas fa-trash-alt text-dark"></i>--}}
-                            <form action="{{url('front/remove/'.$item->rowId)}}" method="POST">
+                            <form action="{{url('remove/'.$item->rowId)}}" method="POST">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
 

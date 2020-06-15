@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="483b92ba-8189-4c5c-8aca-35995e190d8d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/front.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/front.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/profileclient.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/profileclient.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,11 +41,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RouteServiceProvider.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RouteServiceProvider.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
+            <state relative-caret-position="203">
               <caret line="84" column="32" lean-forward="true" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cart.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/front/cart.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="94" column="44" selection-start-line="94" selection-start-column="44" selection-end-line="94" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="details.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/front/details.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="47" column="41" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profileclient.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/front/profileclient.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -113,7 +141,11 @@
     <findStrings>
       <find>checkCode</find>
       <find>home</find>
+      <find>url('front</find>
     </findStrings>
+    <dirStrings>
+      <dir>C:\xampp\htdocs\themar</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -146,9 +178,7 @@
         <option value="$PROJECT_DIR$/resources/views/admin/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/bank-account.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/cart.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/change-password.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/details.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/header.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/home-client.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/index.blade.php" />
@@ -157,7 +187,6 @@
         <option value="$PROJECT_DIR$/resources/views/front/myaccount.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/nave.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/orders.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/front/profileclient.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/register.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/reset-password.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/send-code.blade.php" />
@@ -172,6 +201,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Front/AuthController.php" />
         <option value="$PROJECT_DIR$/routes/front.php" />
         <option value="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/cart.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/details.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/front/profileclient.blade.php" />
       </list>
     </option>
   </component>
@@ -306,13 +338,20 @@
             <path>
               <item name="themar" type="b2602c69:ProjectViewProjectNode" />
               <item name="themar" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="themar" type="b2602c69:ProjectViewProjectNode" />
               <item name="themar" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Providers" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="themar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="themar" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -366,12 +405,12 @@
       <workItem from="1592069354090" duration="17650000" />
       <workItem from="1592122291920" duration="20526000" />
       <workItem from="1592165506145" duration="7198000" />
-      <workItem from="1592208334472" duration="18633000" />
+      <workItem from="1592208334472" duration="18908000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115472000" />
+    <option name="totallyTimeSpent" value="115747000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -384,9 +423,10 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" sideWeight="0.5008944" side_tool="true" weight="0.26963562" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49959514" weight="0.4847943" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49910554" visible="true" weight="0.20809716" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49910554" visible="true" weight="0.20809716" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32955465" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -396,7 +436,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,13 +567,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/cart.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1631">
-          <caret line="82" column="33" lean-forward="true" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/change-password.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
@@ -557,13 +589,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="644">
           <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/details.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-252">
-          <caret line="81" column="50" selection-start-line="81" selection-start-column="50" selection-end-line="81" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -626,14 +651,6 @@
           <caret line="62" column="90" selection-start-line="62" selection-start-column="90" selection-end-line="62" selection-end-column="90" />
           <caret line="80" column="90" selection-start-line="80" selection-start-column="90" selection-end-line="80" selection-end-column="90" />
           <caret line="96" column="90" selection-start-line="96" selection-start-column="90" selection-end-line="96" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/front/profileclient.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1036">
-          <caret line="47" column="65" selection-start-line="47" selection-start-column="65" selection-end-line="47" selection-end-column="65" />
-          <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -773,8 +790,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
+        <state relative-caret-position="203">
           <caret line="84" column="32" lean-forward="true" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/cart.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="94" column="44" selection-start-line="94" selection-start-column="44" selection-end-line="94" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/details.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="47" column="41" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/front/profileclient.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
         </state>
       </provider>
     </entry>

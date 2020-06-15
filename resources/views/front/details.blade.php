@@ -45,7 +45,7 @@
                     <button type="button" class="btn">1</button>
                     <button type="button" class="btn">-</button>
                 </div> -->
-                    <form action="{{url('front/add-cart')}}" method="POST" class="box" id="cart">
+                    <form action="{{url('add-cart')}}" method="POST" class="box" id="cart">
                     {{ csrf_field() }}
                     <input type="hidden" name="id" value="{{$row->id}}">
                     <input type="hidden" name="name" value="{{$row->name}}">

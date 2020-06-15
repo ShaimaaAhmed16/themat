@@ -34,7 +34,7 @@
                 </ul>
             </div>
         @endif
-        <form method="post" action="{{url('front/profile-update/'.auth()->guard('client-web')->user()->id)}}" enctype="multipart/form-data">
+        <form method="post" action="{{url('profile-update/'.auth()->guard('client-web')->user()->id)}}" enctype="multipart/form-data">
             @csrf
             <div class="card">
                 <div class="row">
