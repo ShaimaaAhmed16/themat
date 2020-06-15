@@ -39,7 +39,7 @@ class CategoryController extends Controller
     {
         $rules = [
             'name' => 'required',
-            'image'=>'required|mimes:jpg,png,jpeg',
+            'image'=>'required',
         ];
         $messages = [
             'name.required' => 'يرجي كتابه اسم التصنيف',

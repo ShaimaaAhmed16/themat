@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="483b92ba-8189-4c5c-8aca-35995e190d8d" name="Default" comment="" />
+    <list default="true" id="483b92ba-8189-4c5c-8aca-35995e190d8d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/CategoryController.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,20 +51,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategoryController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CategoryController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Dashboard/CategoryController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="45" column="72" selection-start-line="45" selection-start-column="72" selection-end-line="45" selection-end-column="72" />
+            <state relative-caret-position="224">
+              <caret line="42" column="10" lean-forward="true" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="register.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/front/register.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="63">
               <caret line="48" column="51" lean-forward="true" selection-start-line="48" selection-start-column="51" selection-end-line="48" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/category/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="31" column="35" lean-forward="true" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -133,12 +144,12 @@
         <option value="$PROJECT_DIR$/resources/views/front/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/front/send-code.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/client/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/pages/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/contact/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/product/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ProductController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Front/AuthController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Dashboard/CategoryController.php" />
       </list>
     </option>
@@ -313,7 +324,23 @@
               <item name="themar" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="themar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="themar" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="category" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="themar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="themar" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -365,12 +392,12 @@
       <workItem from="1592069354090" duration="17650000" />
       <workItem from="1592122291920" duration="20526000" />
       <workItem from="1592165506145" duration="7198000" />
-      <workItem from="1592208334472" duration="2109000" />
+      <workItem from="1592208334472" duration="3058000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98948000" />
+    <option name="totallyTimeSpent" value="99897000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -383,7 +410,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" sideWeight="0.5008944" side_tool="true" weight="0.26963562" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49959514" weight="0.4847943" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49910554" visible="true" weight="0.20809716" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49910554" visible="true" weight="0.20809716" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32955465" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -656,20 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/client/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="869">
-          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/category/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/pages/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
@@ -744,10 +757,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Dashboard/CategoryController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/client/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="45" column="72" selection-start-line="45" selection-start-column="72" selection-end-line="45" selection-end-column="72" />
+        <state relative-caret-position="126">
+          <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="56" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/category/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="31" column="35" lean-forward="true" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -755,6 +775,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="48" column="51" lean-forward="true" selection-start-line="48" selection-start-column="51" selection-end-line="48" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Dashboard/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="42" column="10" lean-forward="true" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
         </state>
       </provider>
     </entry>
