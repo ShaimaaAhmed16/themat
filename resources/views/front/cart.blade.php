@@ -72,7 +72,7 @@
                 <div class="row">
                     <div class="col-5 d-flex justify-content-around">
                         <div class="mt-2">
-                            <img src="{{asset($item->model->image)}}" alt="" width="50" height="50" class="img-fluid">
+                            <img src="{{asset('public/'.$item->model->image)}}" alt="" width="50" height="50" class="img-fluid">
                         </div>
 
                         <h6 class="pt-3 pr-1">{{$item->name}}</h6>

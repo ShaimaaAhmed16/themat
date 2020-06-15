@@ -3,7 +3,7 @@
     <div class="nav-item nav-link col-3">
         <a href="{{route('index')}}" class="text-dark">
         <div>
-            <img src="{{asset('front/images/menu.png')}}" width="20" alt="">
+            <img src="{{asset('public/front/images/menu.png')}}" width="20" alt="">
         </div>
 
             الرئيسية
@@ -13,7 +13,7 @@
     <div class="nav-item nav-link col-3">
         <a href="{{route('index')}}" class="text-dark">
         <div>
-            <img src="{{asset('front/images/bar-2.png')}}" width="20" alt="">
+            <img src="{{asset('public/front/images/bar-2.png')}}" width="20" alt="">
         </div>
 
             منتجاتنا

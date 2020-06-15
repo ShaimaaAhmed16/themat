@@ -8,6 +8,11 @@ class Product extends Model
 {
     protected $guarded = ['id'];
 
+    public function getImageUrlAttribute()
+    {
+        return asset('public/' . $this->image);
+    }
+
     public function category(){
         return $this->belongsTo('App\Models\Category');
     }

@@ -50,7 +50,7 @@
                                         <th>{{$record->email}}</th>
                                         <th>
                                             @if($record->image)
-                                            <img  style="height: 70px;width: 70px;" src="{{asset($record->image)}}" >
+                                            <img  style="height: 70px;width: 70px;" src="{{asset('public'.$record->image)}}" >
                                              @else
                                             <span>لايوجد صوره</span>
                                                 @endif

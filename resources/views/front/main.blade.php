@@ -39,7 +39,7 @@
                 @foreach($categories as $category)
                     <li class="nav-item text-center" role="presentation">
                         <a class="nav-link active text-white"  href="index?category_id={{$category->id}}" role="tab" aria-controls="pills-fruits" aria-selected="false">
-                            <img src="{{asset($category->image)}}" width="25" height="25" alt=""><br>
+                            <img src="{{asset('public/'.$category->image)}}" width="25" height="25" alt=""><br>
                             {{$category->name}}
                         </a>
                      </li>
@@ -79,7 +79,7 @@
 
                                     <div class="d-flex justify-content-around">
                                         <div>
-                                            <img src="{{asset($row->image)}}" class="img-fluid" alt="" width="60">
+                                            <img src="{{asset('public/'.$row->image)}}" class="img-fluid" alt="" width="60">
                                         </div>
                                         <div>
                                             <a href="#">

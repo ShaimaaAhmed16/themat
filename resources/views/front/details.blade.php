@@ -27,7 +27,7 @@
 
     <div class="container mt-4">
         <div class="card">
-            <img src="{{asset($row->image)}}" alt="" class="img-fluid">
+            <img src="{{asset('public/'.$row->image)}}" alt="" class="img-fluid">
         </div>
 
     </div>
@@ -79,7 +79,7 @@
                 <div class="row p-2">
                     <div class="col-4 text-right">
 
-                        <img src="{{asset($row1->image)}}" class="img-fluid" alt="" width="120">
+                        <img src="{{asset('public/'.$row1->image)}}" class="img-fluid" alt="" width="120">
                     </div>
                     <div class="col-4 text-right">
                         <h5>{{$row1->name}}</h5>

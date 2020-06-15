@@ -69,7 +69,7 @@
                                     </div>
                                     <div class="col-12 col-md-9">
                                         @if($orderProduct->product->image)
-                                            <p class="m-0"><img  style="height: 100px;width: 100px;" src="{{asset($orderProduct->product->image)}}" ></p>
+                                            <p class="m-0"><img  style="height: 100px;width: 100px;" src="{{asset('public/'.$orderProduct->product->image)}}" ></p>
                                         @else
                                             <p class="m-0">لايوجد صوره</p>
                                         @endif

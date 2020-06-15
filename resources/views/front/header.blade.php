@@ -1,6 +1,6 @@
 <div id="mySidenav" class="sidenav">
     <div class="text-center">
-        <img src="{{asset('front/images/tt.png')}}" width="150" alt="">
+        <img src="{{asset('public/front/images/tt.png')}}" width="150" alt="">
     </div>
 
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>

@@ -51,9 +51,9 @@
         <div class="card p-4 mr-2 ml-2">
             <div class="text-center">
                 @if($row->image)
-                    <img src="{{asset($row->image)}} " alt="" width="50">
+                    <img src="{{asset('public/'.$row->image)}} " alt="" width="50">
                 @else
-                    <img src="{{asset('front/images/user-icon.png')}}" alt="" width="50">
+                    <img src="{{asset('public/front/images/user-icon.png')}}" alt="" width="50">
                 @endif
             </div>
             <div class="card-body text-center">

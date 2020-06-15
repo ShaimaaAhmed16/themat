@@ -8,7 +8,7 @@
         <input type="file" class="form-control image " name="image">
         <br>
     @if($setting->image)
-        <img src="<?php echo asset($setting->image)?>" style="margin-bottom: 10px" width="100"/>
+        <img src="<?php echo asset('public/'.$setting->image)?>" style="margin-bottom: 10px" width="100"/>
     @endif
 
 </div>

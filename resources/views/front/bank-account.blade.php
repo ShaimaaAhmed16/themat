@@ -14,7 +14,7 @@
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 @if(auth()->guard('client-web')->check())
                     <a href="updateinfo.html" class="user">
-                        <img src="{{asset('front/images/user-icon.png')}}" alt="" width="40" class="user-icon">
+                        <img src="{{asset('public/front/images/user-icon.png')}}" alt="" width="40" class="user-icon">
                         <i class="fas fa-plus"></i>
                     </a>
                 @endif

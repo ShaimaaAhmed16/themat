@@ -39,7 +39,7 @@
                                         <th>{{\Illuminate\Support\Str::limit(strtolower($page->text), 50)}}</th>
                                         <th>
                                             @if($page->image)
-                                            <img src="{{asset($page->image)}}" width="70">
+                                            <img src="{{asset('public/'.$page->image)}}" width="70">
                                                 @else
                                                 <span>لايوجد صوره</span>
                                             @endif

@@ -12,7 +12,7 @@
         <input type="file" class="form-control image " name="image">
         <br>
     @if($model->image)
-        <img src="<?php echo asset($model->image)?>" style="margin-bottom: 10px" width="100"/>
+        <img src="<?php echo asset('public/'.$model->image)?>" style="margin-bottom: 10px" width="100"/>
     @endif
 
 </div>

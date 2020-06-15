@@ -64,7 +64,7 @@
                                     </div>
                                     <div class="col-12 col-md-9">
                                         @if($record->image)
-                                            <p class="m-0"><img  style="height: 100px;width: 100px;" src="{{asset($record->image)}}" ></p>
+                                            <p class="m-0"><img  style="height: 100px;width: 100px;" src="{{asset('public/'.$record->image)}}" ></p>
                                         @else
                                             <p class="m-0">لايوجد صوره</p>
                                         @endif

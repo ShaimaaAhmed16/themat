@@ -41,7 +41,7 @@
                     {{--<a class="nav-link active text-white" id="pills-fruits-tab" data-toggle="pill" href="#pills-fruits" role="tab" aria-controls="pills-fruits" aria-selected="false">--}}
                     <a  href="index?category_id={{$category->id}}" class="nav-link active text-white"   role="tab" aria-controls="pills-fruits" aria-selected="false">
 
-                    <img src="{{asset($category->image)}}" width="25" height="25" alt=""><br>
+                    <img src="{{asset('public/'.$category->image)}}" width="25" height="25" alt=""><br>
                         {{$category->name}}
                     </a>
                 </li>
@@ -86,7 +86,7 @@
                         <div class="row p-2">
                             <div class="col-sm-4 col-12 d-flex justify-content-between">
                                 <div>
-                                    <img src="{{asset($row->image)}}" alt="" width="120">
+                                    <img src="{{asset('public/'.$row->image)}}" alt="" width="120">
                                 </div>
                                 <div>
                                     {{--<a href="#">--}}

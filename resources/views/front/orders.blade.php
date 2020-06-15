@@ -43,7 +43,7 @@
                 @foreach($orders as $order)
                     @if($order->status == 'ملغي')
                             <div class="timeline-image">
-                                <img class="rounded-circle img-fluid" src="{{asset('front/images/accepted.png')}}" alt="">
+                                <img class="rounded-circle img-fluid" src="{{asset('public/front/images/accepted.png')}}" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -60,7 +60,7 @@
                     @if($order->status == 'منتهى')
 
                             <div class="timeline-image">
-                                <img class="rounded-circle img-fluid" src="{{asset('front/images/tick.png')}}" alt="">
+                                <img class="rounded-circle img-fluid" src="{{asset('public/front/images/tick.png')}}" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -78,7 +78,7 @@
                     @if($order->status == 'فعال')
 
                             <div class="timeline-image">
-                                <img class="rounded-circle img-fluid" src="{{asset('front/images/accepted.png')}}" alt="">
+                                <img class="rounded-circle img-fluid" src="{{asset('public/front/images/accepted.png')}}" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
@@ -94,7 +94,7 @@
                 @foreach($orders as $order)
                     @if($order->status == 'منتظر')
                             <div class="timeline-image">
-                                <img class="rounded-circle img-fluid" src="{{asset('front/images/accepted.png')}}" alt="">
+                                <img class="rounded-circle img-fluid" src="{{asset('public/front/images/accepted.png')}}" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">

@@ -12,21 +12,21 @@
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="{{asset('adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{asset('adminlte/bower_components/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/adminlte/bower_components/font-awesome/css/font-awesome.min.css')}}">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="{{asset('adminlte/bower_components/Ionicons/css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/adminlte/bower_components/Ionicons/css/ionicons.min.css')}}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{asset('adminlte/dist/css/AdminLTE.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/adminlte/dist/css/AdminLTE.min.css')}}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="{{asset('adminlte/dist/css/skins/_all-skins.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/adminlte/dist/css/skins/_all-skins.min.css')}}">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     {{-- for arabic version--}}
-    <link rel="stylesheet" href="{{asset('adminlte/dist/css/rtl/AdminLTE-rtl.min.css')}}">
-    <link rel="stylesheet" href="{{asset('adminlte/dist/css/rtl/bootstrap-rtl.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/adminlte/dist/css/rtl/AdminLTE-rtl.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/adminlte/dist/css/rtl/bootstrap-rtl.min.css')}}">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -59,7 +59,7 @@
     <!-- /.login-logo -->
     <div class="login-box-body">
         <center>
-        <img src="{{ asset('adminlte/dist/img/tt.png') }}" alt="image"
+        <img src="{{ asset('public/adminlte/dist/img/tt.png') }}" alt="image"
         style="width: 100px;height: 100px; padding-bottom: 10px;">
         </center>
         <p class="login-box-msg">قم بتسجيل الدخول</p>
@@ -116,11 +116,11 @@
 <!-- /.login-box -->
 
 <!-- jQuery 3 -->
-<script src="{{ asset('adminlte/bower_components/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ asset('public/adminlte/bower_components/jquery/dist/jquery.min.js') }}"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="{{ asset('adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('public/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <!-- iCheck -->
-<script src="{{ asset('adminlte/dist/iCheck/icheck.min.js') }}"></script>
+<script src="{{ asset('public/adminlte/dist/iCheck/icheck.min.js') }}"></script>
 <script>
     $(function() {
         $('input').iCheck({

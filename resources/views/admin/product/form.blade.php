@@ -24,7 +24,7 @@
 
     <label for="Image" class="btn-block">صوره المنتج</label>
     @if($model->image)
-    <img src="<?php echo asset($model->image)?>" style="margin-bottom: 10px"/>
+        <img src="{{ $model->image_url }}" width="100" height="100" style="margin-bottom: 10px"/>
     @endif
     <br>
     {!!  Form::file('image',null,[

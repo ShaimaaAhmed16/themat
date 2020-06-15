@@ -20,7 +20,7 @@
 
 @section('content')
     <section class="container text-center pt-5">
-        <img src="{{asset('front/images/tt.png')}}" alt="" width="150" />
+        <img src="{{asset('public/front/images/tt.png')}}" alt="" width="150" />
     </section>
     @if ($errors->any())
         <div class="alert alert-danger text-right">

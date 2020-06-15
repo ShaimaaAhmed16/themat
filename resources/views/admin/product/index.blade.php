@@ -41,7 +41,7 @@
                                         <th>{{$record->price}}</th>
                                         <th>{{$record->wight}}</th>
                                         <th>{{optional($record->category)->name}}</th>
-                                        <th><img src="{{asset($record->image)}}" width="60" height="60"></th>
+                                        <th><img src="{{ $record->image_url }}" width="60" height="60"></th>
                                         <th>
                                             <a href="{{url(route('product.edit',$record->id))}}" class="btn btn-warning btn-xs" alt="تعديل المنتج"><i class="fa fa-edit"></i></a>
                                         </th >

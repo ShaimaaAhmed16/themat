@@ -28,7 +28,7 @@
                                     <tr>
                                         <th>1</th>
                                         <th>{{$setting->app_name}}</th>
-                                        <th><img src="{{asset($setting->image)}}" width="70"></th>
+                                        <th><img src="{{asset('public/'.$setting->image)}}" width="70"></th>
                                         <th>
                                             <a href="{{route('setting.edit',$setting->id)}}" class="btn btn-warning btn-xs" alt="تعديل "><i class="fa fa-edit"></i></a>
                                         </th >

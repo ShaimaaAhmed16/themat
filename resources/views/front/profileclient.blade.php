@@ -45,10 +45,10 @@
                                     @if(auth()->guard('client-web')->user()->image)
                                         <img src="{{asset(auth()->guard('client-web')->user()->image)}}" class="img-fluid" alt="">
                                     @else
-                                        <img src="{{asset('front/images/user-icon.png')}}"  class="img-fluid" alt="">
+                                        <img src="{{asset('public/front/images/user-icon.png')}}"  class="img-fluid" alt="">
                                     @endif
                                     <div class="picture-edit">
-                                        <img src="{{asset('front/images/edit.png')}}" class="picture-src" id="wizardPicturePreview">
+                                        <img src="{{asset('public/front/images/edit.png')}}" class="picture-src" id="wizardPicturePreview">
                                         <input type="file" id="wizard-picture" name="image">
                                     </div>
                                 </div>

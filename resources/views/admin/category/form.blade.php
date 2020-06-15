@@ -7,7 +7,7 @@
 </div>
 <label for="Image" class="btn-block">صوره القسم</label>
 @if($model->image)
-    <img src="<?php echo asset($model->image)?>" style="margin-bottom: 10px"/>
+    <img src="<?php echo asset('public/'.$model->image)?>" style="margin-bottom: 10px"/>
 @endif
 <br>
 {!!  Form::file('image',null,[
