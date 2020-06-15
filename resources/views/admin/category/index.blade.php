@@ -24,6 +24,7 @@
                                <tr>
                                    <th>#</th>
                                    <th>الاسم</th>
+                                   <th>الصور</th>
                                    <th>تعديل</th>
                                    <th>حذف</th>
                                </tr>
@@ -33,6 +34,13 @@
                                     <tr>
                                         <th>{{$loop->iteration}}</th>
                                         <th>{{$record->name}}</th>
+                                        <th>
+                                            @if($record->image)
+                                                <img  style="height: 70px;width: 70px;" src="{{asset($record->image)}}" >
+                                            @else
+                                                <span>لايوجد صوره</span>
+                                            @endif
+                                        </th>
                                         <th>
                                             <a href="{{url(route('category.edit',$record->id))}}" class="btn btn-warning btn-xs" alt="تعديل التصنيف"><i class="fa fa-edit"></i></a>
                                         </th >
