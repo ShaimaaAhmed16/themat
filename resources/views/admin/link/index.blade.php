@@ -52,11 +52,11 @@
                                             <a href="{{url(route('link.edit',$record->id))}}" class="btn btn-warning btn-xs" alt="تعديل "><i class="fa fa-edit"></i></a>
                                         </th >
                                         <th>
-                                            <button class="btn btn-danger" data-catid={{$record->id}} data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i></button>
+                                            <button class="btn btn-danger" data-catid={{$record->id}} data-toggle="modal" data-target="#{{$record->id}}"><i class="fa fa-trash"></i></button>
                                         </th>
                                     </tr>
 
-                                    <div class="modal modal-danger fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal modal-danger fade" id="{{$record->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">

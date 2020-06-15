@@ -51,13 +51,13 @@
                                             <a href="{{url(route('page.edit',$page->id))}}" class="btn btn-warning btn-xs" alt="تعديل "><i class="fa fa-edit"></i></a>
                                         </th >
                                         <th>
-                                            <button class="btn btn-danger" data-catid={{$page->id}} data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i></button>
+                                            <button class="btn btn-danger" data-catid={{$page->id}} data-toggle="modal" data-target="#{{$page->id}}"><i class="fa fa-trash"></i></button>
                                             {{--{!! Form::open(['action'=>['Admin\CategoryController@destroy',$record->id],'method'=>'delete']) !!}--}}
                                             {{--<button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>--}}
                                             {{--{!! Form::close() !!}--}}
                                         </th>
                                     </tr>
-                                    <div class="modal modal-danger fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal modal-danger fade" id="{{$page->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
