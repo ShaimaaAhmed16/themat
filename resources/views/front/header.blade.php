@@ -14,6 +14,11 @@
         <span>من نحن</span>
     </a>
 
+    <a href="{{route('usePolicy')}}">
+        <i class="fas fa-apple-alt pl-2"></i>
+        <span>سياسه الاستخدام</span>
+    </a>
+
     @if(auth()->guard('client-web')->check())
         <a href="{{route('profile.client',auth('client-web')->user()->id)}}">
             <i class="far fa-user-circle pl-2"></i>

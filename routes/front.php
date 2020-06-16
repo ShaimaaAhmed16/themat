@@ -28,6 +28,7 @@
     Route::post('contact/client', 'MainController@contact')->name('contact.client');
 
     Route::get('about', 'MainController@about')->name('about');
+    Route::get('usePolicy', 'MainController@usePolicy')->name('usePolicy');
 
 
 

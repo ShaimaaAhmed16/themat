@@ -1,6 +1,6 @@
 @extends('front.app')
 @section('title')
-    من نحن
+    سياسه الاستخدام
 @endsection
 <header class="header fixed-top bg-light-green">
     <div class="container pt-2 ">
@@ -11,7 +11,13 @@
                 </a>
             </div>
             <div class="col-7 d-flex justify-content-between">
-                <h4 class="text-right text-white">من نحن</h4>
+                <h4 class="text-right text-white">
+                    @if($policy)
+                        <p>{{$policy->name}}</p>
+                    @else
+                    سياسه الاستخدام
+                    @endif
+                </h4>
                 <a href="{{route('index')}}">
                     <i class="fas fa-chevron-left text-white"></i>
                 </a>
@@ -23,9 +29,11 @@
 </header>
 @section('content')
     <section class="container text-right mt-5 about">
-        @if($about)
-            <p>{{$about->text}}</p>
-        @else
+        <br>
+        <br>
+        @if($policy)
+            <p>{{$policy->text}}</p>
+    @else
         <div class="alert alert-danger" role="alert">
             لا يوجد بيانات
         </div>

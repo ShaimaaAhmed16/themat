@@ -139,10 +139,14 @@ class MainController extends Controller
     }
 
     public function about(){
-        $about=Page::where('name','من نحن');
+        $about=Page::where('name','من نحن')->first();
         return view('front.about',compact('about'));
     }
 
+    public function usePolicy(){
+        $policy=Page::where('name','سياسه الاستخدام')->orWhere('name','الشروط والاحكام')->first();
+        return view('front.use-policy',compact('policy'));
+    }
 
     public function viewMap(){
         return view('front.map');
@@ -209,4 +213,6 @@ class MainController extends Controller
     public function done(){
         return view('front.done');
     }
+
+
 }
