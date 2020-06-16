@@ -48,19 +48,7 @@
                 </div>
                 <a  href="{{route('index')}}" class="btn btn-block text-white bg-light-green mt-2">  الدخول ك زائر</a>
                 <a href="{{route('reset.password')}}"  class="btn btn-block text-white bg-light-green mt-2">استعادة كلمة  المرور</a>
-                <br />
-                <hr />
-                <div class="d-flex justify-content-center">
-                    <a href="https://google.com">
-                        <i class="fab fa-google-plus fa-2x text-danger mr-2"></i>
-                    </a>
-                    <a href="https://twitter.com">
-                        <i class="fab fa-twitter fa-2x text-primary mr-2"></i>
-                    </a>
-                    <a href="https://facebook.com">
-                        <i class="fab fa-facebook fa-2x text-blue mr-2"></i>
-                    </a>
-                </div>
+
             </form>
         </div>
     </section>

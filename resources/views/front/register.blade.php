@@ -58,32 +58,10 @@
                 <div class="text-center">
                     <button type="submit" id="myBtn1" class="btn btn-block text-white bg-light-green mb-1">تسجيل حساب جديد</button>
                 </div>
-                <br>
-                <hr>
-                <div class="d-flex justify-content-center ">
-                    <a href="https://google.com">
-                        <i class="fab fa-google fa-2x text-danger mr-2"></i>
-                    </a>
-                    <a href="https://twitter.com">
-                        <i class="fab fa-twitter fa-2x text-primary mr-2"></i>
-                    </a>
-                    <a href="https://facebook.com">
-                        <i class="fab fa-facebook fa-2x text-blue mr-2"></i>
-                    </a>
-                </div>
+
             </form>
         </div>
     </section>
 
-    {{--<a href="{{ url('/auth/facebook') }}" class="btn btn-block btn-social btn-facebook">--}}
-        {{--<span class="fa fa-facebook"></span> Sign in with Facebook--}}
-    {{--</a>--}}
 
-    {{--<a href="{{ url('/auth/twitter') }}" class="btn btn-block btn-social btn-twitter">--}}
-        {{--<span class="fa fa-twitter"></span> Sign in with Twitter--}}
-    {{--</a>--}}
-
-    {{--<a href="{{ url('/auth/google') }}" class="btn btn-block btn-social btn-google">--}}
-        {{--<span class="fa fa-google"></span> Sign in with Google--}}
-    {{--</a>--}}
 @endsection
