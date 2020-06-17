@@ -46,7 +46,7 @@
                         <div class="modal-footer">
 
                             <a href="{{route('login.client')}}" class="btn bg-light-green btn-sm btn-block mt-2 myBtn2 text-white hvr-glow" style="border-radius: 20px;">
-                                <small>شراء الآن</small>
+                                <small>التسجيل الان</small>
                             </a>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                         <div class="modal-footer">
 
                             <a href="{{route('login.client')}}" class="btn bg-light-green btn-sm btn-block mt-2 myBtn2 text-white hvr-glow" style="border-radius: 20px;">
-                                <small>شراء الآن</small>
+                                <small>التسجيل الان</small>
                             </a>
                         </div>
                     </div>
@@ -151,7 +151,7 @@
                         <div class="modal-footer">
 
                             <a href="{{route('login.client')}}" class="btn bg-light-green btn-sm btn-block mt-2 myBtn2 text-white hvr-glow" style="border-radius: 20px;">
-                                <small>شراء الآن</small>
+                                <small>التسجيل الان</small>
                             </a>
                         </div>
                     </div>
@@ -176,7 +176,9 @@
                     <div class="modal-footer">
 
                         <a href="{{route('login.client')}}" class="btn bg-light-green btn-sm btn-block mt-2 myBtn2 text-white hvr-glow" style="border-radius: 20px;">
-                            <small>شراء الآن</small>
+                            <small>
+                                التسجيل الان
+                            </small>
                         </a>
                     </div>
                 </div>

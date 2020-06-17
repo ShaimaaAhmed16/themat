@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="483b92ba-8189-4c5c-8aca-35995e190d8d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/nave.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/nave.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,15 +33,15 @@
       <file leaf-file-name="nave.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/front/nave.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="165" column="6" lean-forward="true" selection-start-line="165" selection-start-column="6" selection-end-line="165" selection-end-column="6" />
+            <state>
+              <caret lean-forward="true" />
               <folding>
                 <element signature="e#1561#1568#1#HTML" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#nav#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#div#2;n#nav#0;n#!!top" />
                 <element signature="e#1544#1551#1#HTML" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#nav#0;n#!!top" expanded="true" />
-                <element signature="n#div#6;n#nav#0;n#!!top" />
+                <element signature="e#5676#5683#1#HTML" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#5;n#nav#0;n#!!top" expanded="true" />
                 <element signature="e#5615#5622#1#HTML" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#6;n#nav#0;n#!!top" expanded="true" />
               </folding>
@@ -577,12 +575,12 @@
       <workItem from="1592335493075" duration="2296000" />
       <workItem from="1592339655924" duration="8631000" />
       <workItem from="1592382235872" duration="16255000" />
-      <workItem from="1592425685989" duration="6629000" />
+      <workItem from="1592425685989" duration="7356000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165300000" />
+    <option name="totallyTimeSpent" value="166027000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -1056,15 +1054,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/nave.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="165" column="6" lean-forward="true" selection-start-line="165" selection-start-column="6" selection-end-line="165" selection-end-column="6" />
+        <state>
+          <caret lean-forward="true" />
           <folding>
             <element signature="e#1561#1568#1#HTML" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#2;n#nav#0;n#!!top" />
             <element signature="e#1544#1551#1#HTML" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#div#6;n#nav#0;n#!!top" />
+            <element signature="e#5676#5683#1#HTML" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#5;n#nav#0;n#!!top" expanded="true" />
             <element signature="e#5615#5622#1#HTML" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#6;n#nav#0;n#!!top" expanded="true" />
           </folding>
