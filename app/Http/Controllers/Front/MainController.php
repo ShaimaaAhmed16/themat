@@ -43,8 +43,8 @@ class MainController extends Controller
                 $query->where('category_id', $request->category_id);
             }
 
-
         })->paginate(8);
+
         return view('front.index' ,compact('rows','categories'));
     }
 

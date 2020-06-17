@@ -45,18 +45,18 @@
             @csrf
             <div class="form-group">
                 <label> العنوان بالتفصيل: </label>
-                <input type="text" class="form-control" name="address_details"/>
+                <input type="text" class="form-control" name="address_details" placeholder="العنوان بالتفصيل"/>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1"> معلم قريب : </label>
-                <input type="text" class="form-control" name="nearby" />
+                <input type="text" class="form-control" name="nearby" placeholder="معلم قريب"/>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1"
                 ><span class="text-danger">*</span> رقم جوال اضافى للتواصل مع
                     المندوب
                 </label>
-                <input type="tel" class="form-control" name="additional_mobile" required />
+                <input type="tel" class="form-control" name="additional_mobile" required  placeholder="رقم الجوال"/>
             </div>
 
             <div class="text-center">

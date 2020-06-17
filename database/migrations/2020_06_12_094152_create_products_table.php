@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->text('description')->nullable(true);
             $table->bigInteger('quantity')->default(0);
             $table->double('tax_price')->default('0');
+            $table->double('tax_status')->default('1');
             $table->unsignedBigInteger('category_id')->nullable();
             $table->timestamps();
 

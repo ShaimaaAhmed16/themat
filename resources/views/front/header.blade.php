@@ -5,10 +5,17 @@
 
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
+    @if(auth()->guard('client-web')->check())
     <a href="{{route('index')}}">
         <i class="fas fa-store-alt pl-2"></i>
         <span>الرئيسية</span>
     </a>
+        @else
+        <a href="{{route('login.client')}}">
+            <i class="fas fa-store-alt pl-2"></i>
+            <span>الرئيسية</span>
+        </a>
+    @endif
     <a href="{{route('about')}}">
         <i class="fas fa-apple-alt pl-2"></i>
         <span>من نحن</span>

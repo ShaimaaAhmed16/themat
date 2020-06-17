@@ -1,6 +1,8 @@
 <nav class="navbar fixed-bottom text-center row bg-gray">
 
+    @if(auth()->guard('client-web')->check())
     <div class="nav-item nav-link col-3">
+
         <a href="{{route('index')}}" class="text-dark">
         <div>
             <img src="{{asset('public/front/images/menu.png')}}" width="20" alt="">
@@ -9,7 +11,18 @@
             الرئيسية
         </a>
     </div>
+    @else
+        <div class="nav-item nav-link col-3">
 
+            <a href="{{route('login.client')}}" class="text-dark">
+                <div>
+                    <img src="{{asset('public/front/images/menu.png')}}" width="20" alt="">
+                </div>
+
+                الرئيسية
+            </a>
+        </div>
+    @endif
     <div class="nav-item nav-link col-3">
         <a href="{{route('index')}}" class="text-dark">
         <div>

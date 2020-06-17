@@ -12,7 +12,7 @@
                 </a>
             </div>
             <div class="col-7">
-                <h4 class="text-right text-white">الثمار الوطنيةر</h4>
+                <h4 class="text-right text-white">الثمار الوطنية</h4>
             </div>
             @include('front.header')
         </div>
@@ -99,7 +99,7 @@
 
 
                                         @if(auth('client-web')->user())
-                                            <a href="{{route('details')}}"><button type="submit" class="btn bg-light-green btn-block mt-4 myBtn2 text-white hvr-glow">
+                                            <a href="{{route('details',$row->id)}}"><button type="submit" class="btn bg-light-green btn-block mt-4 myBtn2 text-white hvr-glow">
                                                 شراء الآن
                                                 </button></a>
 

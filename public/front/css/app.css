@@ -10,7 +10,8 @@
 
 html,
 body {
-  font-family: flat;
+  font-family: "cairo", sans-serif;
+  /*font-family: flat;*/
   background-color: #f8f8f8;
   box-sizing: border-box;
   direction: rtl;
@@ -109,6 +110,9 @@ nav {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
+nav a{
+  font-size: 12px;
+}
 nav .nav-link span {
   background-color: #8cc540;
   border-radius: 50%;
@@ -118,7 +122,7 @@ nav a:hover {
 }
 
 .sidenav {
-  height: 100%;
+  height: 90%;
   width: 0;
   position: fixed;
   z-index: 1;
@@ -128,6 +132,7 @@ nav a:hover {
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  padding-bottom: 150px;
 }
 
 .sidenav a {
@@ -140,7 +145,9 @@ nav a:hover {
   text-align: right;
   position: relative;
 }
-
+.sidenav a:last-child{
+  margin-bottom: 50px;
+}
 .sidenav a:hover {
   color: #b4afaf;
 }

@@ -28,7 +28,9 @@
                                    <th>السعر</th>
                                    <th>الوزن</th>
                                    <th>التصنيف</th>
+                                   <th>القيمه المضافه</th>
                                    <th>صوره المنتج</th>
+                                   <th> حاله القيمه المضافه</th>
                                    <th>تعديل</th>
                                    <th>حذف</th>
                                </tr>
@@ -41,10 +43,19 @@
                                         <th>{{$record->price}}</th>
                                         <th>{{$record->wight}}</th>
                                         <th>{{optional($record->category)->name}}</th>
+                                        <th>{{$record->tax_price}}</th>
                                         <th><img src="{{ $record->image_url }}" width="60" height="60"></th>
+                                        <th>
+                                            @if($record->tax_status == 0)
+                                                <a href="product/{{$record->id}}/active" class="btn btn-danger btn-sm" style="margin-right: 10px;">تفعيل</a>
+                                            @else
+                                                <a href="product/{{$record->id}}/deactive" class="btn btn-success btn-sm" style="margin-right: 10px;">فعال</a>
+                                            @endif
+                                        </th>
                                         <th>
                                             <a href="{{url(route('product.edit',$record->id))}}" class="btn btn-warning btn-xs" alt="تعديل المنتج"><i class="fa fa-edit"></i></a>
                                         </th >
+
                                         <th>
                                             <button class="btn btn-danger" data-catid={{$record->id}} data-toggle="modal" data-target="#{{$record->id}}"><i class="fa fa-trash"></i></button>
                                             {{--{!! Form::open(['action'=>['Admin\ProductController@destroy',$record->id],'method'=>'delete']) !!}--}}

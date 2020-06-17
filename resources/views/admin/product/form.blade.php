@@ -22,6 +22,11 @@
         'class'=>'form-control text-right'
     ]) !!}
 
+    <div>
+        <label for="wight">القيمه المضافه للمنتج</label>
+            {!!  Form::text('tax_price',null,[
+            'class'=>'form-control text-right ',"value"=>"{{old('tax_price')}}"
+            ]) !!}
     <label for="Image" class="btn-block">صوره المنتج</label>
     @if($model->image)
         <img src="{{ $model->image_url }}" width="100" height="100" style="margin-bottom: 10px"/>
@@ -34,6 +39,7 @@
 
 </div>
 
-<div class="form-group">
+<div class="form-group " style="margin-top: 10px">
     <button class="btn btn-primary" type="submit">حفظ</button>
+</div>
 </div>
