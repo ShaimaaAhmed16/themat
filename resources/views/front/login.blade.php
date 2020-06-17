@@ -46,34 +46,7 @@
                     <button type="submit" id="myBtn" class="btn btn-block text-white bg-light-green mb-1">تسجيل الدخول</button >
                     <a href="{{route('register.client')}}" type="submit" class="btn btn-block mb-1 text-white bg-black">تسجيل حساب جديد</a>
                 </div>
-                {{--<a  href="{{route('index')}}" class="btn btn-block text-white bg-light-green mt-2">  الدخول ك زائر</a>--}}
-
-                <a href="{{route('login.client')}}" class="btn btn-block text-white bg-light-green mt-2" style="border-radius: 20px;" data-toggle="modal" data-target="#exampleModal6">
-                    <small> الدخول ك زائر</small>
-                </a>
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body text-center">
-                                يجب التسجيل
-                            </div>
-                            <div class="modal-footer">
-
-                                <a href="{{route('login.client')}}" class="btn bg-light-green btn-sm btn-block mt-2 myBtn2 text-white hvr-glow" style="border-radius: 20px;">
-                                    <small>تسجيل الدخل</small>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
+                <a  href="{{route('index')}}" class="btn btn-block text-white bg-light-green mt-2">  الدخول ك زائر</a>
                 <a href="{{route('reset.password')}}"  class="btn btn-block text-white bg-light-green mt-2">استعادة كلمة  المرور</a>
 
             </form>
