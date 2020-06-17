@@ -122,7 +122,7 @@
                                         @else
                                             <div>
 
-                                                <a href="{{route('login.client')}}" class="btn bg-light-green btn-sm btn-block mt-2 myBtn2 text-white hvr-glow" style="border-radius: 20px;" data-toggle="modal" data-target="#exampleModal6">
+                                                <a href="#" class="btn bg-light-green btn-sm btn-block mt-2 myBtn2 text-white hvr-glow" style="border-radius: 20px;" data-toggle="modal" data-target="#exampleModal6">
                                                     <small>شراء الآن</small>
                                                 </a>
                                                 <!-- Modal -->
