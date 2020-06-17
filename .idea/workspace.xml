@@ -33,8 +33,8 @@
       <file leaf-file-name="nave.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/front/nave.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="455">
+              <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
               <folding>
                 <element signature="e#1561#1568#1#HTML" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#nav#0;n#!!top" expanded="true" />
@@ -165,8 +165,8 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/front/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="113" column="49" lean-forward="true" selection-start-line="113" selection-start-column="49" selection-end-line="113" selection-end-column="49" />
+            <state relative-caret-position="1765">
+              <caret line="142" column="75" selection-start-line="142" selection-start-column="75" selection-end-line="142" selection-end-column="75" />
               <folding>
                 <element signature="e#3448#3470#0#HTML" expanded="true" />
                 <element signature="e#3509#3536#0#HTML" expanded="true" />
@@ -175,7 +175,6 @@
                 <element signature="e#5495#5523#0#HTML" expanded="true" />
                 <element signature="e#6215#6243#0#HTML" expanded="true" />
                 <element signature="e#6117#6407#0#HTML" />
-                <element signature="e#6241#7949#0#HTML" />
                 <element signature="e#6890#6897#1#HTML" expanded="true" />
                 <element signature="e#7514#7542#0#HTML" expanded="true" />
               </folding>
@@ -575,12 +574,12 @@
       <workItem from="1592335493075" duration="2296000" />
       <workItem from="1592339655924" duration="8631000" />
       <workItem from="1592382235872" duration="16255000" />
-      <workItem from="1592425685989" duration="7356000" />
+      <workItem from="1592425685989" duration="7616000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166027000" />
+    <option name="totallyTimeSpent" value="166287000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -1035,8 +1034,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="113" column="49" lean-forward="true" selection-start-line="113" selection-start-column="49" selection-end-line="113" selection-end-column="49" />
+        <state relative-caret-position="1765">
+          <caret line="142" column="75" selection-start-line="142" selection-start-column="75" selection-end-line="142" selection-end-column="75" />
           <folding>
             <element signature="e#3448#3470#0#HTML" expanded="true" />
             <element signature="e#3509#3536#0#HTML" expanded="true" />
@@ -1045,7 +1044,6 @@
             <element signature="e#5495#5523#0#HTML" expanded="true" />
             <element signature="e#6215#6243#0#HTML" expanded="true" />
             <element signature="e#6117#6407#0#HTML" />
-            <element signature="e#6241#7949#0#HTML" />
             <element signature="e#6890#6897#1#HTML" expanded="true" />
             <element signature="e#7514#7542#0#HTML" expanded="true" />
           </folding>
@@ -1054,8 +1052,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/front/nave.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="455">
+          <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
           <folding>
             <element signature="e#1561#1568#1#HTML" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#nav#0;n#!!top" expanded="true" />

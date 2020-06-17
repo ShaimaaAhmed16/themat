@@ -98,10 +98,7 @@
             <i class="fas fa-shopping-basket text-dark"></i>
 
         </div>
-
-            <small>
-                سلة الشراء
-            </small>
+            سلة الشراء
         </a>
         @else
             <a href="{{route('login.client')}}" class="text-dark" data-toggle="modal" data-target="#exampleModal6">
@@ -112,9 +109,8 @@
 
                 </div>
 
-                <small>
                     سلة الشراء
-                </small>
+
             </a>
         @endif
     </div>
