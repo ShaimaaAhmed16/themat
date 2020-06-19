@@ -43,8 +43,8 @@ class MainController extends Controller
                 $query->where('category_id', $request->category_id);
             }
 
-        })->paginate(8);
 
+        })->get();
         return view('front.index' ,compact('rows','categories'));
     }
 
@@ -120,18 +120,18 @@ class MainController extends Controller
         $row->update();
         if (Cart::content()){
             foreach (Cart::content() as $item){
-            if ($item->id ==$id){
+                if ($item->id ==$id){
 //            return $item;
-                $product_qty = $item->qty;
-                return view('front.details',compact('row','rows','product_qty'));
+                    $product_qty = $item->qty;
+                    return view('front.details',compact('row','rows','product_qty'));
 //                return $product_qty;
-            }
-            else{
-                $product_qty = 1 ;
-                return view('front.details',compact('row','rows','product_qty'));
+                }
+                else{
+                    $product_qty = 1 ;
+                    return view('front.details',compact('row','rows','product_qty'));
+                }
             }
         }
-          }
 
         return view('front.details',compact('row','rows'));
 //

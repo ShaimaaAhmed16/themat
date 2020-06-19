@@ -51,23 +51,16 @@ class ProductController extends Controller
             'en_description' => 'required',
             'category_id' => 'required',
             'image'=>'required',
-            'tax_price'=>'required',
 //            'image'=>'required|mimes:jpg,png,jpeg',
         ];
         $messages = [
             'ar_name.required' => 'يرجي كتابه اسم المنتج باللغه العربيه',
             'en_name.required' => 'يرجي كتابه اسم المنتج باللغه الانجليزيه',
             'price.required' => 'يرجي كتابه سعر المنتج',
-<<<<<<< HEAD
             'ar_wight.required' => 'يرجي كتابه الوزن باللغه العربيه',
             'en_wight.required' => 'يرجي كتابه الوزن باللغه الانجليزيه',
             'ar_description.required' => 'يرجي كتابه تفاصيل المنتج باللغه العربيه',
             'en_description.required' => 'يرجي كتابه تفاصيل المنتج باللغه الانجليزيه',
-=======
-            'wight.required' => 'يرجي كتابه الوزن',
-            'description.required' => 'يرجي كتابه تفاصيل المنتج',
-            'tax_price.required' => 'يرجي كتابه القيمه المضافه للمنتج',
->>>>>>> 0fb5e22da4937ec1de123a5135a10e24c5a457a9
             'category_id.required' => 'يرجي اختيار التصنيف',
             'image.required'=>'يرجي اضافه صوره للمنتج'
         ];
@@ -171,21 +164,5 @@ class ProductController extends Controller
         $record->delete();
         flash()->success('تم الحذف بنجاح');
         return redirect()->route('product.index');
-    }
-
-    public function active($id){
-        $record=Product::findOrFail($id);
-        $record->tax_status=1;
-        $record->save();
-        flash()->success('تم التفعيل بنجاح');
-        return back();
-    }
-
-    public function deactive($id){
-        $record=Product::findOrFail($id);
-        $record->tax_status=0;
-        $record->save();
-        flash()->success(' تم الغاء القيمه المضافه ');
-        return back();
     }
 }

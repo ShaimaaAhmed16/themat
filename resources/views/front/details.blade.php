@@ -47,19 +47,11 @@
                     <input type="hidden" name="id" value="{{$row->id}}">
                     <input type="hidden" name="name" value="{{$row->name}}">
                     <input type="hidden" name="price" value="{{$row->price}}">
-<<<<<<< HEAD
                     @if (Cart::count() > 0)
                         <input type="number" value="{{$product_qty?$product_qty:1}}" min="1" name="qty">
                     @else
                         <input type="number" value="1" min="1" name="qty">
                     @endif
-=======
-                        @if (Cart::count() > 0)
-                            <input type="number" value="{{$product_qty?$product_qty:1}}" min="1" name="qty">
-                        @else
-                            <input type="number" value="1" min="1" name="qty">
-                        @endif
->>>>>>> 0fb5e22da4937ec1de123a5135a10e24c5a457a9
                 </form>
 
                 <form>
@@ -83,11 +75,7 @@
                     <button type="submit" class="btn btn-sm" form="cart">أضف للسلة</button>
                     @if (Cart::count() > 0)
                         <button type="button" class="btn btn-sm"><i class="fas fa-shopping-basket"></i><span class="badge ml-1">{{$product_qty?$product_qty:""}}</span></button>
-<<<<<<< HEAD
                     @else
-=======
-                        @else
->>>>>>> 0fb5e22da4937ec1de123a5135a10e24c5a457a9
                         <button type="button" class="btn btn-sm"><i class="fas fa-shopping-basket"></i><span class="badge ml-1">0</span></button>
                     @endif
                 </div>
@@ -100,34 +88,6 @@
             </div>
             <div class="card-body text-right ">{{$row->description}}</div>
         </div>
-<<<<<<< HEAD
-=======
-        {{--<h6 class="text-center">منتجات ذات صلة</h6>--}}
-        {{--@foreach($rows as $row1)--}}
-            {{--<div class="card mb-2">--}}
-                {{--<div class="row p-2">--}}
-                    {{--<div class="col-4 text-right">--}}
-
-                        {{--<img src="{{asset('public/'.$row1->image)}}" class="img-fluid" alt="" width="120">--}}
-                    {{--</div>--}}
-                    {{--<div class="col-4 text-right">--}}
-                        {{--<h5>{{$row1->name}}</h5>--}}
-                        {{--<small>--}}
-                            {{--ريال--}}
-                            {{--{{$row1->price}}--}}
-                        {{--</small><br>--}}
-                        {{--<span class="ml-4">{{$row1->wight}}</span>--}}
-                        {{--<span class="text-light-green">{{$row1->price}}ريال</span>--}}
-                    {{--</div>--}}
-                    {{--<div class="col-4">--}}
-                        {{--<a href="#"><i class="fab fa-opencart"></i></a><br>--}}
-                        {{--<a href="{{route('details',$row1->id)}}" class="btn btn-sm bg-light-green mt-4"> شراء الآن</a>--}}
-                    {{--</div>--}}
-
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--@endforeach--}}
->>>>>>> 0fb5e22da4937ec1de123a5135a10e24c5a457a9
 
     </div>
 
