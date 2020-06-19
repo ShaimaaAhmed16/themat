@@ -47,7 +47,7 @@
                                         </p>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <p class="m-0">{{$record->text}}</p>
+                                        <p class="m-0">{{$record->getTranslation('ar')->text}}</p>
                                         {{--<p class="m-0">{{\Illuminate\Support\Str::limit(strtolower($record->text), 30) }}</p>--}}
                                     </div>
 
@@ -55,25 +55,6 @@
                                 </div>
                             </li>
 
-                            <li class="list-group-item list-group-item-action">
-                                <div class="row text-right">
-                                    <div class="col-12 col-md-3">
-                                        <p class="m-0 font-weight-bold ">
-                                              صوره الصفحه :
-                                        </p>
-                                    </div>
-                                    <div class="col-12 col-md-9">
-                                        @if($record->image)
-                                            <p class="m-0"><img  style="height: 100px;width: 100px;" src="{{asset('public/'.$record->image)}}" ></p>
-                                        @else
-                                            <p class="m-0">لايوجد صوره</p>
-                                        @endif
-
-                                    </div>
-
-
-                                </div>
-                            </li>
                         </ul>
                     </div>
                 </div>

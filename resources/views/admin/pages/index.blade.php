@@ -25,7 +25,6 @@
                                    <th>#</th>
                                    <th>الاسم</th>
                                    <th>محتوي الصفحه</th>
-                                   <th>صوره</th>
                                    <th>عرض</th>
                                    <th>تعديل</th>
                                    <th>حذف</th>
@@ -36,14 +35,7 @@
                                     <tr>
                                         <th>{{$loop->iteration}}</th>
                                         <th>{{$page->name}}</th>
-                                        <th>{{\Illuminate\Support\Str::limit(strtolower($page->text), 50)}}</th>
-                                        <th>
-                                            @if($page->image)
-                                            <img src="{{asset('public/'.$page->image)}}" width="70">
-                                                @else
-                                                <span>لايوجد صوره</span>
-                                            @endif
-                                        </th>
+                                        <th>{{\Illuminate\Support\Str::limit(strtolower($page->getTranslation('ar')->text), 50)}}</th>
                                         <th>
                                             <a href="{{url(route('page.show',$page->id))}}" class="btn btn-warning btn-xs" alt="عرض "><i class="fa fa-eye"></i></a>
                                         </th >

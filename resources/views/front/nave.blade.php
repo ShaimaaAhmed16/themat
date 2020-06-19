@@ -1,40 +1,66 @@
 <nav class="navbar fixed-bottom text-center row bg-gray">
 
-    <div class="nav-item nav-link col-3">
-        <a href="{{route('index')}}" class="text-dark">
-        <div>
-            <img src="{{asset('public/front/images/menu.png')}}" width="20" alt="">
+    @if(auth()->guard('client-web')->check())
+        <div class="nav-item nav-link col-3">
+
+            <a href="{{route('index')}}" class="text-dark">
+                <div>
+                    <img src="{{asset('public/front/images/menu.png')}}" width="20" alt="">
+                </div>
+
+                الرئيسية
+            </a>
+        </div>
+        <div class="nav-item nav-link col-3">
+            <a href="{{route('index')}}" class="text-dark">
+                {{--<a href="{{route('index')}}" class="text-dark">--}}
+                <div>
+                    <img src="{{asset('public/front/images/bar-2.png')}}" width="20" alt="">
+                </div>
+
+                منتجاتنا
+            </a>
+
+        </div>
+    @else
+        <div class="nav-item nav-link col-3">
+            <a href="#"  class="text-dark"  data-toggle="modal" data-target="#exampleModal6">
+                <div>
+                    <img src="{{asset('public/front/images/menu.png')}}" width="20" alt="">
+                </div>
+
+                الرئيسية
+            </a>
+
+
         </div>
 
-            الرئيسية
-        </a>
-    </div>
+        <div class="nav-item nav-link col-3">
+            <a href="#" class="text-dark"  data-toggle="modal" data-target="#exampleModal6">
 
-    <div class="nav-item nav-link col-3">
-        <a href="{{route('index')}}" class="text-dark">
-        <div>
-            <img src="{{asset('public/front/images/bar-2.png')}}" width="20" alt="">
+                {{--<a href="{{route('index')}}" class="text-dark">--}}
+                <div>
+                    <img src="{{asset('public/front/images/bar-2.png')}}" width="20" alt="">
+                </div>
+
+                منتجاتنا
+            </a>
         </div>
+    @endif
 
-            منتجاتنا
-        </a>
-    </div>
     <div class="nav-item nav-link col-3">
         @if(auth('client-web')->user())
-        <a href="{{route('cart')}}" class="text-dark">
-        <div>
-            @if(Cart::count() > 0)
-            <span class="badge ml-1">{{Cart::count()}}@else 0 @endif</span>
-            <i class="fas fa-shopping-basket text-dark"></i>
+            <a href="{{route('cart')}}" class="text-dark">
+                <div>
+                    @if(Cart::count() > 0)
+                        <span class="badge ml-1">{{Cart::count()}}@else 0 @endif</span>
+                        <i class="fas fa-shopping-basket text-dark"></i>
 
-        </div>
-
-            <small>
+                </div>
                 سلة الشراء
-            </small>
-        </a>
+            </a>
         @else
-            <a href="{{route('login.client')}}" class="text-dark">
+            <a href="{{route('login.client')}}" class="text-dark" data-toggle="modal" data-target="#exampleModal6">
                 <div>
                     @if(Cart::count() > 0)
                         <span class="badge ml-1">{{Cart::count()}} @endif</span>
@@ -42,10 +68,11 @@
 
                 </div>
 
-                <small>
-                    سلة الشراء
-                </small>
+                سلة الشراء
+
             </a>
+
+
         @endif
     </div>
     <div class="nav-item nav-link col-3">
@@ -56,20 +83,20 @@
                     <i class="far fa-user-circle text-dark"></i>
                 </div>
 
-                    حسابى
-
-             </a>
-        @else
-            <a href="{{route('login.client')}}" class="text-dark">
-            <div>
-                <i class="far fa-user-circle text-dark"></i>
-            </div>
                 حسابى
 
             </a>
+        @else
+            <a href="#" class="text-dark" data-toggle="modal" data-target="#exampleModal6">
+                <div>
+                    <i class="far fa-user-circle text-dark"></i>
+                </div>
+                حسابى
+
+            </a>
+
         @endif
     </div>
-
 
 
 

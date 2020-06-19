@@ -23,8 +23,12 @@
 </header>
 @section('content')
     <section class="container text-right mt-5 about">
-        @if($about)
-            <p>{{$about->text}}</p>
+        @if(count($abouts) >0)
+            @foreach ($abouts as $about)
+                @if($about->getTranslation('ar')->name =='من نحن')
+                    <p>{{$about->getTranslation('ar')->text}}</p>
+                @endif
+            @endforeach
         @else
         <div class="alert alert-danger" role="alert">
             لا يوجد بيانات

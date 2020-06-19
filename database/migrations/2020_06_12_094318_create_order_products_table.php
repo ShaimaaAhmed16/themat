@@ -16,6 +16,7 @@ class CreateOrderProductsTable extends Migration
         Schema::create('order_products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('quantity');
+            $table->double('wight_grams')->nullable(true);
             $table->unsignedBigInteger('order_id')->nullable(true);
             $table->unsignedBigInteger('product_id')->nullable(true);
             $table->timestamps();

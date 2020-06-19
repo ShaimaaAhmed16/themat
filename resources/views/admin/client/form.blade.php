@@ -25,6 +25,7 @@
     <input type="password" name="password" class="form-control text-right" >
 </div>
 
-<div class="form-group">
-    <button class="btn btn-primary" type="submit">حفظ</button>
-</div>
+<input type="submit" class="form-control text-center " value="حفظ" style="width:40%;background-color: limegreen ;border-radius: 10px">
+{{--<div class="form-group">--}}
+    {{--<button class="btn btn-primary" type="submit">حفظ</button>--}}
+{{--</div>--}}

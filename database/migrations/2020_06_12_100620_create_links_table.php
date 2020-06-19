@@ -15,13 +15,21 @@ class CreateLinksTable extends Migration
     {
         Schema::create('links', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('country')->nullable();
-            $table->string('city')->nullable();
             $table->string('phone')->nullable();
             $table->string('watsUp');
             $table->string('email');
-
             $table->timestamps();
+        });
+
+        Schema::create('link_translations', function (Blueprint $table) {
+            $table->increments('id');
+            $table->bigInteger('link_id')->unsigned();
+            $table->string('locale')->index();
+            $table->string('country')->nullable();
+            $table->string('city')->nullable();
+
+            $table->unique(['link_id','locale']);
+            $table->foreign('link_id')->references('id')->on('links')->onDelete('cascade');
         });
     }
 
@@ -32,6 +40,7 @@ class CreateLinksTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('link_translations');
         Schema::dropIfExists('links');
     }
 }

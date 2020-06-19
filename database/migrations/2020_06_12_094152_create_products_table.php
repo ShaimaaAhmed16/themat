@@ -16,13 +16,11 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('num_of_views')->default('0');
-            $table->string('name');
             $table->integer('price');
-            $table->string('wight')->nullable(true);
+            $table->double('wight_grams')->nullable(true);
             $table->string('image')->nullable(true);
-            $table->text('description')->nullable(true);
-            $table->bigInteger('quantity')->default(0);
             $table->double('tax_price')->default('0');
+            $table->double('tax_status')->default('1');
             $table->unsignedBigInteger('category_id')->nullable();
             $table->timestamps();
 
@@ -30,6 +28,18 @@ class CreateProductsTable extends Migration
                 ->references('id')->on('categories')
                 ->onDelete('CASCADE')
                 ->onUpdate('CASCADE');
+        });
+        Schema::create('product_translations', function (Blueprint $table) {
+            $table->increments('id');
+            $table->bigInteger('product_id')->unsigned();
+            $table->string('locale')->index();
+            $table->string('name');
+            $table->text('description')->nullable(true);
+            $table->string('wight')->nullable(true);
+
+            $table->unique(['product_id','locale']);
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -40,6 +50,7 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('product_translations');
         Schema::dropIfExists('products');
     }
 }

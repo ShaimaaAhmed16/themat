@@ -12,8 +12,12 @@
             </div>
             <div class="col-7 d-flex justify-content-between">
                 <h4 class="text-right text-white">
-                    @if($policy)
-                        <p>{{$policy->name}}</p>
+                    @if(count($policies) >0)
+                        @foreach ($policies as $policy)
+                            @if(($policy->getTranslation('ar')->name =='الشروط والاحكام') || ($policy->getTranslation('ar')->name =='سياسه الاستخدام'))
+                                <p>{{$policy->getTranslation('ar')->name}}</p>
+                            @endif
+                        @endforeach
                     @else
                     سياسه الاستخدام
                     @endif
@@ -31,9 +35,13 @@
     <section class="container text-right mt-5 about">
         <br>
         <br>
-        @if($policy)
-            <p>{{$policy->text}}</p>
-    @else
+        @if(count($policies) >0)
+            @foreach ($policies as $policy)
+                @if(($policy->getTranslation('ar')->name =='الشروط والاحكام') || ($policy->getTranslation('ar')->name =='سياسه الاستخدام'))
+                    <p>{{$policy->getTranslation('ar')->text}}</p>
+                @endif
+            @endforeach
+        @else
         <div class="alert alert-danger" role="alert">
             لا يوجد بيانات
         </div>

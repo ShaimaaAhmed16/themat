@@ -38,23 +38,42 @@ class LinkController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'city' => 'required',
-            'country' => 'required',
+            'ar_country' => 'required',
+            'en_country' => 'required',
+            'ar_city' => 'required',
+            'en_city' => 'required',
             'phone' => 'required',
             'email' => 'required',
             'watsUp'=>'required',
         ];
         $messages = [
-            'country.required' => 'يرجي كتابه اسم الدوله ',
-            'city.required' => 'يرجي كتابه اسم المدينه ',
+            'ar_country.required' => 'يرجي كتابه اسم الدوله باللغه العربيه',
+            'en_country.required' => 'يرجي كتابه اسم الدوله باللغه الانجليزيه',
+            'ar_city.required' => 'يرجي كتابه اسم المدينه باللغه العربيه',
+            'en_city.required' => 'يرجي كتابه اسم المدينه باللغه الانجليزيه',
             'phone.required' => 'يرجي كتابه رقم الهاتف',
             'email.required' => 'يرجي كتابه البريد',
             'watsUp.required'=>'يرجي اضافه رقم الوتس '
         ];
         $this->validate($request, $rules, $messages);
-        $record = Link::create($request->all());
-        flash()->success("تم الاضافه بنجاح");
-        return redirect()->route('link.index');
+        $data = [
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'watsUp' => $request->watsUp,
+            'en' => ['country' => $request->en_country,'city' => $request->en_city],
+            'ar' => ['country' => $request->ar_country,'city' => $request->ar_city],
+        ];
+
+        $record = Link::create($data);
+
+        if ($record->save()){
+            flash()->success("تم الاضافه بنجاح");
+            return redirect()->route('link.index');
+        }
+        else{
+            return back();
+        }
+
     }
 
     /**
@@ -89,9 +108,15 @@ class LinkController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $record = Link::findOrFail($id);
-        $record->update($request->all());
+        $data = [
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'watsUp' => $request->watsUp,
+            'en' => ['country' => $request->en_country,'city' => $request->en_city],
+            'ar' => ['country' => $request->ar_country,'city' => $request->ar_city],
+        ];
+        $record->update($data);
         $record->save();
         flash()->success('تم التعديل بنجاح');
         return redirect()->route('link.index');

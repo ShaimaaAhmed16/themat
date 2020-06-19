@@ -139,13 +139,15 @@ class MainController extends Controller
     }
 
     public function about(){
-        $about=Page::where('name','من نحن')->first();
-        return view('front.about',compact('about'));
+        $abouts=Page::get();
+//        where(getTranslation('ar')->name,'من نحن')->first();
+        return view('front.about',compact('abouts'));
     }
 
     public function usePolicy(){
-        $policy=Page::where('name','سياسه الاستخدام')->orWhere('name','الشروط والاحكام')->first();
-        return view('front.use-policy',compact('policy'));
+        $policies=Page::get();
+//        where('name','سياسه الاستخدام')->orWhere('name','الشروط والاحكام')->first();
+        return view('front.use-policy',compact('policies'));
     }
 
     public function viewMap(){

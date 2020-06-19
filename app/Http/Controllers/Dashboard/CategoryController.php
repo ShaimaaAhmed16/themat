@@ -35,31 +35,86 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+//    public function store(Request $request)
+//    {
+//        $rules = [
+//            'name' => 'required',
+//            'image'=>'required',
+//        ];
+//        $messages = [
+//            'name.required' => 'يرجي كتابه اسم التصنيف',
+//            'image.required' => 'يرجي اختيار الصوره بامتداد jpg,png,jpeg',
+//        ];
+//        $this->validate($request, $rules, $messages);
+//
+//        $image = $request->file('image');
+//        $directionPath = public_path() . '/uploads/image/categories/';
+//        $extension = $image->getClientOriginalExtension();
+//        $name = rand('11111', '99999') . '.' . $extension;
+//        $image->move($directionPath, $name);
+//        $record = Category::create($request->all());
+//        $record->image = 'uploads/image/categories/' . $name;
+//        $record->save();
+//
+//        flash()->success("تم الاضافه بنجاح");
+//        return redirect()->route('category.index');
+//    }
+
     public function store(Request $request)
     {
+//dd($request->all());
         $rules = [
-            'name' => 'required',
+            'ar_name' => 'required',
+            'en_name' => 'required',
             'image'=>'required',
         ];
         $messages = [
-            'name.required' => 'يرجي كتابه اسم التصنيف',
+            'ar_name.required' => ' يرجي كتابه اسم التصنيف باللغه العربيه',
+            'en_name.required' => 'يرجي كتابه اسم التصنيف بالغه الانجليزيه',
             'image.required' => 'يرجي اختيار الصوره بامتداد jpg,png,jpeg',
         ];
-        $this->validate($request, $rules, $messages);
+
+        $this->validate($request, $rules,$messages);
 
         $image = $request->file('image');
         $directionPath = public_path() . '/uploads/image/categories/';
         $extension = $image->getClientOriginalExtension();
         $name = rand('11111', '99999') . '.' . $extension;
         $image->move($directionPath, $name);
-        $record = Category::create($request->all());
+//        $record = Category::create([]); dd($request->all());
+
+//        $rules = [
+//            'ar_name' => 'required',
+//            'en_name' => 'required',
+//            'image'=>'required',
+//        ];
+////        dd($request->en['name']);
+//        $messages = [
+//            'ar_name.required' => ' يرجي كتابه اسم التصنيف باللغه العربيه',
+//            'en_name.required' => 'يرجي كتابه اسم التصنيف بالغه الانجليزيه',
+//            'image.required' => 'يرجي اختيار الصوره بامتداد jpg,png,jpeg',
+//        ];
+//
+//        $this->validate($request, $rules,$messages);
+        $data = [
+            'image' => $request->image,
+            'en' => ['name' => $request->en_name],
+            'ar' => ['name' => $request->ar_name],
+        ];
+//        dd($data);
+        $record = Category::create($data);
+
+//        $record = Category::create($request->all());
         $record->image = 'uploads/image/categories/' . $name;
         $record->save();
-
+    if ($record){
         flash()->success("تم الاضافه بنجاح");
         return redirect()->route('category.index');
     }
-
+    else{
+        return back();
+    }
+    }
     /**
      * Display the specified resource.
      *
@@ -93,7 +148,12 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $record = Category::findOrFail($id);
-        $record->update($request->except('image'));
+        $data = [
+//            'image' => $request->image,
+            'en' => ['name' => $request->en_name],
+            'ar' => ['name' => $request->ar_name],
+        ];
+        $record->update($data,$request->except('image'));
         if ($request->hasFile('image')) {
             $path = public_path();
             $destinationPath = $path . '/uploads/image/categories'; // upload path

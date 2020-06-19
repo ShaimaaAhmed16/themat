@@ -41,8 +41,8 @@
                                 @foreach($records as $record)
                                     <tr>
                                         <th>{{$loop->iteration}}</th>
-                                        <th>{{$record->country}}</th>
-                                        <th>{{$record->city}}</th>
+                                        <th>{{$record->getTranslation('ar')->country}}</th>
+                                        <th>{{$record->getTranslation('ar')->city}}</th>
                                         <th>{{$record->phone}}</th>
                                         <th>{{$record->email}}</th>
                                         <th>

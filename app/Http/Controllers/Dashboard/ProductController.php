@@ -28,6 +28,7 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::get();
+//        dd($categories);
         return view('admin.product.create',compact('categories'));
     }
 
@@ -39,20 +40,27 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+//        dd($request->all());
         $rules = [
-            'name' => 'required',
+            'ar_name' => 'required',
+            'en_name' => 'required',
             'price' => 'required',
-            'wight' => 'required',
-            'description' => 'required',
+            'ar_wight' => 'required',
+            'en_wight' => 'required',
+            'ar_description' => 'required',
+            'en_description' => 'required',
             'category_id' => 'required',
             'image'=>'required',
 //            'image'=>'required|mimes:jpg,png,jpeg',
         ];
         $messages = [
-            'name.required' => 'يرجي كتابه اسم المنتج',
+            'ar_name.required' => 'يرجي كتابه اسم المنتج باللغه العربيه',
+            'en_name.required' => 'يرجي كتابه اسم المنتج باللغه الانجليزيه',
             'price.required' => 'يرجي كتابه سعر المنتج',
-            'wight.required' => 'يرجي كتابه الوزن',
-            'description.required' => 'يرجي كتابه تفاصيل المنتج',
+            'ar_wight.required' => 'يرجي كتابه الوزن باللغه العربيه',
+            'en_wight.required' => 'يرجي كتابه الوزن باللغه الانجليزيه',
+            'ar_description.required' => 'يرجي كتابه تفاصيل المنتج باللغه العربيه',
+            'en_description.required' => 'يرجي كتابه تفاصيل المنتج باللغه الانجليزيه',
             'category_id.required' => 'يرجي اختيار التصنيف',
             'image.required'=>'يرجي اضافه صوره للمنتج'
         ];
@@ -64,15 +72,27 @@ class ProductController extends Controller
         $name = rand('11111', '99999') . '.' . $extension;
         $image->move($directionPath, $name);
 //        dd($request->all());
-        $record = Product::create($request->all());
+        $data = [
+            'image' => $request->image,
+            'price' => $request->price,
+            'category_id' => $request->category_id,
+            'en' => ['name' => $request->en_name,'wight' => $request->en_wight,'description' => $request->en_description],
+            'ar' => ['name' => $request->ar_name,'wight' => $request->ar_wight,'description' => $request->ar_description],
+        ];
+        $record = Product::create($data);
 
         $record->image = 'uploads/image/products/' . $name;
         $record->save();
 //            dd($record);
 
+        if ($record){
+            flash()->success("تم الاضافه بنجاح");
+            return redirect()->route('product.index');
+        }
+        else{
+            return back();
+        }
 
-        flash()->success("تم الاضافه بنجاح");
-        return redirect()->route('product.index');
     }
 
     /**
@@ -94,8 +114,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::get();
         $model = Product::findOrFail($id);
-        return view('admin.product.edit', compact('model'));
+        return view('admin.product.edit', compact('model','categories'));
     }
 
     /**
@@ -108,7 +129,14 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $record = Product::findOrFail($id);
-        $record->update($request->except('image'));
+        $data = [
+            'image' => $request->image,
+            'price' => $request->price,
+            'category_id' => $request->category_id,
+            'en' => ['name' => $request->en_name,'wight' => $request->en_wight,'description' => $request->en_description],
+            'ar' => ['name' => $request->ar_name,'wight' => $request->ar_wight,'description' => $request->ar_description],
+        ];
+        $record->update($data,$request->except('image'));
         if ($request->hasFile('image')) {
             $path = public_path();
             $destinationPath = $path . '/uploads/image/products'; // upload path

@@ -43,34 +43,34 @@ class PageController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'name' => 'required',
-            'text' => 'required',
-            'image' => 'sometimes',
+            'ar_name' => 'required',
+            'en_name' => 'required',
+            'ar_text' => 'required',
+            'en_text' => 'required',
         ];
         $messages = [
-            'name.required' => 'يرجي كتابه اسم الصفحه',
-            'text.required' => 'يرجي كتابه محتوي الصفحه',
-            'image.sometimes' => 'تحميل صوره الصفحه',
+            'ar_name.required' => 'يرجي كتابه اسم الصفحه',
+            'en_name.required' => 'يرجي كتابه اسم الصفحه',
+            'ar_text.required' => 'يرجي كتابه محتوي الصفحه',
+            'en_text.required' => 'يرجي كتابه محتوي الصفحه',
         ];
         $this->validate($request, $rules, $messages);
-        if ($request->image != null){
-            $image = $request->file('image');
-            $directionPath = public_path() . '/uploads/image/pages/';
-            $extension = $image->getClientOriginalExtension();
-            $name = rand('11111', '99999') . '.' . $extension;
-            $image->move($directionPath, $name);
-            $record = Page::create($request->all());
-            $record->image = 'uploads/image/pages/' . $name;
-            $record->save();
+        $data = [
+            'en' => ['text' => $request->en_text,'name' => $request->en_name],
+            'ar' => ['text' => $request->ar_text,'name' => $request->ar_name],
+        ];
+        $record = Page::create($data);
+
 //        dd($request->all());
 
-        }
+       if ($record->save()){
+           flash()->success("تم الاضافه بنجاح");
+           return redirect()->route('page.index');
+       }
         else{
-            $record = Page::create($request->all());
-            $record->save();
+           return back();
         }
-        flash()->success("تم الاضافه بنجاح");
-        return redirect()->route('page.index');
+
     }
 
     /**
@@ -108,16 +108,12 @@ class PageController extends Controller
     public function update(Request $request, $id)
     {
         $record = Page::findOrFail($id);
-        $record->update($request->except('image'));
-        if ($request->hasFile('image')) {
-            $path = public_path();
-            $destinationPath = $path . '/uploads/image/pages'; // upload path
-            $logo = $request->file('image');
-            $extension = $logo->getClientOriginalExtension(); // getting image extension
-            $name = time() . '' . rand(11111, 99999) . '.' . $extension; // renameing image
-            $logo->move($destinationPath, $name); // uploading file to given path
-            $record->update(['image' => 'uploads/image/pages/' . $name]);
-        }
+        $data = [
+            'en' => ['text' => $request->en_text,'name' => $request->en_name],
+            'ar' => ['text' => $request->ar_text,'name' => $request->ar_name],
+        ];
+        $record->update($data);
+
         $record->save();
         flash()->success('تم التعديل بنجاح');
         return redirect()->route('page.index');
