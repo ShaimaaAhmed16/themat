@@ -159,9 +159,5 @@ class ClientController extends Controller
         return redirect()->route('client.index');
     }
 
-//    public function logout()
-//    {
-//        auth()->guard('client-web')->logout();
-//        return redirect('login');
-//    }
+
 }

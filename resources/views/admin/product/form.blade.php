@@ -31,6 +31,7 @@
 
 <div class="form-group">
     <label for="price">سعر المنتج</label>
+<<<<<<< HEAD
     <input type="text" name="price" id="price" class="form-control text-right" >
 </div>
 
@@ -51,3 +52,44 @@
 
 <input type="submit" class="form-control text-center " value="حفظ" style="width:40%;background-color: limegreen ;border-radius: 10px">
 
+=======
+    {!!  Form::text('price',null,[
+        'class'=>'form-control text-right',"value"=>"{{old('price')}}"
+    ]) !!}
+
+    <label for="wight">وزن المنتج</label>
+    {!!  Form::text('wight',null,[
+        'class'=>'form-control text-right',"value"=>"{{old('wight')}}"
+    ]) !!}
+    <label for="description">تفاصيل المنتج</label>
+    {!!  Form::text('description',null,[
+        'class'=>'form-control text-right',"value"=>"{{old('description')}}"
+    ]) !!}
+    @inject('categories','App\Models\Category')
+    <label for="category_id">اختار التصنيف</label>
+    {!!  Form::select('category_id',$categories->pluck('name','id')->toArray(),null,[
+        'class'=>'form-control text-right'
+    ]) !!}
+
+    <div>
+        <label for="wight">القيمه المضافه للمنتج</label>
+            {!!  Form::text('tax_price',null,[
+            'class'=>'form-control text-right ',"value"=>"{{old('tax_price')}}"
+            ]) !!}
+    <label for="Image" class="btn-block">صوره المنتج</label>
+    @if($model->image)
+        <img src="{{ $model->image_url }}" width="100" height="100" style="margin-bottom: 10px"/>
+    @endif
+    <br>
+    {!!  Form::file('image',null,[
+        'class'=>'form-control file_upload_preview '
+    ]) !!}
+
+
+</div>
+
+<div class="form-group " style="margin-top: 10px">
+    <button class="btn btn-primary" type="submit">حفظ</button>
+</div>
+</div>
+>>>>>>> 0fb5e22da4937ec1de123a5135a10e24c5a457a9

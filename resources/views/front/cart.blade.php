@@ -34,15 +34,19 @@
             <!-- Modal -->
             <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
+                    <div class="modal-content text-right">
 
                         <div class="modal-body">
                             هل أنت متأكد
                         </div>
                         <div class="modal-footer">
-                            <form class="">
-                                <button type="button" class="btn" data-dismiss="modal">إلغاء</button>
-                                <a href="{{route('empty')}}" class="btn">متأكد </a>
+                            <form class="m-auto d-flex justify-content-around">
+                                <div>
+                                    <button type="button" class="btn" data-dismiss="modal">إلغاء</button>
+                                </div>
+                                <div>
+                                    <a href="{{route('empty')}}" class="btn">متأكد </a>
+                                </div>
                             </form>
 
                         </div>
@@ -70,7 +74,7 @@
                 @foreach (Cart::content() as $item)
                     <div class="card mt-2">
                 <div class="row">
-                    <div class="col-5 d-flex justify-content-around">
+                    <div class="col-6 d-flex justify-content-around">
                         <div class="mt-2">
                             <img src="{{asset('public/'.$item->model->image)}}" alt="" width="50" height="50" class="img-fluid">
                         </div>
@@ -78,33 +82,33 @@
                         <h6 class="pt-3 pr-1">{{$item->name}}</h6>
 
                     </div>
-                    <div class="col-4">
-                        <form action="{{url('update-quantity/'.$item->rowId)}}" method="get" class="box mt-3">
-                            @csrf
-                            {{ method_field('patch') }}
-                            <input type="number" value="{{$item->qty}}" min="1" name="quantity">
-                            <button type="submit" class="border-0"><i class="fas fa-pencil-alt"></i></button>
-                        </form>
-                    </div>
-                    <div class="col-3">
+                    <div class="col-6 d-flex justify-content-around">
                         <div class="card m-2 true">
                             <span class="pt-1 pb-1">&#10004;</span>
                         </div>
                         {{--<a href="{{url('remove/'.$item->rowId)}}" class="m-3">--}}
                             {{--<i class="fas fa-trash-alt text-dark"></i>--}}
-                            <form action="{{url('remove/'.$item->rowId)}}" method="POST">
+                        <form action="{{url('remove/'.$item->rowId)}}" method="POST" class="mt-3 ml-3">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
 
-                            <button type="submit" class="border-0 btn-light"><i class="fas fa-trash-alt text-dark"></i></button>
-                            </form>
-                        </a>
+                            <button type="submit" class="border-0 btn-light" style="background-color: transparent;"><i class="fas fa-trash-alt text-dark"></i></button>
+                        </form>
                     </div>
+                    <div class="col-12">
+                        <form action="{{url('update-quantity/'.$item->rowId)}}" method="get" class="box mt-3">
+                            @csrf
+                            {{ method_field('patch') }}
+                            <input type="number" value="{{$item->qty}}" min="1" name="quantity">
+                            <button type="submit" class="border-0" style="background-color: transparent;"><i class="fas fa-pencil-alt"></i></button>
+                        </form>
+                    </div>
+
                 </div>
                 <hr>
                 <div class="row">
                     <div class="col-6 mb-1">
-                        <i class="fas fa-weight fa-2x ml-2"></i>
+                        <i class="fas fa-weight ml-1 mr-2"></i>
                         <span>
                             الوزن :  {{$item->model->wight}}
                         </span>
@@ -135,14 +139,14 @@
                     <h6>{{Cart::total()}}</h6>
                 </div>
             </section>
-        <section class="text-center mt-3">
+        <section class="text-center mt-3 mb-5">
             {{--<form method="get" action="{{route('addorder')}}">--}}
             <form method="get" action="{{route('map')}}">
 
             <button type="submit" class="btn btn-success btn-block mt-4"> إكمال الطلب</button>
             {{--<a href="map.html" class="btn btn-success btn-block mt-4"> إكمال الطلب</a>--}}
             </form>
-            <a href="{{route('index')}}" class="btn btn-outline-dark btn-block mt-40"> الرجوع الى المنتجات</a>
+            <a href="{{route('index')}}" class="btn btn-outline-dark btn-block mt-4"> الرجوع الى المنتجات</a>
         </section>
 
         @else

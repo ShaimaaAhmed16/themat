@@ -1,6 +1,6 @@
 @extends('admin.home')
 @section('page')
-    <a href="{{route('product.index')}}">المنتج</a>
+    <a href="{{route('product.index')}}">المنتجات</a>
 @endsection
 @section('page_title')
 / تعديل المنتج
@@ -23,6 +23,7 @@
                 'files' =>true
                 ]) !!}
                     @csrf
+<<<<<<< HEAD
                     <div class="form-group">
                         <label for="ar_name">اسم المنتج بالعربي</label>
                         <input type="text" name="ar_name" id="ar_name" class="form-control text-right" value="{{ isset($model) ? $model->getTranslation('ar')->name : '' }} ">
@@ -79,6 +80,65 @@
                     </div>
 
                     <input type="submit" class="form-control text-center " value="حفظ" style="width:40%;background-color: limegreen ;border-radius: 10px">
+=======
+
+                    @include('admin.product.form')
+                    {{--<div class="form-group ">--}}
+                        {{--<label for="name">اسم المنتج</label>--}}
+                        {{--{!!  Form::text('name',null,[--}}
+                            {{--'class'=>'form-control text-right',"value"=>"{{old('name')}}"--}}
+                        {{--]) !!}--}}
+                        {{--<label for="price">سعر المنتج</label>--}}
+                        {{--{!!  Form::text('price',null,[--}}
+                            {{--'class'=>'form-control text-right',"value"=>"{{old('price')}}"--}}
+                        {{--]) !!}--}}
+
+                        {{--<label for="wight">وزن المنتج</label>--}}
+                        {{--{!!  Form::text('wight',null,[--}}
+                            {{--'class'=>'form-control text-right',"value"=>"{{old('wight')}}"--}}
+                        {{--]) !!}--}}
+                        {{--<label for="description">تفاصيل المنتج</label>--}}
+                        {{--{!!  Form::text('description',null,[--}}
+                            {{--'class'=>'form-control text-right',"value"=>"{{old('description')}}"--}}
+                        {{--]) !!}--}}
+                        {{--@inject('categories','App\Models\Category')--}}
+                        {{--<label for="category_id">اختار التصنيف</label>--}}
+                        {{--{!!  Form::select('category_id',$categories->pluck('name','id')->toArray(),null,[--}}
+                            {{--'class'=>'form-control text-right'--}}
+                        {{--]) !!}--}}
+
+                        {{--<div>--}}
+                            {{--<div>--}}
+                                {{--<label for="wight">القيمه المضافه للمنتج</label>--}}
+                            {{--</div>--}}
+                            {{--<div style="display: flex;justify-content: start">--}}
+                                {{--{!!  Form::text('tax_price',null,[--}}
+                                {{--'class'=>'form-control text-right ',"value"=>"{{old('tax_price')}}","style" =>"width : 15%"--}}
+                                {{--]) !!}--}}
+                                {{--@if($model->tax_status == 0)--}}
+                                    {{--<a href="product/{{$model->id}}/active" class="btn btn-danger btn-sm" style="margin-right: 10px;">تفعيل</a>--}}
+                                {{--@else--}}
+                                    {{--<a href="product/{{$model->id}}/deactive" class="btn btn-danger btn-sm" style="margin-right: 10px;">فعال</a>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div style="clear: both;"></div>--}}
+                        {{--<label for="Image" class="btn-block">صوره المنتج</label>--}}
+                        {{--@if($model->image)--}}
+                            {{--<img src="{{ $model->image_url }}" width="100" height="100" style="margin-bottom: 10px"/>--}}
+                        {{--@endif--}}
+                        {{--<br>--}}
+                        {{--{!!  Form::file('image',null,[--}}
+                            {{--'class'=>'form-control file_upload_preview '--}}
+                        {{--]) !!}--}}
+
+
+                    {{--</div>--}}
+
+                    {{--<div class="form-group">--}}
+                        {{--<button class="btn btn-primary" type="submit">حفظ</button>--}}
+                    {{--</div>--}}
+>>>>>>> 0fb5e22da4937ec1de123a5135a10e24c5a457a9
                     {!!  Form::close() !!}
             </div>
             <!-- /.card-body -->

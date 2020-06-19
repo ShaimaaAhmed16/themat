@@ -24,6 +24,9 @@ Route::group(['prefix' => 'dashboard','namespace' => 'Dashboard'], function () {
         Route::get('index', 'HomeController@index')->name('dashboard.index');
 
         Route::resource('product', 'ProductController');
+        Route::get('product/{id}/active','ProductController@active');
+        Route::get('product/{id}/deactive','ProductController@deactive');
+
         Route::resource('client', 'ClientController');
         Route::get('client/{id}/active', 'ClientController@active');
         Route::get('client/{id}/deactive', 'ClientController@deactive');
