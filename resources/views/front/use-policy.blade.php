@@ -1,6 +1,6 @@
 @extends('front.app')
 @section('title')
-    سياسه الاستخدام
+    {{trans('lang.use_policy')}}
 @endsection
 <header class="header fixed-top bg-light-green">
     <div class="container pt-2 ">
@@ -19,7 +19,7 @@
                             @endif
                         @endforeach
                     @else
-                        سياسه الاستخدام
+                        {{trans('lang.use_policy')}}
                     @endif
                 </h4>
                 <a href="{{route('index')}}">
@@ -38,12 +38,12 @@
         @if(count($policies) >0)
             @foreach ($policies as $policy)
                 @if(($policy->getTranslation('ar')->name =='الشروط والاحكام') || ($policy->getTranslation('ar')->name =='سياسه الاستخدام'))
-                    <p>{{$policy->getTranslation('ar')->text}}</p>
+                    <p>{{$policy->getTranslation()->text}}</p>
                 @endif
             @endforeach
         @else
             <div class="alert alert-danger" role="alert">
-                لا يوجد بيانات
+                {{trans('lang.There_are_no_data')}}
             </div>
         @endif
     </section>

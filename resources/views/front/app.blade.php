@@ -10,6 +10,7 @@
     <title>@yield('title')</title>
 </head>
 <body>
+{{--<body style="direction: {{ app()->isLocal('ar') ? 'ltr' : 'rtl' }}">--}}
 
 @yield('content')
 

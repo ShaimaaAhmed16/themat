@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{asset('public/front/css/all.css')}}">
     <link rel="stylesheet" href="{{asset('public/front/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/front/css/app.css')}}">
-    <title>الثمار الوطنية</title>
+    <title>{{trans('lang.national_fruits')}}</title>
 </head>
 <body>
 <section class="container text-center pt-3">
@@ -29,10 +29,10 @@
                 @csrf
                 <div class="form-group text-center m-auto">
 
-                    <input type="text" class="form-control" placeholder=" كود المرور " name="pin_code">
+                    <input type="text" class="form-control" placeholder=" {{trans('lang.Pass_code')}} " name="pin_code">
                 </div><br>
                 <div class="text-center w-50 m-auto ">
-                    <button  type="submit" class="btn text-white btn-block text-center bg-light-green"> متابعة </button>
+                    <button  type="submit" class="btn text-white btn-block text-center bg-light-green"> {{trans('lang.continue')}} </button>
 
                 </div>
             </form>
@@ -40,16 +40,16 @@
                 <div class="mb-3 text-center w-50 m-auto">
                     @csrf
                     <input type="hidden" name="pin_code" value="1234">
-                    <button  type="submit" class="btn text-white btn-block text-center bg-light-green"> إعادة إرسال </button>
+                    <button  type="submit" class="btn text-white btn-block text-center bg-light-green"> {{trans('lang.resend')}} </button>
                 </div>
             </form>
 
             <div class="d-flex justify-content-between">
                 <div>
-                    <a href="{{route('login.client')}}" type="submit" class="btn text-white btn-block bg-secondary mb-1 mr-1 ml-1"> الدخول</a>
+                    <a href="{{route('login.client')}}" type="submit" class="btn text-white btn-block bg-secondary mb-1 mr-1 ml-1"> {{trans('lang.login')}}</a>
                 </div>
                 <div>
-                    <a href="{{route('register.client')}}" type="submit" class="btn mb-1 btn-block text-white bg-secondary mr-1 ml-1">تسجيل حساب جديد</a>
+                    <a href="{{route('register.client')}}" type="submit" class="btn mb-1 btn-block text-white bg-secondary mr-1 ml-1">{{trans('lang.register')}}</a>
                 </div>
             </div>
 

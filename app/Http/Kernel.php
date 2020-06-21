@@ -65,7 +65,6 @@ class Kernel extends HttpKernel
         'client-web' => \App\Http\Middleware\ClientWeb::class,
         'IsActive' => \App\Http\Middleware\IsActive::class,
 
-        /**** OTHER MIDDLEWARE ****/
         'localize'                => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
         'localizationRedirect'    => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,
         'localeSessionRedirect'   => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,

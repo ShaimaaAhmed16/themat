@@ -1,6 +1,6 @@
 @extends('front.app')
 @section('title')
-   سله التسوق
+    {{trans('lang.shopping_basket')}}
 @endsection
 <header class="header fixed-top bg-light-green">
     <div class="container pt-2 ">
@@ -11,7 +11,7 @@
                 </a>
             </div>
             <div class="col-8 d-flex justify-content-between">
-                <h4 class="text-white">سلة التسوق</h4>
+                <h4 class="text-white">{{trans('lang.shopping_basket')}}</h4>
                 <a href="{{route('index')}}">
                     <i class="fas fa-chevron-left text-white"></i>
                 </a>
@@ -27,9 +27,9 @@
     <div class="container shopcart1 pb-5">
         @if (Cart::count() > 0)
         <section class="d-flex justify-content-between mt-5 pl-4">
-            <label class="mt-2 pr-2"> عدد المنتجات : {{Cart::count()}}</label>
+            <label class="mt-2 pr-2"> {{trans('lang.number_of_products')}} : {{Cart::count()}}</label>
             <button type="button" class="btn" data-toggle="modal" data-target="#Modal">
-                إفراغ السلة
+                {{trans('lang.empty_the_basket')}}
             </button>
             <!-- Modal -->
             <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -37,15 +37,15 @@
                     <div class="modal-content text-right">
 
                         <div class="modal-body">
-                            هل أنت متأكد
+                            {{trans('lang.are_you_sure')}}
                         </div>
                         <div class="modal-footer">
                             <form class="m-auto d-flex justify-content-around">
                                 <div>
-                                    <button type="button" class="btn" data-dismiss="modal">إلغاء</button>
+                                    <button type="button" class="btn" data-dismiss="modal">{{trans('lang.Cancellation')}}</button>
                                 </div>
                                 <div>
-                                    <a href="{{route('empty')}}" class="btn">متأكد </a>
+                                    <a href="{{route('empty')}}" class="btn">{{trans('lang.Certain')}} </a>
                                 </div>
                             </form>
 
@@ -86,11 +86,9 @@
                         <div class="card m-2 true">
                             <span class="pt-1 pb-1">&#10004;</span>
                         </div>
-                        {{--<a href="{{url('remove/'.$item->rowId)}}" class="m-3">--}}
-                            {{--<i class="fas fa-trash-alt text-dark"></i>--}}
-                        <form action="{{url('remove/'.$item->rowId)}}" method="POST" class="mt-3 ml-3">
+                        <form action="{{url('remove/'.$item->rowId)}}" method="get" class="mt-3 ml-3">
                             {{ csrf_field() }}
-                            {{ method_field('DELETE') }}
+                            {{--{{ method_field('DELETE') }}--}}
 
                             <button type="submit" class="border-0 btn-light" style="background-color: transparent;"><i class="fas fa-trash-alt text-dark"></i></button>
                         </form>
@@ -107,17 +105,22 @@
                 </div>
                 <hr>
                 <div class="row">
-                    <div class="col-6 mb-1">
+                    <div class="col-4 mb-1">
                         <i class="fas fa-weight ml-1 mr-2"></i>
                         <span>
-                            الوزن :  {{$item->model->wight}}
+                            {{trans('lang.wight')}} :  {{$item->model->wight}}
                         </span>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
                         <span>
-                            السعر : {{$item->price}} ر.س
+                            {{trans('lang.price')}} : {{$item->price}} {{trans('lang.SR')}}
                         </span>
-                        <i class="fas fa-dollar-sign"></i>
+
+                    </div>
+                    <div class="col-4">
+                        <span>
+                            {{trans('lang.the_value_added_of_this_product')}} : {{$item->model->tax_price?$item->model->tax_price/100:0}}
+                        </span>
                     </div>
                 </div>
             </div>
@@ -126,16 +129,16 @@
 
         <section class="jumbotron p-2 m-4">
                 <div class="d-flex justify-content-between">
-                    <h6>سعر المنتجات</h6>
+                    <h6>{{trans('lang.The_total_price_of_the_products')}}</h6>
                     <h6>{{Cart::subtotal()}}</h6>
                 </div>
                 <div class="d-flex justify-content-between">
-                    <h6>القيمة المضافة</h6>
+                    <h6>{{trans('lang.value_added')}}</h6>
                     <h6>{{Cart::tax()}}</h6>
                 </div>
                 <hr>
                 <div class="d-flex justify-content-between">
-                    <h6>السعر الاجمالى</h6>
+                    <h6>{{trans('lang.total_price')}}</h6>
                     <h6>{{Cart::total()}}</h6>
                 </div>
             </section>
@@ -143,15 +146,15 @@
             {{--<form method="get" action="{{route('addorder')}}">--}}
             <form method="get" action="{{route('map')}}">
 
-            <button type="submit" class="btn btn-success btn-block mt-4"> إكمال الطلب</button>
+            <button type="submit" class="btn btn-success btn-block mt-4"> {{trans('lang.complete_the_request')}}</button>
             {{--<a href="map.html" class="btn btn-success btn-block mt-4"> إكمال الطلب</a>--}}
             </form>
-            <a href="{{route('index')}}" class="btn btn-outline-dark btn-block mt-4"> الرجوع الى المنتجات</a>
+            <a href="{{route('index')}}" class="btn btn-outline-dark btn-block mt-4"> {{trans('lang.refer_to_the_products')}}</a>
         </section>
 
         @else
             <section class="text-center mt-5">
-                <label class="bg-red text-white pl-5 pr-5 pt-1 pb-1">لايوجد منتجات فى السلة</label>
+                <label class="bg-red text-white pl-5 pr-5 pt-1 pb-1">{{trans('lang.no_products_in_the_cart')}}</label>
             </section>
         @endif
     </div>

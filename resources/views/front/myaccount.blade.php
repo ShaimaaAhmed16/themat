@@ -1,6 +1,6 @@
 @extends('front.app')
 @section('title')
-    الثمار الوطنية
+    {{trans('lang.national_fruits')}}
 @endsection
 <header class="header fixed-top bg-light-green">
     <div class="container pt-2">
@@ -11,7 +11,7 @@
                 </a>
             </div>
             <div class="col-7 d-flex justify-content-between">
-                <h5 class="text-white">صفحتى الشخصية</h5>
+                <h5 class="text-white">{{trans('lang.profile')}}</h5>
                 <a href="{{route('index')}}">
                     <i class="fas fa-chevron-left text-white"></i>
                 </a>
@@ -25,11 +25,11 @@
     <div class="container mt-5">
         <div class="d-flex justify-content-between">
             @if($row->status)
-                <label>حالة الحساب :1</label>
-                <label class="text-primary">فعال</label>
+                <label>{{trans('lang.account_status')}} :1</label>
+                <label class="text-primary">{{trans('lang.active')}}</label>
             @else
-                <label>حالة الحساب :0</label>
-                <label class="text-primary">منتظر</label>
+                <label>{{trans('lang.account_status')}} :0</label>
+                <label class="text-primary">{{trans('lang.deactive')}}</label>
             @endif
 
         </div>
@@ -66,28 +66,28 @@
         </div>
         <div class="row mt-4">
             <div class="col-12 mb-2 text-right">
-                <span>الاسم</span><br />
+                <span>{{trans('lang.name')}}</span><br />
                 <small>u{{$row->first_name}} {{$row->second_name}}</small>
             </div>
             <div class="col-12 mb-2">
                 <a href="#" class="text-black"></a>
             </div>
             <div class="col-12 mb-2 text-right">
-                <span>البريد الالكترونى</span><br />
+                <span>{{trans('lang.email')}}</span><br />
                 <small>{{$row->email}}</small>
             </div>
             <div class="col-12 mb-2">
                 <a href="#" class="text-black"></a>
             </div>
             <div class="col-12 mb-2 text-right">
-                <span>رقم الجوال</span>
+                <span>{{trans('lang.phone')}}</span>
                 <small>{{$row->phone}}</small>
             </div>
             <div class="col-12 mb-2">
                 <a href="#" class="text-black"></a>
             </div>
             <div class="col-12 mb-2 text-right">
-                <span>العنوان</span>
+                <span>{{trans('lang.address')}}</span>
                 <small>{{$row->address}}</small>
             </div>
         </div>
@@ -95,7 +95,7 @@
             <div class="row">
                 <div class="col-6 text-right">
                     <small>
-                        عدد الطلبات
+                        {{trans('lang.number_of_orders')}}
                         <i class="fas fa-shopping-bag ml-2"></i>
                     </small>
                 </div>

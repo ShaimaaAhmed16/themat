@@ -8,55 +8,55 @@
     @if(auth()->guard('client-web')->check())
     <a href="{{route('index')}}">
         <i class="fas fa-store-alt pl-2"></i>
-        <span>الرئيسية</span>
+        <span>{{trans('lang.home')}}</span>
     </a>
         @else
         <a href="{{route('login.client')}}">
             <i class="fas fa-store-alt pl-2"></i>
-            <span>الرئيسية</span>
+            <span>{{trans('lang.home')}}</span>
         </a>
     @endif
     <a href="{{route('about')}}">
         <i class="fas fa-apple-alt pl-2"></i>
-        <span>من نحن</span>
+        <span>{{trans('lang.about')}}</span>
     </a>
 
     <a href="{{route('usePolicy')}}">
         <i class="fas fa-apple-alt pl-2"></i>
-        <span>سياسه الاستخدام</span>
+        <span>{{trans('lang.use_policy')}}</span>
     </a>
 
     @if(auth()->guard('client-web')->check())
         <a href="{{route('profile.client',auth('client-web')->user()->id)}}">
             <i class="far fa-user-circle pl-2"></i>
-            <span>صفحتى الشخصية </span>
+            <span>{{trans('lang.my_personal_page')}}</span>
         </a>
     @else
         <a href="{{route('register.client')}}">
             <i class="fas fa-shopping-basket pl-2"></i>
-            <span>تسجيل حساب جديد </span>
+            <span>{{trans('lang.register')}}</span>
         </a>
         <a href="{{route('login.client')}}">
             <i class="fas fa-shopping-basket pl-2">
-            </i><span>تسجيل الدخول </span>
+            </i><span>{{trans('lang.login')}}</span>
         </a>
     @endif
     <a href="{{route('contact.client')}}">
         <i class="fas fa-phone-volume pl-2"></i>
-        <span>اتصل  بنا </span>
+        <span>{{trans('lang.contact_us')}}</span>
     </a>
     <a href="#">
         <i class="fas fa-share-alt pl-2"></i>
-        <span>مشاركة البيانات</span>
+        <span>{{trans('lang.share_data')}}</span>
     </a>
     <a href="#">
         <i class="fas fa-star-half-alt pl-2"></i>
-        <span>تقييم التطبيق </span>
+        <span>{{trans('lang.application_evaluation')}}</span>
     </a>
     @if(auth()->guard('client-web')->check())
         <a href="{{route('logout')}}">
             <i class="fas fa-sign-out-alt pl-2"></i>
-            <span>خروج </span>
+            <span>{{trans('lang.logout')}}</span>
         </a>
     @endif
 </div>

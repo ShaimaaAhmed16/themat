@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{asset('public/front/css/all.css')}}">
     <link rel="stylesheet" href="{{asset('public/front/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/front/css/app.css')}}">
-    <title>الثمار الوطنية</title>
+    <title>{{trans('lang.national_fruits')}}</title>
 </head>
 <body>
     <section class="container text-center pt-3">
@@ -26,18 +26,18 @@
             <form class="container" action="{{route('change.password')}}" method="post">
                 <div class="form-group text-right">
 
-                    <input type="password" class="form-control" placeholder="كلمة المرور" name="password">
+                    <input type="password" class="form-control" placeholder="{{trans('lang.password')}}" name="password">
                 </div>
                 <div class="form-group text-right">
 
-                    <input type="password" class="form-control" placeholder="تاكيد كلمة المرور " name="password_confirmation">
+                    <input type="password" class="form-control" placeholder="{{trans('lang.national_fruits')}}" name="password_confirmation">
                 </div>
                 <div class="mb-3 text-center">
-                    <button type="submit" class="btn text-white text-center bg-light-green">حفظ كلمة  المرور</button>
+                    <button type="submit" class="btn text-white text-center bg-light-green">{{trans('lang.confirm_password')}}</button>
                 </div>
                 <div class="d-flex justify-content-around">
-                    <a href="{{route('login.client')}}" type="submit" class="btn text-white bg-secondary mb-1"> الدخول</a>
-                    <a href="{{route('register.client')}}" type="submit" class="btn mb-1 text-white bg-secondary">تسجيل حساب جديد</a>
+                    <a href="{{route('login.client')}}" type="submit" class="btn text-white bg-secondary mb-1">{{trans('lang.login')}}</a>
+                    <a href="{{route('register.client')}}" type="submit" class="btn mb-1 text-white bg-secondary">{{trans('lang.register')}}</a>
                 </div>
             </form>
         </div>

@@ -1,6 +1,6 @@
 @extends('front.app')
 @section('title')
-    الثمار الوطنية
+    {{trans('lang.national_fruits')}}
 @endsection
 <header class="header fixed-top bg-light-green">
     <div class="container pt-2">
@@ -11,7 +11,7 @@
                 </a>
             </div>
             <div class="col-7 d-flex justify-content-between">
-                <h4 class="text-right text-white">الصفحة الشخصية</h4>
+                <h4 class="text-right text-white">{{trans('lang.profile')}}</h4>
                 <a href="{{route('index')}}">
                     <i class="fas fa-chevron-left text-white"></i>
                 </a>
@@ -34,7 +34,7 @@
                 </ul>
             </div>
         @endif
-        <form method="post" action="{{url('profile-update/'.auth()->guard('client-web')->user()->id)}}" enctype="multipart/form-data">
+        <form method="get" action="{{url('profile-update/'.auth()->guard('client-web')->user()->id)}}" enctype="multipart/form-data">
             @csrf
             <div class="card">
                 <div class="row">
@@ -60,41 +60,41 @@
             </div>
 
             <div class="form-group text-right">
-                <label for="username" class="text-light-green">الاسم الاول</label>
-                <input  type="text" class="form-control" id="username" placeholder="الاسم الاول"
+                <label for="username" class="text-light-green">{{trans('lang.first_name')}}</label>
+                <input  type="text" class="form-control" id="username" placeholder="{{trans('lang.first_name')}}"
                  value="{{auth()->guard('client-web')->user()->first_name}}"  name="first_name" />
             </div>
             <div class="form-group text-right">
-                <label for="username" class="text-light-green">اسم العائله</label>
-                <input  type="text" class="form-control" id="username" placeholder="اسم العائله"
+                <label for="username" class="text-light-green">{{trans('lang.family_name')}}</label>
+                <input  type="text" class="form-control" id="username" placeholder="{{trans('lang.family_name')}}"
                         value="{{auth()->guard('client-web')->user()->second_name}}"  name="second_name" />
             </div>
             <div class="form-group text-right">
-                <label class="text-light-green">رقم الجوال</label>
-                <input type="tel" class="form-control" placeholder="رقم الجوال"  value="{{auth()->guard('client-web')->user()->phone}}"  name="phone"/>
+                <label class="text-light-green">{{trans('lang.phone')}}</label>
+                <input type="tel" class="form-control" placeholder="{{trans('lang.phone')}}"  value="{{auth()->guard('client-web')->user()->phone}}"  name="phone"/>
             </div>
             <div class="form-group text-right">
-                <label class="text-light-green">البريد الالكترونى</label>
+                <label class="text-light-green">{{trans('lang.email')}}</label>
                 <input
                         type="email"
                         class="form-control"
-                        placeholder="البريد الالكترونى" name="email" value="{{auth()->guard('client-web')->user()->email}}"
+                        placeholder="{{trans('lang.email')}}" name="email" value="{{auth()->guard('client-web')->user()->email}}"
                 />
             </div>
             <div class="form-group text-right">
-                <label class="text-light-green">العنوان</label>
-                <input type="text" class="form-control" placeholder="العنوان"  name="address" value="{{auth()->guard('client-web')->user()->address}}"/>
+                <label class="text-light-green">{{trans('lang.address')}}</label>
+                <input type="text" class="form-control" placeholder="{{trans('lang.address')}}"  name="address" value="{{auth()->guard('client-web')->user()->address}}"/>
             </div>
             <div class="form-group text-right">
-                <label class="text-light-green">كلمة المرور</label>
+                <label class="text-light-green">{{trans('lang.password')}}</label>
                 <input
                         type="password"
                         class="form-control"
-                        placeholder="اتركها فارغة ان لم تريد تغييرها"
+                        placeholder="{{trans('lang.Leave_it_blank')}}"
                 />
             </div>
 
-            <button type="submit" class="btn btn-block text-white">تحديث</button>
+            <button type="submit" class="btn btn-block text-white">{{trans('lang.Update')}}</button>
         </form>
     </section>
 @endsection

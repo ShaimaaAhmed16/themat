@@ -260,7 +260,7 @@ class AuthController extends Controller
         }
         $user->save();
         if($user){
-            flash()->success('تم تعديل البانات الشخصيه بنجاح');
+            flash()->success('تم تعديل البيانات الشخصيه بنجاح');
             return redirect()->route('index');
         }
         else{

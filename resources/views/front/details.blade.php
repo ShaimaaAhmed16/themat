@@ -1,6 +1,6 @@
 @extends('front.app')
 @section('title')
-    الثمار الوطنية
+    {{trans('lang.national_fruits')}}
 @endsection
 <header class="header fixed-top bg-light-green">
     <div class="container pt-2 ">
@@ -12,7 +12,7 @@
             </div>
             <div class="col-8 d-flex justify-content-between">
 
-                <h4 class="text-right text-white"> {{$row->name}}</h4>
+                <h4 class="text-right text-white">{{$row->name}}</h4>
                 <a href="{{route('index')}}">
                     <i class="fas fa-chevron-left text-white"></i>
                 </a>
@@ -38,41 +38,44 @@
             <div class="col-6 text-right">
                 <small>
                     <i class="fas fa-weight"></i>
-                    الوزن :  {{$row->wight}}
+                    {{trans('lang.wight')}} :  {{$row->wight}}
                 </small>
                 <br>
 
-                <form action="{{url('add-cart')}}" method="POST" class="box" id="cart">
+                <form action="{{url('add-cart')}}" method="get" class="box" id="cart">
                     {{ csrf_field() }}
                     <input type="hidden" name="id" value="{{$row->id}}">
                     <input type="hidden" name="name" value="{{$row->name}}">
                     <input type="hidden" name="price" value="{{$row->price}}">
-                    @if (Cart::count() > 0)
-                        <input type="number" value="{{$product_qty?$product_qty:1}}" min="1" name="qty">
-                    @else
-                        <input type="number" value="1" min="1" name="qty">
-                    @endif
-                </form>
+                    {{--@if (Cart::count() > 0)--}}
+                        <input type="number" value="0" min="0" name="qty">
+                        {{--<input type="number" value="{{$product_qty?$product_qty:0}}" min="0" name="qty">--}}
+                    {{--@else--}}
+                        {{--<input type="number" value="0" min="0" name="qty">--}}
+                    {{--@endif--}}
+                {{--</form>--}}
 
-                <form>
+                {{--<form>--}}<br>
+                    <br>
+                    @if($row->getTranslation('ar')->wight == 'كيلو')
                     <i class="fas fa-weight" style="font-size: 13px"></i>
-                    <small>الوزن بالجرام:</small>
+                    <small>{{trans('lang.weight_in_grams')}}:</small>
                     <div class="input-group input-group-sm mt-2 mb-3">
-                        <input type="text" class="form-control">
-                        <div class="input-group-prepend">
-                            <button class="btn btn-sm">تاكيد</button>
-                        </div>
+                        <input type="text" class="form-control" name="qty1">
+                        {{--<div class="input-group-prepend">--}}
+                            {{--<button class="btn btn-sm">تاكيد</button>--}}
+                        {{--</div>--}}
                     </div>
+                    @endif
                 </form>
             </div>
             <div class="col-6">
                 <span>
-                    السعر : {{$row->price}} ر.س
+                    {{trans('lang.price')}} : {{$row->price}} {{trans('lang.SR')}}
                 </span>
-                <i class="fas fa-dollar-sign"></i>
                 <br>
                 <div class="btn-group mt-2">
-                    <button type="submit" class="btn btn-sm" form="cart">أضف للسلة</button>
+                    <button type="submit" class="btn btn-sm" form="cart">{{trans('lang.add_to_cart')}}</button>
                     @if (Cart::count() > 0)
                         <button type="button" class="btn btn-sm"><i class="fas fa-shopping-basket"></i><span class="badge ml-1">{{$product_qty?$product_qty:""}}</span></button>
                     @else
@@ -83,10 +86,10 @@
         </div>
 
         <div class="card mt-5 mb-4">
-            <div class="card-title text-right p-2">
-                <span class="about-product">عن المنتج</span>
+            <div class="card-title text-right">
+                <span class="about-product">{{trans('lang.about_the_product')}}</span>
             </div>
-            <div class="card-body text-right ">{{$row->description}}</div>
+            <div class="card-body text-right " style="padding-top: 0;">{{$row->description}}</div>
         </div>
 
     </div>

@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{asset('public/front/css/all.css')}}">
     <link rel="stylesheet" href="{{asset('public/front/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/front/css/app.css')}}">
-    <title>الثمار الوطنية</title>
+    <title>{{trans('lang.national_fruits')}}</title>
 </head>
 <body>
 
@@ -28,14 +28,14 @@
                 @csrf
                 <div class="form-group text-right">
 
-                    <input type="text" class="form-control" placeholder="رقم الجوال ********9665" name="phone">
+                    <input type="text" class="form-control" placeholder="{{trans('lang.phone')}} ********9665" name="phone">
                 </div>
                 <div class="mb-3 text-center">
-                    <button  type="submit" class="btn text-white text-center bg-light-green">استعادة كلمة  المرور</button>
+                    <button  type="submit" class="btn text-white text-center bg-light-green">{{trans('lang.restore_password')}}</button>
                 </div>
                 <div class="d-flex justify-content-around">
-                    <a href="{{route('login.client')}}"  class="btn text-white bg-secondary mb-1">تسجيل الدخول</a>
-                    <a href="{{route('register.client')}}"  class="btn mb-1 text-white bg-secondary">تسجيل حساب جديد</a>
+                    <a href="{{route('login.client')}}"  class="btn text-white bg-secondary mb-1">{{trans('lang.login')}}</a>
+                    <a href="{{route('register.client')}}"  class="btn mb-1 text-white bg-secondary">{{trans('lang.register')}}</a>
                 </div>
             </form>
         </div>

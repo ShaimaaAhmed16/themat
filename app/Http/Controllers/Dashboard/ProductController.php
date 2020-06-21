@@ -45,6 +45,7 @@ class ProductController extends Controller
             'ar_name' => 'required',
             'en_name' => 'required',
             'price' => 'required',
+            'tax_price' => 'required',
             'ar_wight' => 'required',
             'en_wight' => 'required',
             'ar_description' => 'required',
@@ -57,6 +58,7 @@ class ProductController extends Controller
             'ar_name.required' => 'يرجي كتابه اسم المنتج باللغه العربيه',
             'en_name.required' => 'يرجي كتابه اسم المنتج باللغه الانجليزيه',
             'price.required' => 'يرجي كتابه سعر المنتج',
+            'tax_price.required' => 'يرجي كتابه القيمه المضافه لهذا المنتج',
             'ar_wight.required' => 'يرجي كتابه الوزن باللغه العربيه',
             'en_wight.required' => 'يرجي كتابه الوزن باللغه الانجليزيه',
             'ar_description.required' => 'يرجي كتابه تفاصيل المنتج باللغه العربيه',
@@ -75,6 +77,7 @@ class ProductController extends Controller
         $data = [
             'image' => $request->image,
             'price' => $request->price,
+            'tax_price' => $request->tax_price,
             'category_id' => $request->category_id,
             'en' => ['name' => $request->en_name,'wight' => $request->en_wight,'description' => $request->en_description],
             'ar' => ['name' => $request->ar_name,'wight' => $request->ar_wight,'description' => $request->ar_description],
@@ -132,6 +135,7 @@ class ProductController extends Controller
         $data = [
             'image' => $request->image,
             'price' => $request->price,
+            'tax_price' => $request->tax_price,
             'category_id' => $request->category_id,
             'en' => ['name' => $request->en_name,'wight' => $request->en_wight,'description' => $request->en_description],
             'ar' => ['name' => $request->ar_name,'wight' => $request->ar_wight,'description' => $request->ar_description],
@@ -163,6 +167,22 @@ class ProductController extends Controller
         $record = Product::findOrFail($id);
         $record->delete();
         flash()->success('تم الحذف بنجاح');
+        return redirect()->route('product.index');
+    }
+
+    public function active($id){
+        $record=Product::findOrFail($id);
+        $record->tax_status	 =1;
+        $record->save();
+        flash()->success('تم التفعيل بنجاح');
+        return redirect()->route('product.index');
+    }
+
+    public function deactive($id){
+        $record=Product::findOrFail($id);
+        $record->tax_status=0;
+        $record->save();
+        flash()->success(' المستخدم غير مفعل');
         return redirect()->route('product.index');
     }
 }

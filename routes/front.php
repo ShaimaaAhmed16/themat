@@ -1,5 +1,12 @@
 <?php
 
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){
+
+
     Route::get('register', 'AuthController@viewRegister')->name('register.client');
     Route::post('register', 'AuthController@register')->name('register.client');
 
@@ -40,12 +47,12 @@
         Route::group(['middleware'=>['IsActive']],function () {
             Route::get('details/product/{id}', 'MainController@detailsProduct')->name('details');
             Route::get('cart', 'CartController@index')->name('cart');
-            Route::post('add-cart', 'CartController@store');
+            Route::get('add-cart', 'CartController@store');
             Route::get('update-quantity/{product}', 'CartController@update');
             Route::get('empty', 'CartController@empty')->name('empty');
-            Route::delete('remove/{product}', 'CartController@destroy');
+            Route::get('remove/{product}', 'CartController@destroy');
             Route::get('profile-client/{id}', 'AuthController@viewProfile')->name('profile.client');
-            Route::post('profile-update/{id}', 'AuthController@profile')->name('profile');
+            Route::get('profile-update/{id}', 'AuthController@profile')->name('profile');
             Route::get('myacount', 'AuthController@myAccount')->name('myacount');
 
             Route::get('map', 'MainController@viewMap')->name('map');
@@ -59,3 +66,4 @@
         });
     });
 
+});

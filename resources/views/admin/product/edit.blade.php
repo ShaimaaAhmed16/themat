@@ -58,13 +58,17 @@
                     <label for="price">سعر المنتج</label>
                     <input type="text" name="price" id="price" class="form-control text-right" value="{{ isset($model) ? $model->price : '' }}">
                 </div>
+                    <div class="form-group">
+                        <label for="tax_price">القيمه المضافه لهذا المنتج</label>
+                        <input type="text" name="tax_price" id="tax_price" class="form-control text-right" value="{{ isset($model) ? $model->tax_price : '' }}">
+                    </div>
 
                 <div class="form-group">
                     <label for="price">اختار القسم</label>
                     <select class="form-control text-right" name="category_id">
                         <option>اختار القسم</option>
                         @foreach ($categories as $category)
-                            <option value="{{$category ->getTranslation('ar')->category_id}}">{{$category ->getTranslation('ar')->name}}</option>
+                            <option value="{{$category ->getTranslation('ar')->category_id}}" {{ $category ->getTranslation('ar')->category_id === $model->category_id ? ' selected' : '' }} >{{$category ->getTranslation('ar')->name}}</option>
                         @endforeach
                     </select>
                 </div>

@@ -1,6 +1,6 @@
 @extends('front.app')
 @section('title')
-    من نحن
+    {{trans('lang.about')}}
 @endsection
 <header class="header fixed-top bg-light-green">
     <div class="container pt-2 ">
@@ -11,7 +11,7 @@
                 </a>
             </div>
             <div class="col-7 d-flex justify-content-between">
-                <h4 class="text-right text-white">من نحن</h4>
+                <h4 class="text-right text-white">{{trans('lang.about')}}</h4>
                 <a href="{{route('index')}}">
                     <i class="fas fa-chevron-left text-white"></i>
                 </a>
@@ -26,12 +26,12 @@
         @if(count($abouts) >0)
             @foreach ($abouts as $about)
                 @if($about->getTranslation('ar')->name =='من نحن')
-                    <p>{{$about->getTranslation('ar')->text}}</p>
+                    <p>{{$about->getTranslation()->text}}</p>
                 @endif
             @endforeach
         @else
         <div class="alert alert-danger" role="alert">
-            لا يوجد بيانات
+            {{trans('lang.There_are_no_data')}}
         </div>
     @endif
     </section>

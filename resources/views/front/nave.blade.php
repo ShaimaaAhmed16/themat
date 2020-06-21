@@ -8,7 +8,7 @@
                     <img src="{{asset('public/front/images/menu.png')}}" width="20" alt="">
                 </div>
 
-                الرئيسية
+                {{trans('lang.home')}}
             </a>
         </div>
         <div class="nav-item nav-link col-3">
@@ -18,7 +18,7 @@
                     <img src="{{asset('public/front/images/bar-2.png')}}" width="20" alt="">
                 </div>
 
-                منتجاتنا
+                {{trans('lang.our_products')}}
             </a>
 
         </div>
@@ -29,7 +29,7 @@
                     <img src="{{asset('public/front/images/menu.png')}}" width="20" alt="">
                 </div>
 
-                الرئيسية
+                {{trans('lang.home')}}
             </a>
 
 
@@ -43,7 +43,7 @@
                     <img src="{{asset('public/front/images/bar-2.png')}}" width="20" alt="">
                 </div>
 
-                منتجاتنا
+                {{trans('lang.our_products')}}
             </a>
         </div>
     @endif
@@ -57,7 +57,7 @@
                         <i class="fas fa-shopping-basket text-dark"></i>
 
                 </div>
-                سلة الشراء
+                {{trans('lang.your_cart')}}
             </a>
         @else
             <a href="{{route('login.client')}}" class="text-dark" data-toggle="modal" data-target="#exampleModal6">
@@ -68,7 +68,7 @@
 
                 </div>
 
-                سلة الشراء
+                {{trans('lang.your_cart')}}
 
             </a>
 
@@ -83,7 +83,7 @@
                     <i class="far fa-user-circle text-dark"></i>
                 </div>
 
-                حسابى
+                {{trans('lang.account')}}
 
             </a>
         @else
@@ -91,7 +91,7 @@
                 <div>
                     <i class="far fa-user-circle text-dark"></i>
                 </div>
-                حسابى
+                {{trans('lang.account')}}
 
             </a>
 

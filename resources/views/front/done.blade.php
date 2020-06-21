@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{asset('public/front/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/front/css/hover.css')}}">
     <link rel="stylesheet" href="{{asset('public/front/css/app.css')}}">
-    <title>تم ارسال الطلب</title>
+    <title>{{trans('lang.request_sent')}}</title>
 </head>
 <body>
 
@@ -19,9 +19,9 @@
             </div>
             <div class="clearfix"></div>
             <div class="col-12 text-center mt-3">
-                <h2>تم ارسال الطلب</h2>
-                <p>الطلب في حاله الانتظار ويتم الدفع عند الاستلام</p>
-                <a href="{{route('myorder')}}" class="btn btn-block text-white bg-light-green mb-1"> صفحه طلباتي </a>
+                <h2>{{trans('lang.request_sent')}}</h2>
+                <p>{{trans('lang.The_request')}}</p>
+                <a href="{{route('myorder')}}" class="btn btn-block text-white bg-light-green mb-1"> {{trans('lang.my_requests_page')}}</a>
 
             </div>
 

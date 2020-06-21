@@ -1,5 +1,7 @@
 @extends('front.app')
-@section('title', 'الثمار الوطنية')
+@section('title')
+    {{trans('lang.national_fruits')}}
+    @endsection
 
 @section('content')
     <header class="header fixed-top bg-light-green">
@@ -12,7 +14,7 @@
                 </div>
                 <div class="col-8">
                     <h4 class="text-right text-white" style="margin: 0 10%;">
-                        الثمار الوطنية
+                        {{trans('lang.national_fruits')}}
                     </h4>
                 </div>
                 @include('front.header')
@@ -20,7 +22,7 @@
         </div>
     </header>
     <div class="container mt-5 pt-3 mb-3">
-        <p class="text-right"><b>العنوان : </b></p>
+        <p class="text-right"><b>{{trans('lang.address')}} : </b></p>
     </div>
 
     <section class="map">
@@ -44,23 +46,23 @@
         <form class="text-right" method="post" action="{{route('map')}}">
             @csrf
             <div class="form-group">
-                <label> العنوان بالتفصيل: </label>
-                <input type="text" class="form-control" name="address_details" placeholder="العنوان بالتفصيل"/>
+                <label> {{trans('lang.Detailed_address')}}: </label>
+                <input type="text" class="form-control" name="address_details" placeholder="{{trans('lang.Detailed_address')}}"/>
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1"> معلم قريب : </label>
-                <input type="text" class="form-control" name="nearby" placeholder="معلم قريب"/>
+                <label for="exampleInputEmail1">{{trans('lang.nearby_teacher')}} : </label>
+                <input type="text" class="form-control" name="nearby" placeholder="{{trans('lang.nearby_teacher')}}"/>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1"
-                ><span class="text-danger">*</span> رقم جوال اضافى للتواصل مع
-                    المندوب
+                ><span class="text-danger">*</span>
+                    {{trans('lang.additional_mobile')}}
                 </label>
-                <input type="tel" class="form-control" name="additional_mobile" required  placeholder="رقم الجوال"/>
+                <input type="tel" class="form-control" name="additional_mobile" required  placeholder="{{trans('lang.phone')}}"/>
             </div>
 
             <div class="text-center">
-                <button type="submit" class="btn btn-success">اعتماد الطلب</button>
+                <button type="submit" class="btn btn-success">{{trans('lang.Approval_of_the_request')}}</button>
             </div>
         </form>
     </section>

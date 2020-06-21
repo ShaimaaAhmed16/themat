@@ -19,41 +19,45 @@ class MainController extends Controller
         return view('front.home-client');
     }
 
-//    public function productPransh(){
-//        return view('front.product-pransh');
-//    }
-
 
     public function index(Request $request){
-//        dd(Auth::guard('client-web')->user());
-//        foreach (Cart::content() as $item){
-//            return $item;
-//
-//        }
-//            $quantity = Product::where('id',$item->id);
-//        }
-//        return Cart::content()->id;
-
-        $categories =Category::all();
         $rows = Product::where(function ($query) use ($request) {
             if ($request->name) {
-                $query->where('name', 'like', '%'.$request->name.'%');
+                $query->whereTranslationLike('name', '%'.$request->name.'%');
             }
             elseif ($request->category_id) {
                 $query->where('category_id', $request->category_id);
             }
-
-
         })->get();
+
+        $categories =Category::all();
+        if(request()->sort == 'low_high') {
+            $rows = Product::orderBy('price')->get();
+        } elseif (request()->sort == 'high_low') {
+            $rows = Product::orderBy('price', 'desc')->get();
+        }
+        elseif (request()->sort == 'num_of_views') {
+            $rows = Product::orderBy('num_of_views', 'desc')->get();
+        }
+
+        elseif (request()->sort == 'num_of_orders') {
+            $rows = Order::orderBy('num_of_orders', 'desc')->get();
+            if ($rows){
+                flash()->success('لايوجد بيانات');
+                return back();
+            }
+        }
+
+
         return view('front.index' ,compact('rows','categories'));
     }
-
 
 
     public function main(Request $request){
         $categories =Category::all();
         $rows = Product::where('name', 'like', '%'.$request->name.'%')->paginate(8);
-        if (request()->sort == 'low_high') {
+//        $rows = Product::where('name', 'like', '%'.$request->name.'%')->paginate(8);
+        if(request()->sort == 'low_high') {
             $rows = Product::orderBy('price')->paginate(8);
         } elseif (request()->sort == 'high_low') {
             $rows = Product::orderBy('price', 'desc')->paginate(8);
@@ -127,7 +131,7 @@ class MainController extends Controller
 //                return $product_qty;
                 }
                 else{
-                    $product_qty = 1 ;
+                    $product_qty = 0 ;
                     return view('front.details',compact('row','rows','product_qty'));
                 }
             }

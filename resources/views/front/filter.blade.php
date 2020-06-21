@@ -1,6 +1,6 @@
 @extends('front.app')
 @section('title')
-    الثمار الوطنية
+    {{trans('lang.national_fruits')}}
 @endsection
 <header class="header fixed-top bg-light-green">
     <div class="container pt-2 ">
@@ -11,7 +11,7 @@
                 </a>
             </div>
             <div class="col-7">
-                <h4 class="text-right text-white">الثمار الوطنية</h4>
+                <h4 class="text-right text-white">{{trans('lang.national_fruits')}}</h4>
             </div>
             @include('front.header')
         </div>
@@ -19,23 +19,27 @@
 
 </header>
 @section('content')
+
 <div class="container text-right mt-5 fillter">
-    <div>
-        <a href="{{ route('main', ['sort'=>' num_of_orders']) }}" class="text-black">الاكثر طلبا</a>
+    <div class="text-center">
+        @include('flash::message')
+    </div> <br>
+    <div >
+        <a href="{{ route('index', ['sort'=>' num_of_orders']) }}" class="text-black">{{trans('lang.the_most_wanted')}}</a>
 
         <hr>
     </div>
     <div>
-        <a  href="{{ route('main', ['sort'=>' num_of_views']) }}" class="text-black">الاعلى مشاهدة</a>
+        <a  href="{{ route('index', ['sort'=>' num_of_views']) }}" class="text-black">{{trans('lang.Most_viewed')}}</a>
         <hr>
     </div>
 
     <div>
-        <a href="{{ route('main', ['sort'=>'high_low']) }}" class="text-black">السعر الاكثر فالاقل</a>
+        <a href="{{ route('index', ['sort'=>'high_low']) }}" class="text-black">{{trans('lang.The_price_is_more_and_less')}}</a>
         <hr>
     </div>
     <div>
-        <a href="{{ route('main', ['sort'=>'low_high']) }}" class="text-black">السعر الاقل فالاكثر</a>
+        <a href="{{ route('index', ['sort'=>'low_high']) }}" class="text-black">{{trans('lang.The_price_is_lower_and_more')}}</a>
         <hr>
     </div>
 

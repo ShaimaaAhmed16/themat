@@ -33,6 +33,10 @@
     <label for="price">سعر المنتج</label>
     <input type="text" name="price" id="price" class="form-control text-right" >
 </div>
+<div class="form-group">
+    <label for="tax_price">القيمه المضافه لهذا المنتج</label>
+    <input type="text" name="tax_price" id="tax_price" class="form-control text-right" >
+</div>
 
 <div class="form-group">
     <label for="price">اختار القسم</label>

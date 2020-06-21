@@ -1,6 +1,6 @@
 @extends('front.app')
 @section('title')
-    تسجيل الدخول إلى حسابك
+   {{trans('lang.login_to_your_account')}}
 @endsection
 <header class="header fixed-top bg-light-green">
     <div class="container pt-2">
@@ -11,7 +11,7 @@
                 </a>
             </div>
             <div class="col-7">
-                <h4 class="text-right text-white">الثمار الوطنية</h4>
+                <h4 class="text-right text-white">{{trans('lang.national_fruits')}}</h4>
             </div>
             @include('front.header')
         </div>
@@ -37,17 +37,17 @@
             <form class="container" method="post" action="{{route('login.client')}}">
                 @csrf
                 <div class="form-group text-right">
-                    <input id="email" type="email" class="form-control" placeholder="البريد الالكترونى" name="email"/>
+                    <input id="email" type="email" class="form-control" placeholder="{{trans('lang.email')}}" name="email"/>
                 </div>
                 <div class="form-group text-right">
-                    <input type="password" id="password"  class="form-control" placeholder="كلمة المرور"  name="password"/>
+                    <input type="password" id="password"  class="form-control" placeholder="{{trans('lang.password')}}"  name="password"/>
                 </div>
                 <div class="text-center">
-                    <button type="submit" id="myBtn" class="btn btn-block text-white bg-light-green mb-1">تسجيل الدخول</button >
-                    <a href="{{route('register.client')}}" type="submit" class="btn btn-block bg-light-green mb-1  text-white ">تسجيل حساب جديد</a>
+                    <button type="submit" id="myBtn" class="btn btn-block text-white bg-light-green mb-1">{{trans('lang.login')}}</button >
+                    <a href="{{route('register.client')}}" type="submit" class="btn btn-block bg-light-green mb-1  text-white ">{{trans('lang.register')}}</a>
                 </div>
-                <a  href="{{route('index')}}" class="btn btn-block text-white bg-light-green mt-2">  الدخول ك زائر</a>
-                <a href="{{route('reset.password')}}"  class="btn btn-block text-white bg-light-green mt-2">استعادة كلمة  المرور</a>
+                <a  href="{{route('index')}}" class="btn btn-block text-white bg-light-green mt-2"> {{trans('lang.login_as_a_visitor')}}</a>
+                <a href="{{route('reset.password')}}"  class="btn btn-block text-white bg-light-green mt-2">{{trans('lang.restore_password')}}</a>
 
             </form>
         </div>
@@ -63,12 +63,12 @@
                     </button>
                 </div>
                 <div class="modal-body text-center">
-                    يجب التسجيل
+                    {{trans('lang.You_must_register')}}
                 </div>
                 <div class="modal-footer">
 
                     <a href="{{route('login.client')}}" class="btn bg-light-green btn-sm btn-block mt-2 myBtn2 text-white hvr-glow" style="border-radius: 20px;">
-                        <small>التسجيل الان</small>
+                        <small>{{trans('lang.register_now')}}</small>
                     </a>
                 </div>
             </div>

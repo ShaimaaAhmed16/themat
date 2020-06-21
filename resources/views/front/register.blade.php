@@ -1,5 +1,7 @@
 @extends('front.app')
-@section('title', 'الثمار الوطنية')
+@section('title')
+    {{trans('lang.national_fruits')}}
+    @endsection
 
 @section('content')
     <header class="header fixed-top bg-light-green">
@@ -11,7 +13,7 @@
                     </a>
                 </div>
                 <div class="col-7">
-                    <h4 class="text-right text-white">الثمار الوطنية</h4>
+                    <h4 class="text-right text-white">{{trans('lang.national_fruits')}}</h4>
                 </div>
                 @include('front.header')
             </div>
@@ -35,28 +37,28 @@
             <form class="container" method="post" action="{{route('register.client')}}">
                 @csrf
                 <div class="form-group text-right">
-                    <input id="name" type="text" class="form-control" placeholder="الاسم الاول" name="first_name" value="{{old('first_name')}}">
+                    <input id="name" type="text" class="form-control" placeholder="{{trans('lang.first_name')}}" name="first_name" value="{{old('first_name')}}">
                 </div>
                 <div class="form-group text-right">
-                    <input id="name" type="text"class="form-control" placeholder="اسم العائلة" name="second_name" value="{{old('second_name')}}">
+                    <input id="name" type="text"class="form-control" placeholder="{{trans('lang.family_name')}}" name="second_name" value="{{old('second_name')}}">
                 </div>
                 <div class="form-group text-right">
-                    <input id="name" type="text"class="form-control" placeholder="الحى"  name="address" value="{{old('address')}}">
+                    <input id="name" type="text"class="form-control" placeholder="{{trans('lang.district')}}"  name="address" value="{{old('address')}}">
                 </div>
                 <div class="form-group text-right">
-                    <input type="email"  id="email1" class="form-control" placeholder="البريد الالكترونى" name="email" value="{{old('email')}}">
+                    <input type="email"  id="email1" class="form-control" placeholder="{{trans('lang.email')}}" name="email" value="{{old('email')}}">
                 </div>
                 <div class="form-group text-right">
-                    <input type="tel" id="phone" class="form-control" placeholder="********9665 رقم الجوال" name="phone" value="{{old('phone')}}">
+                    <input type="tel" id="phone" class="form-control" placeholder="********9665 {{trans('lang.phone')}}" name="phone" value="{{old('phone')}}">
                 </div>
                 <div class="form-group text-right">
-                    <input type="password" id="password1" class="form-control"placeholder="كلمة المرور" name="password">
+                    <input type="password" id="password1" class="form-control"placeholder="{{trans('lang.password')}}" name="password">
                 </div>
                 <div class="form-group text-right">
-                    <input type="password" id="password1" class="form-control"placeholder="إعادة كلمة المرور" name="password_confirmation">
+                    <input type="password" id="password1" class="form-control"placeholder="{{trans('lang.confirm_password')}}" name="password_confirmation">
                 </div>
                 <div class="text-center">
-                    <button type="submit" id="myBtn1" class="btn btn-block text-white bg-light-green mb-1">تسجيل حساب جديد</button>
+                    <button type="submit" id="myBtn1" class="btn btn-block text-white bg-light-green mb-1">{{trans('lang.register')}}</button>
                 </div>
 
             </form>
@@ -73,12 +75,12 @@
                     </button>
                 </div>
                 <div class="modal-body text-center">
-                    يجب التسجيل
+                   {{trans('lang.You_must_register')}}
                 </div>
                 <div class="modal-footer">
 
                     <a href="{{route('login.client')}}" class="btn bg-light-green btn-sm btn-block mt-2 myBtn2 text-white hvr-glow" style="border-radius: 20px;">
-                        <small>التسجيل الان</small>
+                        <small>{{trans('lang.register_now')}}</small>
                     </a>
                 </div>
             </div>

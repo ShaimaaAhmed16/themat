@@ -1,17 +1,19 @@
 @extends('front.app')
 @section('title')
-    الثمار الوطنية
+    {{trans('lang.national_fruits')}}
 @endsection
-<header class="header fixed-top bg-light-green">
+<header class="header fixed-top bg-light-green" >
+{{--<header class="header fixed-top bg-light-green" style="direction: {{ app()->isLocal('ar') ? 'ltr' : 'rtl' }}">--}}
     <div class="container pt-2 ">
         <div class="row">
-            <div class="col-4 text-right">
+            <div class="col-4 text-right" >
                 <a href="#" class="text-white">
+                {{--<a href="#" class="text-white" style="margin-right: {{ app()->isLocal('en') ? '' : '' }}">--}}
                     <i class="fas fa-bars" onclick="openNav()"></i>
                 </a>
             </div>
             <div class="col-8">
-                <h4 class="text-right text-white" style="margin: 0 10%;">الثمار الوطنية</h4>
+                <h4 class="text-right text-white" style="margin: 0 10%;">{{trans('lang.national_fruits')}}</h4>
             </div>
 
             @include('front.header')
@@ -68,7 +70,7 @@
         <div class="row p-2">
             <div class="col-6 text-right">
                 <a href="{{route('filter')}}"><i class="fas fa-filter mr-2"></i>
-                    <span>فلتر</span></a>
+                    <span>{{trans('lang.filter')}}</span></a>
 
             </div>
             <div class="col-6">
@@ -115,11 +117,11 @@
                                             </div>
 
                                             <h6 class="pt-1">{{$row->name}}</h6>
-                                            <small class="text-light-green">1{{$row->price}} ر.س</small>
+                                            <small class="text-light-green">{{$row->price}}{{trans('lang.SR')}}</small>
                                             @if(auth('client-web')->user())
                                                 <div>
                                                     <a href="{{route('details',$row->id)}}" class="btn bg-light-green btn-sm btn-block mt-2 myBtn2 text-white hvr-glow" style="border-radius: 20px;" >
-                                                        <small>شراء الآن</small>
+                                                        <small>{{trans('lang.buy_now')}}</small>
                                                     </a>
 
                                                 </div>
@@ -129,7 +131,7 @@
                                                 <div>
 
                                                     <a href="#" class="btn bg-light-green btn-sm btn-block mt-2 myBtn2 text-white hvr-glow" style="border-radius: 20px;" data-toggle="modal" data-target="#exampleModal6">
-                                                        <small>شراء الآن</small>
+                                                        <small>{{trans('lang.buy_now')}}</small>
                                                     </a>
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -141,12 +143,12 @@
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    يجب التسجيل
+                                                                    {{trans('lang.You_must_register')}}
                                                                 </div>
                                                                 <div class="modal-footer">
 
                                                                     <a href="{{route('login.client')}}" class="btn bg-light-green btn-sm btn-block mt-2 myBtn2 text-white hvr-glow" style="border-radius: 20px;">
-                                                                        <small>التسجيل الان</small>
+                                                                        <small>{{trans('lang.register_now')}}</small>
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -172,7 +174,7 @@
         </div>
     @else
         <div class="alert alert-danger text-center mt-5" role="alert">
-            لا يوجد منتجات بهذا الاسم
+            {{trans('lang.there_are_no_products_with_this_name')}}
         </div>
     @endif
 
