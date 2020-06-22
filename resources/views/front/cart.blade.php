@@ -79,7 +79,7 @@
                             <img src="{{asset('public/'.$item->model->image)}}" alt="" width="50" height="50" class="img-fluid">
                         </div>
 
-                        <h6 class="pt-3 pr-1">{{$item->name}}</h6>
+                        <h6 class="pt-3 pr-1">{{$item->model->name}}</h6>
 
                     </div>
                     <div class="col-6 d-flex justify-content-around">
