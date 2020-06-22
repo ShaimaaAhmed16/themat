@@ -43,7 +43,7 @@ class MainController extends Controller
         elseif (request()->sort == 'num_of_orders') {
             $rows = Order::orderBy('num_of_orders', 'desc')->get();
             if ($rows){
-                flash()->success('لايوجد بيانات');
+                flash()->success(trans('lang.no_data'));
                 return back();
             }
         }
@@ -93,10 +93,10 @@ class MainController extends Controller
             'message'=>'required',
         ];
         $messages=[
-            'name.required'=>'يرجي كتابه الاسم بالكامل',
-            'email.required'=>'يرجي كتابه البريد الالكتروني بطريقه صحيحه',
-            'phone.required'=>'يرجي كتابه رقم الجوال',
-            'message.required'=>'يرجي كتابه الرساله ',
+            'name.required'=>trans('lang.full_name'),
+            'email.required'=>trans('lang.email_correctly'),
+            'phone.required'=>trans('lang.write_mobile'),
+            'message.required'=>trans('lang.write_message'),
         ];
         $this->validate($request,$rules,$messages);
         $user = Contact::create([
@@ -165,9 +165,9 @@ class MainController extends Controller
             'additional_mobile'=>'required',
         ];
         $messages=[
-            'address_details.required'=>'يرجي كتابه العنوان بالتفصيل',
-            'nearby.required'=>'يرجي كتابه مكان قريب منك',
-            'additional_mobile.required'=>'يرجي كتابه رقم الجوال اخر للتواصل مع المندوب',
+            'address_details.required'=>trans('lang.title_detail'),
+            'nearby.required'=>trans('lang.write_near'),
+            'additional_mobile.required'=>trans('lang.another_mobile'),
         ];
         $this->validate($request,$rules,$messages);
         $user=$request->user('client-web');
@@ -182,7 +182,7 @@ class MainController extends Controller
 //            return back();
 
         }else{
-            flash()->error('يوجد بيانات خطأ يرجي المحاوله مره اخري');
+            flash()->error(trans('lang.Please_try'));
             return back();
         }
     }

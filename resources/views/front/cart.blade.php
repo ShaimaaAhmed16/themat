@@ -94,12 +94,20 @@
                         </form>
                     </div>
                     <div class="col-12">
-                        <form action="{{url('update-quantity/'.$item->rowId)}}" method="get" class="box mt-3">
-                            @csrf
-                            {{ method_field('patch') }}
-                            <input type="number" value="{{$item->qty}}" min="1" name="quantity">
-                            <button type="submit" class="border-0" style="background-color: transparent;"><i class="fas fa-pencil-alt"></i></button>
+                       @if($item->model->getTranslation('ar')->wight == 'كيلو' )
+                            <p>{{trans('lang.quantity_product')}}{{$item->qty}} {{trans('lang.kilo')}}</p>
+                          <a href="{{route('details',$item->model->id)}}" class="border-0" style="background-color: transparent; color: #4e555b">{{trans('lang.quantity_change')}} <i class="fas fa-pencil-alt"></i></a>
                         </form>
+                        @else
+                            <form action="{{url('update-quantity/'.$item->rowId)}}" method="get" class="box mt-3">
+                                @csrf
+                                {{ method_field('patch') }}
+                                <input type="number" value="{{$item->qty}}" min="1" name="quantity">
+                                <button type="submit" class="border-0" style="background-color: transparent;"><i class="fas fa-pencil-alt"></i></button>
+                            </form>
+                        @endif
+
+
                     </div>
 
                 </div>

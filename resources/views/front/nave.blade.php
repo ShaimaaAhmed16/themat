@@ -1,4 +1,4 @@
-<nav class="navbar fixed-bottom text-center row bg-gray">
+<nav class="navbar fixed-bottom text-center row bg-gray" >
 
     @if(auth()->guard('client-web')->check())
         <div class="nav-item nav-link col-3">

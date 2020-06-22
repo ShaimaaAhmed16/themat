@@ -33,16 +33,16 @@ class CartController extends Controller
     {
         if(($request->qty)&&($request->qty1)){
             Cart::add($request->id, $request->name,$request->qty+$request->qty1/1000, $request->price, 550 )->associate('App\Models\Product');
-            return redirect()->route('index')->with('success_message','تم الاضافه الي السله');
+            return redirect()->route('index')->with('success_message',trans('lang.Added_basket'));
 
         }
         if($request->qty){
         Cart::add($request->id, $request->name,$request->qty, $request->price, 550 )->associate('App\Models\Product');
-        return redirect()->route('index')->with('success_message','تم الاضافه الي السله');
+        return redirect()->route('index')->with('success_message',trans('lang.Added_basket'));
         }
         if($request->qty1){
             Cart::add($request->id, $request->name,$request->qty1/1000, $request->price, 550 )->associate('App\Models\Product');
-            return redirect()->route('index')->with('success_message','تم الاضافه الي السله');
+            return redirect()->route('index')->with('success_message',trans('lang.Added_basket'));
 
         }
 
@@ -101,6 +101,6 @@ class CartController extends Controller
     public function destroy($id)
     {
         Cart::remove($id);
-        return back()->with('success_message','تم الحذف');
+        return back()->with('success_message',trans('lang.deletion_successful'));
     }
 }

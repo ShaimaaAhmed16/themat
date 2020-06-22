@@ -40,16 +40,16 @@ class AuthController extends Controller
                 return redirect()->route('index');
             }
 
-            return back()->with('error', 'عفوا كود التفعيل غير صحيح');
+            return back()->with('error', trans('lang.activation_code'));
         }
 
         $code = rand('1111','9999');
 
         $user->update(['pin_code' => $code]);
 
-        curl_send_jawalsms_message($user->phone, "كود التفعيل الخاص بك هو $code");
+        curl_send_jawalsms_message($user->phone, trans('lang.Your_activation').$code);
 
-        return back()->with('success', 'تم إرسال الكود بنجاح');
+        return back()->with('success', trans('lang.code_successfully'));
     }
 
     public function register(Request $request){
@@ -62,12 +62,12 @@ class AuthController extends Controller
             'phone'=>['required',new StartWritePhone],
         ];
         $messages=[
-            'first_name.required'=>'يرجي كتابه الاسم الاول',
-            'second_name.required'=>'يرجي كتابه اسم العائله',
-            'address.required'=>'يرجي كتابه اسم الحي',
-            'email.required'=>'يرجي كتابه البريد الالكتروني بطريقه صحيحه',
-            'password.required'=>'يرجي كتابه كلمه السر لاتقل عن 6احرف',
-            'phone.required'=>'يرجي كتابه رقم الجوال********9665',
+            'first_name.required'=>trans('lang.first_name'),
+            'second_name.required'=>trans('lang.family_name'),
+            'address.required'=>trans('lang.neighborhood'),
+            'email.required'=>trans('lang.email_correctly'),
+            'password.required'=>trans('lang.write_password'),
+            'phone.required'=>trans('lang.mobile_number'),
         ];
 
         $this->validate($request,$rules,$messages);
@@ -86,18 +86,18 @@ class AuthController extends Controller
         ]);
         $user->save();
         if ($user){
-            $send = curl_send_jawalsms_message($request->phone, "كود التفعيل الخاص بك هو $code");
+            $send = curl_send_jawalsms_message($request->phone, trans('lang.Your_activation').$code);
            if ($send){
                 auth('client-web')->login($user);
                 return redirect()->route('activation-page');
            }
            else{
-               flash()->error('يوجد كتابه رقم الجوال بطريقه صحيحه ********9665');
+               flash()->error(trans('lang.mobile_number'));
                return back();
            }
         }
         else{
-            flash()->error('يوجد خطا في البيانات');
+            flash()->error(trans('lang.error_data'));
             return back();
         }
     }
@@ -111,8 +111,8 @@ class AuthController extends Controller
             'password' => 'required',
         ];
         $messages=[
-            'email.required'=>'يرجي كتابه البريد الالكتروني بطريقه صحيحه',
-            'password.required'=>'يرجي كتابه كلمه السر الخاصه بك',
+            'email.required'=>trans('lang.email_correctly'),
+            'password.required'=>trans('lang.your_password'),
         ];
         $this->validate($request,$rules,$messages);
         $client = Client::where('email', $request->input('email'))->first();
@@ -120,11 +120,11 @@ class AuthController extends Controller
             if (Auth::guard('client-web')->attempt($request->only('email', 'password'))) {
                 return redirect()->route('index');
             } else {
-                flash()->error('يوجد خطا في الباسورد او الايميل');
+                flash()->error(trans('lang.error_password'));
                 return back();
             }
         }
-        flash()->error('يوجد خطا في الباسورد او الايميل');
+        flash()->error(trans('lang.error_email'));
         return back();
     }
 
@@ -138,7 +138,7 @@ class AuthController extends Controller
             'phone'    => 'required',
         ];
         $messages=[
-            'phone.required'=>'يرجي كتابه رقم الجوال بطريقه صحيحه',
+            'phone.required'=>trans('lang.mobile_number'),
         ];
         $this->validate($request,$rules,$messages);
 
@@ -149,18 +149,18 @@ class AuthController extends Controller
             $update = $send->update(['pin_code' => $code]);
             if ($update) {
                 //send sms
-                curl_send_jawalsms_message($request->phone, "كود إعادة تعين كلمة المرور الخاص بك هو $code");
+                curl_send_jawalsms_message($request->phone,  trans('lang.password_reset').$code);
 //                Mail::to($send->email)
 //                    ->bcc('fruit@gmail.com')
 //                    ->send(new ReaetPassword($code));
-                flash()->message('تم إرسال الكود بنجاح - برجاء فحص الموبايل');
+                flash()->message(trans('lang.check_mobile'));
 
                 return  redirect()->route('checkCode', ['phone' => $request->phone]);
             } else {
-                return back()->with('message','حاول مره اخري');
+                return back()->with('message',trans('lang.Try_again'));
             }
         } else {
-            return back()->with('message','حاول مره اخري');
+            return back()->with('message',trans('lang.Try_again'));
         }
     }
 
@@ -180,12 +180,12 @@ class AuthController extends Controller
                 return redirect()->route('newPassword');
             }
             else{
-                flash()->message('حدث خطا, حاول مره اخري');
+                flash()->message(trans('lang.error_occurred'));
                 return back();
             }
         }
         else{
-            flash()->message('هذا الكود غير صحيح');
+            flash()->message(trans('lang.code_incorrect'));
             return back();
         }
 
@@ -196,17 +196,17 @@ class AuthController extends Controller
             'password'=>'required|confirmed',
         ];
         $messages=[
-            'password.required'=>'يرجي كتابه كلمه السر',
+            'password.required'=>trans('lang.write_password'),
         ];
         $this->validate($request,$rules,$messages);
 
         $user = Client::update(bcrypt($request->password));
         if($user->save()){
-            flash()->message('تم تغيير كلمه السر بنجاح');
+            flash()->message(trans('lang.Password_changed'));
             return redirect()->route('login.client');
         }
         else{
-            flash()->message('لم يتم كتابه كلمه السر بشكل صحيح');
+            flash()->message(trans('lang.write_password'));
             return back();
         }
     }
@@ -260,11 +260,11 @@ class AuthController extends Controller
         }
         $user->save();
         if($user){
-            flash()->success('تم تعديل البيانات الشخصيه بنجاح');
+            flash()->success(trans('lang.modified_successfully'));
             return redirect()->route('index');
         }
         else{
-            flash()->error('يوجد خطا في البيانات');
+            flash()->error(trans('lang.error_data'));
             return back();
         }
     }
@@ -275,44 +275,7 @@ class AuthController extends Controller
         return view('front.myaccount',compact('row','orders'));
     }
 
-//    public function redirectToProvider($provider)
-//    {
-//        return Socialite::driver($provider)->redirect();
-//    }
-//
-//    public function handleProviderCallback($provider)
-//    {
-//        try
-//        {
-//            $socialUser = Socialite::driver($provider)->user();
-//        }
-//        catch(\Exception $e)
-//        {
-//            return redirect()->route('register');
-//        }
-//        //check if we have logged provider
-//        $socialProvider = Social::where('provider_id',$socialUser->getId())->first();
-//        if(!$socialProvider)
-//        {
-//            //create a new user and provider
-//            $user = Client::firstOrCreate(
-//                ['email' => $socialUser->getEmail()],
-//                ['name' => $socialUser->getName()]
-//            );
-//
-//            $user->socialProviders()->create(
-//                ['provider_id' => $socialUser->getId(), 'provider' => $provider]
-//            );
-//
-//        }
-//        else
-//            $user = $socialProvider->user;
-//
-//        auth()->guard('client-web')->login($user);
-//
-//        return redirect()->route('index');
-//
-//    }
+
 
 
     public function logout()

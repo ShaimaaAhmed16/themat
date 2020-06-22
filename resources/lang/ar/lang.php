@@ -55,9 +55,12 @@ return[
     'number_of_products'=> 'عدد المنتجات',
     'empty_the_basket'=> 'إفراغ السلة',
     'are_you_sure'=> 'هل أنت متأكد',
+    'quantity_product'=> 'كميه المنتج:',
     'Cancellation'=> 'إلغاء',
     'Certain'=> 'متأكد',
     'wight'=> 'الوزن',
+    'kilo'=> 'كيلو',
+    'quantity_change'=> 'تعديل الكميه',
     'the_value_added_of_this_product'=> 'القيمه المضافه لهذا المنتج',
     'The_total_price_of_the_products'=> 'السعر الكلي المنتجات',
     'value_added'=> 'القيمة المضافة',
@@ -118,5 +121,42 @@ return[
         'The_receipt_of_the_request'=> 'تم استلام الطلب',
         'The_request_has_been_activated'=> 'تم تفعيل الطلب',
         'The_request_is_on_hold'=> 'الطلب في حاله الانتظار ',
+
+    //auth controller
+    'activation_code' => 'عفوا كود التفعيل غير صحيح',
+    'Your_activation' => 'كود التفعيل الخاص بك هو ',
+    'code_successfully' => 'تم إرسال الكود بنجاح ',
+    'first_name' => 'يرجي كتابه الاسم الاول',
+    'family_name' => 'يرجي كتابه اسم العائله',
+    'neighborhood' => 'يرجي كتابه اسم الحي',
+    'email_correctly' => 'يرجي كتابه البريد الالكتروني بطريقه صحيحه',
+    'write_password' => 'يرجي كتابه كلمه السر لاتقل عن 6احرف',
+    'mobile_number' => 'يرجي كتابه رقم الجوال********9665',
+    'error_data' => 'يوجد خطا في البيانات',
+    'your_password' => 'يرجي كتابه كلمه السر الخاصه بك',
+    'error_password' => 'يوجد خطا في كلمه المرور',
+    'error_email' => 'يوجد خطا في الايميل',
+    'password_reset' => 'كود إعادة تعين كلمة المرور الخاص بك هو',
+    'check_mobile' => 'تم إرسال الكود بنجاح - برجاء فحص الموبايل',
+    'Try_again' => 'حاول مره اخري',
+    'error_occurred' => 'حدث خطا, حاول مره اخري',
+    'code_incorrect' => 'هذا الكود غير صحيح',
+    'Password_changed' => 'تم تغيير كلمه السر بنجاح',
+    'modified_successfully' => 'تم تعديل البيانات الشخصيه بنجاح',
+
+
+    //cart controller
+    'Added_basket'=> 'تم الاضافه الي السله',
+    'deletion_successful'=> 'تم الحذف بنجاح',
+
+    //main controller
+    'no_data'=> 'لا يوجد بيانات',
+    'full_name'=> 'يرجي كتابه الاسم بالكامل',
+    'write_mobile'=> 'يرجي كتابه رقم الجوال',
+    'write_message'=> 'يرجي كتابه الرساله ',
+    'title_detail'=> 'يرجي كتابه العنوان بالتفصيل',
+    'write_near'=> 'يرجي كتابه مكان قريب منك',
+    'another_mobile'=> 'يرجي كتابه رقم الجوال اخر للتواصل مع المندوب',
+    'Please_try'=> 'يوجد بيانات خطأ يرجي المحاوله مره اخري',
 
 ];
