@@ -22,7 +22,7 @@
 
 </header>
 @section('content')
-    <section class="container text-right mt-5 about">
+    <section class="container {{app()->isLocale('ar')?'text-right':'text-left' }} mt-5 about">
         @if(count($abouts) >0)
             @foreach ($abouts as $about)
                 @if($about->getTranslation('ar')->name =='من نحن')

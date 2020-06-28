@@ -11,7 +11,7 @@
                 </a>
             </div>
             <div class="col-8 d-flex justify-content-between">
-                <h4 class="text-white">{{trans('lang.shopping_basket')}}</h4>
+                <h4 class="text-white  text-center">{{trans('lang.shopping_basket')}}</h4>
                 <a href="{{route('index')}}">
                     <i class="fas fa-chevron-left text-white"></i>
                 </a>
@@ -113,32 +113,32 @@
                 </div>
                 <hr>
                 <div class="row">
-                    <div class="col-4 mb-1">
+                    <div class="col-6 mb-1 {{app()->isLocale('ar')?'text-right':'text-left' }}">
                         <i class="fas fa-weight ml-1 mr-2"></i>
                         <span>
                             {{trans('lang.wight')}} :  {{$item->model->wight}}
                         </span>
                     </div>
-                    <div class="col-4">
+                    <div class="col-6 {{app()->isLocale('en')?'text-right':'' }}">
                         <span>
                             {{trans('lang.price')}} : {{$item->price}} {{trans('lang.SR')}}
                         </span>
 
                     </div>
-                    <div class="col-4">
-                        <span>
-                            {{trans('lang.the_value_added_of_this_product')}} : {{$item->model->tax_price?$item->model->tax_price/100:0}}
-                        </span>
-                    </div>
+                    {{--<div class="col-4">--}}
+                        {{--<span>--}}
+                            {{--{{trans('lang.the_value_added_of_this_product')}} : {{$item->model->tax_price?$item->model->tax_price/100:0}}--}}
+                        {{--</span>--}}
+                    {{--</div>--}}
                 </div>
             </div>
                 @endforeach
         </section>
 
-        <section class="jumbotron p-2 m-4">
+        <section class="jumbotron p-2 mt-4">
                 <div class="d-flex justify-content-between">
-                    <h6>{{trans('lang.The_total_price_of_the_products')}}</h6>
-                    <h6>{{Cart::subtotal()}}</h6>
+                    <h6  class="{{app()->isLocale('ar')?'text-right':'text-left ml-5' }}" >{{trans('lang.The_total_price_of_the_products')}}</h6>
+                    <h6 class="{{app()->isLocale('ar')?'text-left':'text-right' }}">{{Cart::subtotal()}}</h6>
                 </div>
                 <div class="d-flex justify-content-between">
                     <h6>{{trans('lang.value_added')}}</h6>

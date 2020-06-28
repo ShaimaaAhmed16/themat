@@ -3,7 +3,8 @@
     {{trans('lang.national_fruits')}}
 @endsection
 <header class="header fixed-top bg-light-green" >
-{{--<header class="header fixed-top bg-light-green" style="direction: {{ app()->isLocal('ar') ? 'ltr' : 'rtl' }}">--}}
+{{--<header class="header fixed-top bg-light-green" style="direction: {{app()->isLocale('ar')?'rtl':'ltr' }}">--}}
+   {{--{{dd(app()->isLocale('ar'))}}--}}
     <div class="container pt-2 ">
         <div class="row">
             <div class="col-4 text-right" >
@@ -13,7 +14,7 @@
                 </a>
             </div>
             <div class="col-8">
-                <h4 class="text-right text-white" style="margin: 0 10%;">{{trans('lang.national_fruits')}}</h4>
+                <h4 class="{{app()->isLocale('ar')?'text-right':'text-left' }} text-white" style="margin: 0 5%;">{{trans('lang.national_fruits')}}</h4>
             </div>
 
             @include('front.header')
@@ -36,7 +37,7 @@
                     {!! Form::close() !!}
                 </div>
             </div>
-            <ul class="nav nav-pills justify-content-around mt-2 pr-0" id="pills-tab" role="tablist">
+            <ul class="nav nav-pills justify-content-around mt-2 pr-0" id="pills-tab" role="tablist" style="direction: {{app()->isLocale('ar')?'rtl':'ltr' }} ">
                 {{--@if($category_first)--}}
                 {{--<li class="nav-item text-center" role="presentation">--}}
                 {{--<a  href="index?category_id={{$category_first->id}}" class="nav-link active text-white"   role="tab" aria-controls="pills-fruits" aria-selected="false">--}}
@@ -67,13 +68,15 @@
         @include('flash::message')
     </div>
     <section class="container mt-2 filter card">
-        <div class="row p-2">
-            <div class="col-6 text-right">
-                <a href="{{route('filter')}}"><i class="fas fa-filter mr-2"></i>
+        <div class="row p-2" style="direction: {{app()->isLocale('ar')?'rtl':'ltr' }} ">
+            <div class="col-6 {{app()->isLocale('ar')?'text-right':'text-left' }}" >
+
+                {{--style="direction: {{app()->isLocale('ar')?'rtl':'ltr' }};float:{{app()->isLocale('en')?'right':'' }} "--}}
+                <a href="{{route('filter')}}"><i class="fas fa-filter mr-2" ></i>
                     <span>{{trans('lang.filter')}}</span></a>
 
             </div>
-            <div class="col-6">
+            <div class="col-6 {{app()->isLocale('en')?'text-right':'' }}">
                 {{--<a href="{{route('main')}}"><i class="fas fa-th-large mr-2"></i></a>--}}
                 <a href="{{route('index')}}"><i class="fas fa-th-list text-light-green"></i></a>
 
@@ -93,7 +96,7 @@
                         <div class="row">
                             @foreach($rows as $row)
                                 <div class="col-6 mb-3">
-                                    <div class="card text-center" style="height: 220px;">
+                                    <div class="card text-center" style="height:{{app()->isLocale('ar')?'220px':'240px' }}" >
                                         <div style="position: relative;">
                                             <img src="{{asset('public/'.$row->image)}}" class="img-fluid" alt=""style="width:100%;height:100px">
                                             <div style="position: absolute;top: 5px;left: 5px;">

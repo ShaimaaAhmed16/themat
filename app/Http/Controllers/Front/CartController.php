@@ -31,19 +31,30 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        if(($request->qty)&&($request->qty1)){
-            Cart::add($request->id, $request->name,$request->qty+$request->qty1/1000, $request->price, 550 )->associate('App\Models\Product');
-            return redirect()->route('index')->with('success_message',trans('lang.Added_basket'));
+        if ($request->qty ==0){
+            if($request->qty1){
+                Cart::add($request->id, $request->name,$request->qty1/1000, $request->price, 550 )->associate('App\Models\Product');
+                return redirect()->route('index')->with('success_message',trans('lang.Added_basket'));
 
+            }
+            flash()->error(trans('lang.choose_weight'));
+            return back();
         }
-        if($request->qty){
-        Cart::add($request->id, $request->name,$request->qty, $request->price, 550 )->associate('App\Models\Product');
-        return redirect()->route('index')->with('success_message',trans('lang.Added_basket'));
-        }
-        if($request->qty1){
-            Cart::add($request->id, $request->name,$request->qty1/1000, $request->price, 550 )->associate('App\Models\Product');
-            return redirect()->route('index')->with('success_message',trans('lang.Added_basket'));
+        else{
+            if(($request->qty)&&($request->qty1)){
+                Cart::add($request->id, $request->name,$request->qty+$request->qty1/1000, $request->price, 550 )->associate('App\Models\Product');
+                return redirect()->route('index')->with('success_message',trans('lang.Added_basket'));
 
+            }
+            if($request->qty){
+                Cart::add($request->id, $request->name,$request->qty, $request->price, 550 )->associate('App\Models\Product');
+                return redirect()->route('index')->with('success_message',trans('lang.Added_basket'));
+            }
+            if($request->qty1){
+                Cart::add($request->id, $request->name,$request->qty1/1000, $request->price, 550 )->associate('App\Models\Product');
+                return redirect()->route('index')->with('success_message',trans('lang.Added_basket'));
+
+            }
         }
 
     }

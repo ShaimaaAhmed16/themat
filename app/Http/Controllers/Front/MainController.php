@@ -178,7 +178,8 @@ class MainController extends Controller
 
         ]);
         if ($user){
-            return redirect()->route('addorder');
+            return redirect()->route('payment');
+//
 //            return back();
 
         }else{
@@ -187,7 +188,7 @@ class MainController extends Controller
         }
     }
 
-
+//return redirect()->route('addorder');
 
     public function myOrder(){
         $orders = Order::all();
@@ -219,6 +220,7 @@ class MainController extends Controller
     public function done(){
         return view('front.done');
     }
+
 
 
 }

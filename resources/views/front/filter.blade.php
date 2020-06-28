@@ -20,7 +20,7 @@
 </header>
 @section('content')
 
-<div class="container text-right mt-5 fillter">
+<div class="container mt-5 fillter {{app()->isLocale('ar')?'text-right':'text-left' }}" >
     <div class="text-center">
         @include('flash::message')
     </div> <br>

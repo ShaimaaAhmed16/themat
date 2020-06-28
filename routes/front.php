@@ -40,6 +40,8 @@ Route::group(
 
 
 
+
+
     Route::group(['middleware'=>'client-web'],function () {
         Route::get('filter', 'MainController@viewFilter')->name('filter');
 
@@ -57,6 +59,8 @@ Route::group(
 
             Route::get('map', 'MainController@viewMap')->name('map');
             Route::post('map', 'MainController@map')->name('map');
+
+            Route::get('payment', 'PaymentController@payment')->name('payment');
 
             Route::get('done', 'MainController@done')->name('done');
 

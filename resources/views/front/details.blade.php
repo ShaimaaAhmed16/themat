@@ -31,7 +31,9 @@
         </div>
 
     </div>
-
+    <div class="text-center">
+        @include('flash::message')
+    </div>
     <div class="container mt-2 buy">
         <div class="row">
 
@@ -48,24 +50,24 @@
                     <input type="hidden" name="name" value="{{$row->name}}">
                     <input type="hidden" name="price" value="{{$row->price}}">
                     {{--@if (Cart::count() > 0)--}}
-                        <input type="number" value="0" min="0" name="qty">
-                        {{--<input type="number" value="{{$product_qty?$product_qty:0}}" min="0" name="qty">--}}
+                    <input type="number" value="0" min="0" name="qty">
+                    {{--<input type="number" value="{{$product_qty?$product_qty:0}}" min="0" name="qty">--}}
                     {{--@else--}}
-                        {{--<input type="number" value="0" min="0" name="qty">--}}
+                    {{--<input type="number" value="0" min="0" name="qty">--}}
                     {{--@endif--}}
-                {{--</form>--}}
+                    {{--</form>--}}
 
-                {{--<form>--}}<br>
+                    {{--<form>--}}<br>
                     <br>
                     @if($row->getTranslation('ar')->wight == 'كيلو')
-                    <i class="fas fa-weight" style="font-size: 13px"></i>
-                    <small>{{trans('lang.weight_in_grams')}}:</small>
-                    <div class="input-group input-group-sm mt-2 mb-3">
-                        <input type="text" class="form-control" name="qty1">
-                        {{--<div class="input-group-prepend">--}}
+                        <i class="fas fa-weight" style="font-size: 13px"></i>
+                        <small>{{trans('lang.weight_in_grams')}}:</small>
+                        <div class="input-group input-group-sm mt-2 mb-3">
+                            <input type="text" class="form-control" name="qty1">
+                            {{--<div class="input-group-prepend">--}}
                             {{--<button class="btn btn-sm">تاكيد</button>--}}
-                        {{--</div>--}}
-                    </div>
+                            {{--</div>--}}
+                        </div>
                     @endif
                 </form>
             </div>

@@ -32,7 +32,7 @@
 
 </header>
 @section('content')
-    <section class="container text-right mt-5 about">
+    <section class="container {{app()->isLocale('ar')?'text-right':'text-left' }} mt-5 about">
         <br>
         <br>
         @if(count($policies) >0)
