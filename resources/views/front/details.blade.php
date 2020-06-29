@@ -34,17 +34,17 @@
     <div class="text-center">
         @include('flash::message')
     </div>
-    <div class="container mt-2 buy">
-        <div class="row">
+    <div class="container mt-2 buy" >
+        <div class="row" style="direction: {{app()->isLocale('ar')?'rtl':'ltr' }}">
 
-            <div class="col-6 text-right">
+            <div class="col-5 {{app()->isLocale('ar')?'text-right':'' }}" >
                 <small>
                     <i class="fas fa-weight"></i>
                     {{trans('lang.wight')}} :  {{$row->wight}}
                 </small>
                 <br>
 
-                <form action="{{url('add-cart')}}" method="get" class="box" id="cart">
+                <form action="{{url('add-cart')}}" method="get" class="box mt-2" id="cart">
                     {{ csrf_field() }}
                     <input type="hidden" name="id" value="{{$row->id}}">
                     <input type="hidden" name="name" value="{{$row->name}}">
@@ -71,7 +71,7 @@
                     @endif
                 </form>
             </div>
-            <div class="col-6">
+            <div class="col-7 {{app()->isLocale('en')?'text-left':'' }}">
                 <span>
                     {{trans('lang.price')}} : {{$row->price}} {{trans('lang.SR')}}
                 </span>
@@ -87,11 +87,11 @@
             </div>
         </div>
 
-        <div class="card mt-5 mb-4">
-            <div class="card-title text-right">
-                <span class="about-product">{{trans('lang.about_the_product')}}</span>
+        <div class="card mt-5 mb-4" >
+            <div class="card-title " style="direction: {{app()->isLocale('ar')?'rtl':'ltr' }}">
+                <span class="about-product {{app()->isLocale('ar')?'text-right':'text-left' }}" >{{trans('lang.about_the_product')}}</span>
             </div>
-            <div class="card-body text-right " style="padding-top: 0;">{{$row->description}}</div>
+            <div class="card-body {{app()->isLocale('ar')?'text-right':'text-left' }} " style="padding-top: 0;">{{$row->description}}</div>
         </div>
 
     </div>

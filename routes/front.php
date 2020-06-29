@@ -58,11 +58,12 @@ Route::group(
             Route::get('myacount', 'AuthController@myAccount')->name('myacount');
 
             Route::get('map', 'MainController@viewMap')->name('map');
-            Route::post('map', 'MainController@map')->name('map');
+            Route::post('map/add', 'MainController@map')->name('map-add');
+            Route::get('checkout', 'MainController@checkout')->name('checkout');
 
             Route::get('payment', 'PaymentController@payment')->name('payment');
 
-            Route::get('done', 'MainController@done')->name('done');
+            Route::get('done', 'PaymentController@done')->name('done');
 
             Route::get('myorder', 'MainController@myOrder')->name('myorder');
             Route::get('addorder', 'MainController@addOrder')->name('addorder');

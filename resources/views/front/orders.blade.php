@@ -22,23 +22,23 @@
 
 </header>
 @section('content')
-    <section class="container text-right mt-5 about">
+    <section class="container text-right mt-5 about" style="direction: {{app()->isLocale('ar')?'rtl':'ltr' }}">
         <ul class="nav nav-tabs  nav-justified pr-0" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link  text-dark " id="profile-tab" data-toggle="tab" href="#{{trans('lang.Waiting')}}" role="tab" aria-controls="profile" aria-selected="false">{{trans('lang.Waiting')}} </a>
+                <a class="nav-link  text-dark " id="profile-tab" data-toggle="tab" href="#{{trans('lang.Waiting')}}" role="tab" aria-controls="profile" aria-selected="false" style="padding: 8px 0 !important;">{{trans('lang.Waiting')}} </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark active" id="contact-tab" data-toggle="tab" href="#{{trans('lang.active')}}" role="tab" aria-controls="contact" aria-selected="true">{{trans('lang.active')}} </a>
+                <a class="nav-link text-dark active" id="contact-tab" data-toggle="tab" href="#{{trans('lang.active')}}" role="tab" aria-controls="contact" aria-selected="true" style="padding: 8px 0 !important;">{{trans('lang.active')}} </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  text-dark" id="profile-tab" data-toggle="tab" href="#{{trans('lang.Finished')}}" role="tab" aria-controls="profile" aria-selected="false">{{trans('lang.Finished')}} </a>
+                <a class="nav-link  text-dark" id="profile-tab" data-toggle="tab" href="#{{trans('lang.Finished')}}" role="tab" aria-controls="profile" aria-selected="false" style="padding: 8px 0 !important;">{{trans('lang.Finished')}} </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-dark" id="home-tab" data-toggle="tab" href="#{{trans('lang.Canceled')}}" role="tab" aria-controls="home" aria-selected="false">{{trans('lang.Canceled')}} </a>
+                <a class="nav-link text-dark" id="home-tab" data-toggle="tab" href="#{{trans('lang.Canceled')}}" role="tab" aria-controls="home" aria-selected="false" style="padding: 8px 0 !important;">{{trans('lang.Canceled')}} </a>
             </li>
         </ul>
         @if(count($orders) >0)
-        <div class="tab-content" id="myTabContent">
+        <div class="tab-content" id="myTabContent" >
             <div class="tab-pane fade" id="{{trans('lang.Canceled')}}" role="tabpanel" aria-labelledby="home-tab">
                 @foreach($orders as $order)
                     @if($order->status == 'ملغي')

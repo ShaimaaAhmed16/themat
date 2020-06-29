@@ -21,5 +21,6 @@
 <script src="{{asset('public/front/js/bootstrap.min.js')}}"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="{{asset('public/front/js/main.js')}}"></script>
+@yield('scripts')
 </body>
 </html>

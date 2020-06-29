@@ -1,4 +1,5 @@
-<div id="mySidenav" class="sidenav">
+{{--<div id="mySidenav" class="sidenav " style="direction: {{app()->isLocale('ar')?'rtl':'ltr' }}">--}}
+<div id="mySidenav" class="sidenav ">
     <div class="text-center">
         <img src="{{asset('public/front/images/tt.png')}}" width="150" alt="">
     </div>
@@ -7,8 +8,8 @@
 
     @if(auth()->guard('client-web')->check())
     <a href="{{route('index')}}">
-        <i class="fas fa-store-alt pl-2"></i>
-        <span>{{trans('lang.home')}}</span>
+        <i class="fas fa-store-alt pl-2 " ></i>
+        <span >{{trans('lang.home')}}</span>
     </a>
         @else
         <a href="{{route('login.client')}}">

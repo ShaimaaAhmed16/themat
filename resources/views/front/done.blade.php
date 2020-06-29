@@ -20,7 +20,13 @@
             <div class="clearfix"></div>
             <div class="col-12 text-center mt-3">
                 <h2>{{trans('lang.request_sent')}}</h2>
-                <p>{{trans('lang.The_request')}}</p>
+                {{--<p>{{trans('lang.The_request')}}</p>--}}
+                @if(isset($success))
+                    <div class="alert alert-success text-center">
+                        تم الدفع بنجاح
+                    </div>
+                @endif
+
                 <a href="{{route('myorder')}}" class="btn btn-block text-white bg-light-green mb-1"> {{trans('lang.my_requests_page')}}</a>
 
             </div>

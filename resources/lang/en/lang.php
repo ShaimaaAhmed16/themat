@@ -42,7 +42,7 @@ return[
     'filter'=> 'Filter',
     'buy_now'=> 'Buy now',
     'price'=> 'price',
-    'SR'=> 'SR',
+    'SR'=> 'SAR',
     'there_are_no_products_with_this_name'=> 'there are no products with this name',
 
     //active code page
@@ -146,6 +146,7 @@ return[
     //cart controller
     'Added_basket'=> 'Added to basket',
     'deletion_successful'=> 'Deletion successful',
+    'choose_weight' => 'Weight must be chosen',
 
     //main controller
     'no_data'=> 'There are no data',

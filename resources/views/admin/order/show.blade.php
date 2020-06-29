@@ -47,6 +47,61 @@
 
                                 </div>
                             </li>
+
+                            <li class="list-group-item list-group-item-action">
+                                <div class="row text-right">
+                                    <div class="col-12 col-md-3">
+                                        <p class="m-0 font-weight-bold ">
+                                            العنوان بالتفصيل :
+                                        </p>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <p class="m-0">{{optional($record->client)->address_details}}{{optional($record->client)->second_name}}</p>
+                                    </div>
+
+                                </div>
+                            </li>
+
+                            <li class="list-group-item list-group-item-action">
+                                <div class="row text-right">
+                                    <div class="col-12 col-md-3">
+                                        <p class="m-0 font-weight-bold ">
+                                            اقرب مكان :
+                                        </p>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <p class="m-0">{{optional($record->client)->nearby}}{{optional($record->client)->second_name}}</p>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li class="list-group-item list-group-item-action">
+                                <div class="row text-right">
+                                    <div class="col-12 col-md-3">
+                                        <p class="m-0 font-weight-bold ">
+                                            رقم الجوال :
+                                        </p>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <p class="m-0">{{optional($record->client)->phone}}{{optional($record->client)->second_name}}</p>
+                                    </div>
+
+                                </div>
+                            </li>
+
+                            <li class="list-group-item list-group-item-action">
+                                <div class="row text-right">
+                                    <div class="col-12 col-md-3">
+                                        <p class="m-0 font-weight-bold ">
+                                            رقم جوال اخر:
+                                        </p>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <p class="m-0">{{optional($record->client)->additional_mobile}}{{optional($record->client)->second_name}}</p>
+                                    </div>
+
+                                </div>
+                            </li>
                             <li class="list-group-item list-group-item-action">
                         @foreach($record->orderProducts as $orderProduct)
                                 <div class="row ">

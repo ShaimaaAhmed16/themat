@@ -25,9 +25,9 @@ class MainController extends Controller
             if ($request->name) {
                 $query->whereTranslationLike('name', '%'.$request->name.'%');
             }
-            elseif ($request->category_id) {
-                $query->where('category_id', $request->category_id);
-            }
+//            if ($request->category_id) {
+//                $query->where('category_id', $request->category_id);
+//            }
         })->get();
 
         $categories =Category::all();
@@ -178,7 +178,7 @@ class MainController extends Controller
 
         ]);
         if ($user){
-            return redirect()->route('payment');
+            return redirect()->route('checkout');
 //
 //            return back();
 
@@ -188,39 +188,15 @@ class MainController extends Controller
         }
     }
 
+    public function checkout(){
+        return view('front.ajax.payment');
+    }
 //return redirect()->route('addorder');
 
     public function myOrder(){
-        $orders = Order::all();
+        $orders = Order::latest()->get();
 //        dd($orders);
         return view('front.orders',compact('orders'));
     }
-    public function addOrder(Request $request){
-        $order = Order::create([
-            'client_id' => auth('client-web')->user()->id,
-            'status' => 'منتظر',
-            'total' => Cart::total(),
-        ]);
-        $order->num_of_orders +=1;
-        $order->update();
-        // Insert into order_product table
-        foreach (Cart::content() as $item) {
-            OrderProduct::create([
-                'order_id' => $order->id,
-                'product_id' => $item->model->id,
-                'quantity' => $item->qty,
-            ]);
-        }
-        Cart::instance('default')->destroy();
-        session()->forget('coupon');
-//        return back();
-//        flash()->success('تم ارسال الطلب ,الطلب في حاله الانتظار ويتم الدفع عند الاستلام');
-        return redirect()->route('done');
-    }
-    public function done(){
-        return view('front.done');
-    }
-
-
 
 }

@@ -34,7 +34,7 @@
     @include('flash::message')
     <section class="signin">
         <div class="card pt-3">
-            <form class="container" method="post" action="{{route('login.client')}}">
+            <form class="container" method="post" action="{{route('login.client')}}" style="direction: {{app()->isLocale('ar')?'rtl':'ltr' }} ">
                 @csrf
                 <div class="form-group text-right">
                     <input id="email" type="email" class="form-control" placeholder="{{trans('lang.email')}}" name="email"/>

@@ -22,24 +22,24 @@
 
 </header>
 @section('content')
-<section class="contact container">
+<section class="contact container" style="direction: {{app()->isLocale('ar')?'rtl':'ltr' }}">
     @if(count($rows)>0)
         @foreach($rows as $row)
             <div class="card text-right pr-4">
-        <div class="row">
+        <div class="row" >
             <div class="col-12">
-                <i class="fas fa-globe text-light-green ml-2"></i>
-                <small>{{$row->getTranslation()->country}} - {{$row->getTranslation()->city}}</small>
+                <i class="fas fa-globe text-light-green "></i>
+                <small>{{$row->getTranslation()->country}}-{{$row->getTranslation()->city}}</small>
             </div>
-            <div class="col-12">
+            <div class="col-12 {{app()->isLocale('en')?'text-left':'text-right' }}">
                 <i class="fas fa-mobile text-light-green ml-2"></i>
                 <small>{{$row->phone}}</small>
             </div>
-            <div class="col-12">
+            <div class="col-12 {{app()->isLocale('en')?'text-left':'text-right' }}">
                 <i class="fab fa-whatsapp text-light-green ml-2"></i>
                 <small>{{$row-> watsUp}}</small>
             </div>
-            <div class="col-12">
+            <div class="col-12 {{app()->isLocale('en')?'text-left':'text-right' }}">
                 <i class="fas fa-envelope text-light-green ml-2"></i>
                 <small>{{$row->email}}</small>
             </div>

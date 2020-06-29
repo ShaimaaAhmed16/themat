@@ -5,13 +5,13 @@
 <header class="header fixed-top bg-light-green">
     <div class="container pt-2 ">
         <div class="row">
-            <div class="col-4 text-right">
+            <div class="col-3 text-right">
                 <a href="#" class="text-white">
                     <i class="fas fa-bars" onclick="openNav()"></i>
                 </a>
             </div>
-            <div class="col-8 d-flex justify-content-between">
-                <h4 class="text-white  text-center">{{trans('lang.shopping_basket')}}</h4>
+            <div class="col-9 d-flex justify-content-between">
+                <h4 class="text-white  text-left">{{trans('lang.shopping_basket')}}</h4>
                 <a href="{{route('index')}}">
                     <i class="fas fa-chevron-left text-white"></i>
                 </a>
@@ -24,7 +24,7 @@
 
 @section('content')
 
-    <div class="container shopcart1 pb-5">
+    <div class="container shopcart1 pb-5" style="direction: {{app()->isLocale('ar')?'rtl':'ltr' }}">
         @if (Cart::count() > 0)
         <section class="d-flex justify-content-between mt-5 pl-4">
             <label class="mt-2 pr-2"> {{trans('lang.number_of_products')}} : {{Cart::count()}}</label>
@@ -119,7 +119,7 @@
                             {{trans('lang.wight')}} :  {{$item->model->wight}}
                         </span>
                     </div>
-                    <div class="col-6 {{app()->isLocale('en')?'text-right':'' }}">
+                    <div class="{{app()->isLocale('en')?'text-right col-5':'col-6' }} ">
                         <span>
                             {{trans('lang.price')}} : {{$item->price}} {{trans('lang.SR')}}
                         </span>
@@ -137,8 +137,8 @@
 
         <section class="jumbotron p-2 mt-4">
                 <div class="d-flex justify-content-between">
-                    <h6  class="{{app()->isLocale('ar')?'text-right':'text-left ml-5' }}" >{{trans('lang.The_total_price_of_the_products')}}</h6>
-                    <h6 class="{{app()->isLocale('ar')?'text-left':'text-right' }}">{{Cart::subtotal()}}</h6>
+                    <h6>{{trans('lang.The_total_price_of_the_products')}}</h6>
+                    <h6>{{Cart::subtotal()}}</h6>
                 </div>
                 <div class="d-flex justify-content-between">
                     <h6>{{trans('lang.value_added')}}</h6>

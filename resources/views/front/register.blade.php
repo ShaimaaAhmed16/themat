@@ -34,10 +34,10 @@
     @endif
     <section class="signin">
         <div class="card pt-3">
-            <form class="container" method="post" action="{{route('register.client')}}">
+            <form class="container" method="post" action="{{route('register.client')}}" style="direction: {{app()->isLocale('ar')?'rtl':'ltr' }} ">
                 @csrf
                 <div class="form-group text-right">
-                    <input id="name" type="text" class="form-control" placeholder="{{trans('lang.first_name')}}" name="first_name" value="{{old('first_name')}}">
+                    <input id="name" type="text" class="form-control"  placeholder="{{trans('lang.first_name')}}" name="first_name" value="{{old('first_name')}}" >
                 </div>
                 <div class="form-group text-right">
                     <input id="name" type="text"class="form-control" placeholder="{{trans('lang.family_name')}}" name="second_name" value="{{old('second_name')}}">

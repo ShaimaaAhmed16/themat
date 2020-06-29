@@ -148,6 +148,7 @@ return[
     //cart controller
     'Added_basket'=> 'تم الاضافه الي السله',
     'deletion_successful'=> 'تم الحذف بنجاح',
+    'choose_weight' => 'يجب اختيار الوزن',
 
     //main controller
     'no_data'=> 'لا يوجد بيانات',
