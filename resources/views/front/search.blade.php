@@ -70,7 +70,7 @@
             </div>
             <div class="col-6 {{app()->isLocale('en')?'text-right':'' }}">
                 {{--<a href="{{route('main')}}"><i class="fas fa-th-large mr-2"></i></a>--}}
-                <a href="{{route('index')}}"><i class="fas fa-th-list text-light-green"></i></a>
+                <a href="{{route('search')}}"><i class="fas fa-th-list text-light-green"></i></a>
 
 
             </div>

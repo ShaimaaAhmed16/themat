@@ -20,4 +20,10 @@ class Client extends Authenticatable
     {
         return $this->belongsToMany('App\Models\Product');
     }
+
+
+    public function getMobileNumberAttribute()
+{
+   return '966'.ltrim($this->phone,'0');
+}
 }

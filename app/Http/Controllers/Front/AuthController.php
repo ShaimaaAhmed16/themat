@@ -46,8 +46,7 @@ class AuthController extends Controller
         $code = rand('1111','9999');
 
         $user->update(['pin_code' => $code]);
-
-        curl_send_jawalsms_message($user->phone, trans('lang.Your_activation').$code);
+        curl_send_jawalsms_message($user->mobile_number, trans('lang.Your_activation').$code);
 
         return back()->with('success', trans('lang.code_successfully'));
     }
@@ -86,7 +85,7 @@ class AuthController extends Controller
         ]);
         $user->save();
         if ($user){
-            $send = curl_send_jawalsms_message($request->phone, trans('lang.Your_activation').$code);
+            $send = curl_send_jawalsms_message($user->mobile_number, trans('lang.Your_activation').$code);
            if ($send){
                 auth('client-web')->login($user);
                 return redirect()->route('activation-page');
@@ -149,7 +148,7 @@ class AuthController extends Controller
             $update = $send->update(['pin_code' => $code]);
             if ($update) {
                 //send sms
-                curl_send_jawalsms_message($request->phone,  trans('lang.password_reset').$code);
+                curl_send_jawalsms_message($send->mobile_number,  trans('lang.password_reset').$code);
 //                Mail::to($send->email)
 //                    ->bcc('fruit@gmail.com')
 //                    ->send(new ReaetPassword($code));

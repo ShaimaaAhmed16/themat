@@ -28,7 +28,7 @@ class StartWritePhone implements Rule
 
     public function passes($attribute, $value)
     {
-        return Str::startsWith($value, '966');
+        return Str::startsWith($value, '05');
     }
 
     /**
@@ -38,7 +38,7 @@ class StartWritePhone implements Rule
      */
     public function message()
     {
-        return 'الجوال يجب ان يبدا بالمفتاح 966';
+        return 'الجوال يجب ان يبدا بالمفتاح 05';
 //        return 'The validation error message.';
     }
 }

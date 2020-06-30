@@ -21,6 +21,11 @@ class MainController extends Controller
 
 
     public function index(Request $request){
+        $categories =Category::all();
+        return view('front.index' ,compact('rows','categories'));
+    }
+
+    public function search(Request $request){
         $rows = Product::where(function ($query) use ($request) {
             if ($request->name) {
                 $query->whereTranslationLike('name', '%'.$request->name.'%');
@@ -47,7 +52,6 @@ class MainController extends Controller
                 return back();
             }
         }
-
 
         return view('front.index' ,compact('rows','categories'));
     }
