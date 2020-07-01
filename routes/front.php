@@ -23,9 +23,7 @@ Route::group(
 
     Route::get('/', 'MainController@homeClient')->name('home');
     Route::get('index', 'MainController@index')->name('index');
-
-
-    Route::get('main', 'MainController@main')->name('main');
+    Route::get('search', 'MainController@search')->name('search');
 
 
     Route::get('auth/{provider}', 'AuthController@redirectToProvider');

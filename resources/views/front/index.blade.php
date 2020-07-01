@@ -28,7 +28,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    {!! Form::open(['action'=>'Front\MainController@index','method'=>'get']) !!}
+                    {!! Form::open(['action'=>'Front\MainController@search','method'=>'get']) !!}
                     <div class="searchContainer">
                         <i class="fa fa-search searchIcon"></i>
                         <button type="submit" class="border-0"></button>
@@ -87,7 +87,7 @@
                         <div class="content mt-2">
 
                             <div class="row">
-                                @forelse($rows as $row)
+                                @forelse($category->products as $row)
                                     <div class="col-6 mb-3">
                                         <div class="card text-center" style="height:{{app()->isLocale('ar')?'220px':'240px' }}" >
                                             <div style="position: relative;">

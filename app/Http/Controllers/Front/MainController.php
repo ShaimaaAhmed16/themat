@@ -22,7 +22,7 @@ class MainController extends Controller
 
     public function index(Request $request){
         $categories =Category::all();
-        return view('front.index' ,compact('rows','categories'));
+        return view('front.index' ,compact('categories'));
     }
 
     public function search(Request $request){
@@ -30,9 +30,9 @@ class MainController extends Controller
             if ($request->name) {
                 $query->whereTranslationLike('name', '%'.$request->name.'%');
             }
-//            if ($request->category_id) {
-//                $query->where('category_id', $request->category_id);
-//            }
+            if ($request->category_id) {
+                $query->where('category_id', $request->category_id);
+            }
         })->get();
 
         $categories =Category::all();
@@ -53,7 +53,7 @@ class MainController extends Controller
             }
         }
 
-        return view('front.index' ,compact('rows','categories'));
+        return view('front.search' ,compact('rows','categories'));
     }
 
 

@@ -25,21 +25,21 @@
         @include('flash::message')
     </div> <br>
     <div >
-        <a href="{{ route('index', ['sort'=>' num_of_orders']) }}" class="text-black">{{trans('lang.the_most_wanted')}}</a>
+        <a href="{{ route('search', ['sort'=>' num_of_orders']) }}" class="text-black">{{trans('lang.the_most_wanted')}}</a>
 
         <hr>
     </div>
     <div>
-        <a  href="{{ route('index', ['sort'=>' num_of_views']) }}" class="text-black">{{trans('lang.Most_viewed')}}</a>
+        <a  href="{{ route('search', ['sort'=>' num_of_views']) }}" class="text-black">{{trans('lang.Most_viewed')}}</a>
         <hr>
     </div>
 
     <div>
-        <a href="{{ route('index', ['sort'=>'high_low']) }}" class="text-black">{{trans('lang.The_price_is_more_and_less')}}</a>
+        <a href="{{ route('search', ['sort'=>'high_low']) }}" class="text-black">{{trans('lang.The_price_is_more_and_less')}}</a>
         <hr>
     </div>
     <div>
-        <a href="{{ route('index', ['sort'=>'low_high']) }}" class="text-black">{{trans('lang.The_price_is_lower_and_more')}}</a>
+        <a href="{{ route('search', ['sort'=>'low_high']) }}" class="text-black">{{trans('lang.The_price_is_lower_and_more')}}</a>
         <hr>
     </div>
 
