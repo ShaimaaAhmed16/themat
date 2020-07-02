@@ -129,27 +129,6 @@
                                                         <a href="#" class="btn bg-light-green btn-sm btn-block mt-2 myBtn2 text-white hvr-glow" style="border-radius: 20px;" data-toggle="modal" data-target="#exampleModal6">
                                                             <small>{{trans('lang.buy_now')}}</small>
                                                         </a>
-                                                        <!-- Modal -->
-                                                        <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                            <span aria-hidden="true">&times;</span>
-                                                                        </button>
-                                                                    </div>
-                                                                    <div class="modal-body">
-                                                                        {{trans('lang.You_must_register')}}
-                                                                    </div>
-                                                                    <div class="modal-footer">
-
-                                                                        <a href="{{route('login.client')}}" class="btn bg-light-green btn-sm btn-block mt-2 myBtn2 text-white hvr-glow" style="border-radius: 20px;">
-                                                                            <small>{{trans('lang.register_now')}}</small>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
 
                                                     </div>
 
@@ -177,4 +156,27 @@
                 @endforelse
             </div>
         </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {{trans('lang.You_must_register')}}
+                </div>
+                <div class="modal-footer">
+
+                    <a href="{{route('login.client')}}" class="btn bg-light-green btn-sm btn-block mt-2 myBtn2 text-white hvr-glow" style="border-radius: 20px;">
+                        <small>{{trans('lang.register_now')}}</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection
