@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class SettingController extends Controller
 {
@@ -30,6 +31,7 @@ class SettingController extends Controller
         $record = Setting::findOrFail($id);
         $record->update($request->except('image'));
         if ($request->hasFile('image')) {
+            File::delete('public/'.$record->image);
             $path = public_path();
             $destinationPath = $path . '/uploads/image/settings'; // upload path
             $logo = $request->file('image');

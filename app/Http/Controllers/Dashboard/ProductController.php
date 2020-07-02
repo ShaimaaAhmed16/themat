@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use File;
+use Illuminate\Support\Facades\File;
+
 
 class ProductController extends Controller
 {
@@ -142,7 +143,7 @@ class ProductController extends Controller
         ];
         $record->update($data,$request->except('image'));
         if ($request->hasFile('image')) {
-            File::delete('public'.$record->image);
+            File::delete('public/'.$record->image);
             $path = public_path();
             $destinationPath = $path . '/uploads/image/products'; // upload path
             $logo = $request->file('image');
@@ -167,7 +168,9 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $record = Product::findOrFail($id);
+        File::delete('public/'.$record->image);
         $record->delete();
+
         flash()->success('تم الحذف بنجاح');
         return redirect()->route('product.index');
     }

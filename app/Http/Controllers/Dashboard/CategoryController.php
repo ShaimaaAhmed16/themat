@@ -155,7 +155,7 @@ class CategoryController extends Controller
         ];
         $record->update($data,$request->except('image'));
         if ($request->hasFile('image')) {
-            File::delete('public/uploads/image/categories'.$record->image);
+            File::delete('public/'.$record->image);
             $path = public_path();
             $destinationPath = $path . '/uploads/image/categories'; // upload path
             $logo = $request->file('image');
@@ -180,6 +180,7 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $record = Category::findOrFail($id);
+        File::delete('public/'.$record->image);
         $record->delete();
         flash()->success('تم الحذف بنجاح');
         return redirect()->route('category.index');
