@@ -124,6 +124,11 @@
                             {{trans('lang.price')}} : {{$item->price}} {{trans('lang.SR')}}
                         </span>
 
+                        {{--<div class="col-4">--}}
+                        {{--<span>--}}
+                        {{--{{trans('lang.the_value_added_of_this_product')}} : {{$item->model->tax_price?$item->model->tax_price/100:0}}--}}
+                        {{--</span>--}}
+                        {{--</div>--}}
                     </div>
                     {{--<div class="col-4">--}}
                         {{--<span>--}}
