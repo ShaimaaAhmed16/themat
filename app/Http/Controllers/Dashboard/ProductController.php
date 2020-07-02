@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use File;
 
 class ProductController extends Controller
 {
@@ -133,7 +134,6 @@ class ProductController extends Controller
     {
         $record = Product::findOrFail($id);
         $data = [
-            'image' => $request->image,
             'price' => $request->price,
             'tax_price' => $request->tax_price,
             'category_id' => $request->category_id,
@@ -142,6 +142,7 @@ class ProductController extends Controller
         ];
         $record->update($data,$request->except('image'));
         if ($request->hasFile('image')) {
+            File::delete('public'.$record->image);
             $path = public_path();
             $destinationPath = $path . '/uploads/image/products'; // upload path
             $logo = $request->file('image');
@@ -150,6 +151,7 @@ class ProductController extends Controller
             $logo->move($destinationPath, $name); // uploading file to given path
             $record->update(['image' => 'uploads/image/products/' . $name]);
         }
+
         $record->save();
         flash()->success('تم التعديل بنجاح');
         return redirect()->route('product.index');

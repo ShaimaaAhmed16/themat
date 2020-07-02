@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class CategoryController extends Controller
 {
@@ -149,12 +150,12 @@ class CategoryController extends Controller
     {
         $record = Category::findOrFail($id);
         $data = [
-//            'image' => $request->image,
             'en' => ['name' => $request->en_name],
             'ar' => ['name' => $request->ar_name],
         ];
         $record->update($data,$request->except('image'));
         if ($request->hasFile('image')) {
+            File::delete('public/uploads/image/categories'.$record->image);
             $path = public_path();
             $destinationPath = $path . '/uploads/image/categories'; // upload path
             $logo = $request->file('image');
