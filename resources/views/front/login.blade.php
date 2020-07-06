@@ -37,7 +37,7 @@
             <form class="container" method="post" action="{{route('login.client')}}" style="direction: {{app()->isLocale('ar')?'rtl':'ltr' }} ">
                 @csrf
                 <div class="form-group text-right">
-                    <input id="email" type="text" class="form-control" placeholder="{{trans('lang.phone')}}" name="phone"/>
+                    <input id="email" type="text" class="form-control" placeholder="05xxxxxxxx {{trans('lang.phone')}}" name="phone"/>
                 </div>
                 <div class="form-group text-right">
                     <input type="password" id="password"  class="form-control" placeholder="{{trans('lang.password')}}"  name="password"/>

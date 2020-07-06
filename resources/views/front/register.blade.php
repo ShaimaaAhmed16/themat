@@ -52,7 +52,7 @@
                     <input type="tel" id="phone" class="form-control" placeholder="05xxxxxxxx {{trans('lang.phone')}}" name="phone" value="{{old('phone')}}">
                 </div>
                 <div class="form-group text-right">
-                    <input type="password" id="password1" class="form-control"placeholder="{{trans('lang.password')}}" name="password">
+                    <input type="password" id="password1" class="form-control" placeholder="{{trans('lang.password')}}" name="password">
                 </div>
                 <div class="form-group text-right">
                     <input type="password" id="password1" class="form-control"placeholder="{{trans('lang.confirm_password')}}" name="password_confirmation">

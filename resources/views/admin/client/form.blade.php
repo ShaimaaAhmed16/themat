@@ -9,7 +9,7 @@
     ]) !!}
     <label for="phone">رقم الهاتف</label>
     {!!  Form::text('phone',null,[
-        'class'=>'form-control text-right',"value"=>"{{old('phone')}}"
+        'class'=>'form-control text-right',"value"=>"{{old('phone')}}",'placeholder'=>'05xxxxxxxx رقم الجوال'
     ]) !!}
 
     <label for="email">البريد</label>
