@@ -58,7 +58,7 @@ class AuthController extends Controller
             'address'=>'required',
             'email'=>'required|unique:clients',
             'password'=>'required|confirmed|min:6',
-            'phone'=>['required',new StartWritePhone],
+            'phone'=>['required|unique:clients',new StartWritePhone],
         ];
         $messages=[
             'first_name.required'=>trans('lang.first_name'),
@@ -106,24 +106,24 @@ class AuthController extends Controller
     }
     public function login(Request $request){
         $rules=[
-            'email'    => 'required',
+            'phone'    => 'required',
             'password' => 'required',
         ];
         $messages=[
-            'email.required'=>trans('lang.email_correctly'),
+            'phone.required'=>trans('lang.phone'),
             'password.required'=>trans('lang.your_password'),
         ];
         $this->validate($request,$rules,$messages);
-        $client = Client::where('email', $request->input('email'))->first();
+        $client = Client::where('phone', $request->input('phone'))->first();
         if ($client) {
-            if (Auth::guard('client-web')->attempt($request->only('email', 'password'))) {
+            if (Auth::guard('client-web')->attempt($request->only('phone', 'password'))) {
                 return redirect()->route('index');
             } else {
                 flash()->error(trans('lang.error_password'));
                 return back();
             }
         }
-        flash()->error(trans('lang.error_email'));
+        flash()->error(trans('lang.error_phone'));
         return back();
     }
 

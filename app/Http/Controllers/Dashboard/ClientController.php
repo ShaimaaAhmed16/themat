@@ -62,6 +62,7 @@ class ClientController extends Controller
             'email' => $request->email,
             'phone' => $request->phone,
             'address' => $request->address,
+            'status' => 1,
             'password' => Hash::make($request->password),
         ]);
         if($record){

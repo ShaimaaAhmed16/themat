@@ -134,7 +134,7 @@ return[
     'error_data' => 'There is an error in the data',
     'your_password' => 'Please write your password',
     'error_password' => 'There is an error in the password',
-    'error_email' => 'There is an error in the email',
+    'error_phone' => 'There is an error in the phone',
     'password_reset' => 'Your password reset code is',
     'check_mobile' => 'The code has been sent successfully - please check the mobile',
     'Try_again' => 'Try again',
