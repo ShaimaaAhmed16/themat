@@ -24,6 +24,7 @@
         @include('flash::message')
         <div class="card pt-3">
             <form class="container" action="{{route('change.password')}}" method="post">
+                @csrf
                 <div class="form-group text-right">
 
                     <input type="password" class="form-control" placeholder="{{trans('lang.password')}}" name="password">
