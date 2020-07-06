@@ -58,7 +58,7 @@ class AuthController extends Controller
             'address'=>'required',
             'email'=>'required|unique:clients',
             'password'=>'required|confirmed|min:6',
-            'phone'=>['required|unique:clients',new StartWritePhone],
+            'phone'=>['required',new StartWritePhone],
         ];
         $messages=[
             'first_name.required'=>trans('lang.first_name'),
@@ -86,7 +86,7 @@ class AuthController extends Controller
         $user->save();
         if ($user){
             $send = curl_send_jawalsms_message($user->mobile_number, trans('lang.Your_activation').$code);
-           if ($send){
+            if ($send){
                 auth('client-web')->login($user);
                 return redirect()->route('activation-page');
            }
