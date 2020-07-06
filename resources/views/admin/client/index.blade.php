@@ -45,7 +45,7 @@
                                 @foreach($records as $record)
                                     <tr id="removable{{$record->id}}">
                                         <th>{{$loop->iteration}}</th>
-                                        <th>{{$record->first_name.$record->second_name}}</th>
+                                        <th>{{$record->first_name}}.{{$record->second_name}}</th>
                                         <th>{{$record->phone}}</th>
                                         <th>{{$record->email}}</th>
                                         <th>
