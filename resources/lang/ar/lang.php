@@ -28,7 +28,8 @@ return[
     'email'=> 'البريد الالكترونى',
     'phone'=> 'رقم الجوال',
     'password'=> 'كلمة المرور',
-    'confirm_password'=> 'إعادة كلمة المرور',
+    'confirm_password'=> 'تاكيد كلمة المرور',
+    'update_password'=> 'تحديث',
     'save_the_password'=> 'حفظ كلمة المرور',
 
     //login

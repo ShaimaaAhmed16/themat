@@ -33,7 +33,7 @@
                     <input type="password" class="form-control" placeholder="{{trans('lang.confirm_password')}}" name="password_confirmation">
                 </div>
                 <div class="mb-3 text-center">
-                    <button type="submit" class="btn text-white text-center bg-light-green">{{trans('lang.confirm_password')}}</button>
+                    <button type="submit" class="btn text-white text-center bg-light-green">{{trans('lang.update_password')}}</button>
                 </div>
                 <div class="d-flex justify-content-around">
                     <a href="{{route('login.client')}}" type="submit" class="btn text-white bg-secondary mb-1">{{trans('lang.login')}}</a>

@@ -141,6 +141,7 @@ return[
     'error_occurred' => 'An error occurred, try again',
     'code_incorrect' => 'This code is incorrect',
     'Password_changed' => 'Password changed successfully',
+    'update_password' => 'update password',
     'modified_successfully' => 'Personal data has been modified successfully',
 
     //cart controller
