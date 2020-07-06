@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group text-right">
 
-                    <input type="password" class="form-control" placeholder="{{trans('lang.national_fruits')}}" name="password_confirmation">
+                    <input type="password" class="form-control" placeholder="{{trans('lang.confirm_password')}}" name="password_confirmation">
                 </div>
                 <div class="mb-3 text-center">
                     <button type="submit" class="btn text-white text-center bg-light-green">{{trans('lang.confirm_password')}}</button>
