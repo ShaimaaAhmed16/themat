@@ -201,8 +201,8 @@ class AuthController extends Controller
         $this->validate($request,$rules,$messages);
         $user = Client::where('pin_code',$request->pin_code)->first();
 
-        $user ->update(bcrypt($request->password));
-        $user->pin_code = null;
+        $user ->update(['password' => bcrypt($request->password),'pin_code' =>null]);
+//        $user->pin_code = null;
         if($user->save()){
             flash()->message(trans('lang.Password_changed'));
             return redirect()->route('login.client');
