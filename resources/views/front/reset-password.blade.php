@@ -28,7 +28,7 @@
                 @csrf
                 <div class="form-group {{app()->isLocale('ar')?'text-right':'text-left' }}">
 
-                    <input type="text" class="form-control {{app()->isLocale('ar')?'text-right':'text-left' }}" placeholder="{{trans('lang.phone')}} ********9665" name="phone">
+                    <input type="text" class="form-control {{app()->isLocale('ar')?'text-right':'text-left' }}" placeholder="05xxxxxxxx {{trans('lang.phone')}}" name="phone">
                 </div>
                 <div class="mb-3 text-center">
                     <button  type="submit" class="btn text-white text-center bg-light-green">{{trans('lang.restore_password')}}</button>
