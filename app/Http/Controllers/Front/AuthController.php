@@ -174,7 +174,7 @@ class AuthController extends Controller
         ]);
         $user = Client::where('pin_code',$request->pin_code)->first();
         if($user){
-            $user->pin_code = null;
+//            $user->pin_code = null;
             if($user->save()){
                 return redirect()->route('newPassword');
             }
