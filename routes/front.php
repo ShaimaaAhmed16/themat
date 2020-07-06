@@ -17,7 +17,7 @@ Route::group(
     Route::get('activation-page', 'AuthController@activationPage')->name('activation-page');
     Route::post('activation', 'AuthController@activation')->name('activation');
     Route::get('checkCode/{phone?}', 'AuthController@checkCodePage')->name('checkCode');
-    Route::get('change-password', 'AuthController@newPassword')->name('newPassword');
+    Route::get('change-password/{pin}', 'AuthController@newPassword')->name('newPassword');
     Route::post('check/code', 'AuthController@checkCode')->name('check.code');
     Route::post('change/password', 'AuthController@changePassword')->name('change.password');
 

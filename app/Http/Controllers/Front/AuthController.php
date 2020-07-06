@@ -163,9 +163,9 @@ class AuthController extends Controller
         }
     }
 
-    public function newPassword()
+    public function newPassword($pin_code)
     {
-        return view('front.change-password');
+        return view('front.change-password',compact('pin_code'));
     }
 
     public function checkCode(Request $request){
@@ -176,7 +176,7 @@ class AuthController extends Controller
         if($user){
 //            $user->pin_code = null;
             if($user->save()){
-                return redirect()->route('newPassword');
+                return redirect()->route('newPassword',$request->pin_code);
             }
             else{
                 flash()->message(trans('lang.error_occurred'));
@@ -192,14 +192,16 @@ class AuthController extends Controller
 
     public function changePassword(Request $request){
         $rules=[
+            'pin_code'=>'required',
             'password'=>'required|confirmed',
         ];
         $messages=[
             'password.required'=>trans('lang.write_password'),
         ];
         $this->validate($request,$rules,$messages);
+        $user = Client::where('pin_code',$request->pin_code)->first();
 
-        $user = Client::update(bcrypt($request->password));
+        $user ->update([bcrypt($request->password),'pin_code' => null]);
         if($user->save()){
             flash()->message(trans('lang.Password_changed'));
             return redirect()->route('login.client');

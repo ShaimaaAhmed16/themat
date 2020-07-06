@@ -29,6 +29,11 @@
 
                     <input type="password" class="form-control" placeholder="{{trans('lang.password')}}" name="password">
                 </div>
+
+                <div class="form-group text-right">
+
+                    <input type="hidden" class="form-control" name="pin_code" value="{{$pin_code}}">
+                </div>
                 <div class="form-group text-right">
 
                     <input type="password" class="form-control" placeholder="{{trans('lang.confirm_password')}}" name="password_confirmation">
