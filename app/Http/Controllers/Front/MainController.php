@@ -15,6 +15,9 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
+    public function splash(){
+        return view('front.splash');
+    }
     public function homeClient(){
         return view('front.home-client');
     }

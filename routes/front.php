@@ -21,7 +21,8 @@ Route::group(
     Route::post('check/code', 'AuthController@checkCode')->name('check.code');
     Route::post('change/password', 'AuthController@changePassword')->name('change.password');
 
-    Route::get('/', 'MainController@homeClient')->name('home');
+    Route::get('/', 'MainController@splash');
+    Route::get('ar', 'MainController@homeClient')->name('home');
     Route::get('index', 'MainController@index')->name('index');
     Route::get('search', 'MainController@search')->name('search');
 
