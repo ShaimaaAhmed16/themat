@@ -169,12 +169,12 @@ class MainController extends Controller
         $rules=[
             'address_details'=>'required',
             'nearby'=>'required',
-            'additional_mobile'=>'required',
+            'additional_mobile'=>'sometimes',
         ];
         $messages=[
             'address_details.required'=>trans('lang.title_detail'),
             'nearby.required'=>trans('lang.write_near'),
-            'additional_mobile.required'=>trans('lang.another_mobile'),
+            'additional_mobile.sometimes'=>trans('lang.another_mobile'),
         ];
         $this->validate($request,$rules,$messages);
         $user=$request->user('client-web');

@@ -63,18 +63,18 @@
             @csrf
             <div class="form-group {{app()->isLocale('en')?'text-left':'text-right' }}">
                 <label > {{trans('lang.Detailed_address')}}: </label>
-                <input type="text" class="form-control" name="address_details" placeholder="{{trans('lang.Detailed_address')}}"/>
+                <input type="text" class="form-control" name="address_details" placeholder="{{trans('lang.Detailed_address')}}" value="{{old('address_details')}}"/>
             </div>
             <div class="form-group {{app()->isLocale('en')?'text-left':'text-right' }}">
                 <label for="exampleInputEmail1">{{trans('lang.nearby_teacher')}} : </label>
-                <input type="text" class="form-control" name="nearby" placeholder="{{trans('lang.nearby_teacher')}}"/>
+                <input type="text" class="form-control" name="nearby" placeholder="{{trans('lang.nearby_teacher')}}" value="{{old('nearby')}}"/>
             </div>
             <div class="form-group {{app()->isLocale('en')?'text-left':'text-right' }}">
                 <label for="exampleInputEmail1"
                 ><span class="text-danger">*</span>
                     {{trans('lang.additional_mobile')}}
                 </label>
-                <input type="tel" class="form-control" id="phone" name="additional_mobile"  placeholder="{{trans('lang.phone')}}"/>
+                <input type="tel" class="form-control" id="phone" name="additional_mobile"  placeholder="05xxxxxxxx {{trans('lang.phone')}}"/>
             </div>
 
             <div class="text-center">
